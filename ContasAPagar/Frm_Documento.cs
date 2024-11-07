@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ContasAPagar
 {
-    public partial class Form1 : Form
+    public partial class Frm_Documento : Form
     {
-        public Form1()
+        public Frm_Documento()
         {
             InitializeComponent();
         }

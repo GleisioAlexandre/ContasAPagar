@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ContasAPagar.view;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ContasAPagar
 {
@@ -16,7 +18,7 @@ namespace ContasAPagar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Frm_Home());
         }
     }
 }
