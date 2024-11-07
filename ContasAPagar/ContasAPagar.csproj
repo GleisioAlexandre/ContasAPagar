@@ -116,6 +116,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Banco de Dados\" />
     <Folder Include="controller\" />
     <Folder Include="model\" />
   </ItemGroup>
