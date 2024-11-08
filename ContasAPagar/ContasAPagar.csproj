@@ -58,6 +58,12 @@
     <Compile Include="view\Frm_Documento.Designer.cs">
       <DependentUpon>Frm_Documento.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Frm_Fornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Frm_Fornecedor.Designer.cs">
+      <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Frm_Situacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Frm_Documento.resx">
       <DependentUpon>Frm_Documento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Frm_Fornecedor.resx">
+      <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Frm_Situacao.resx">
       <DependentUpon>Frm_Situacao.cs</DependentUpon>

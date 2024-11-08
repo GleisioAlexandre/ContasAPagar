@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecdorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.situaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,11 +58,19 @@
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
+            // documentoToolStripMenuItem
+            // 
+            this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
+            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.documentoToolStripMenuItem.Text = "Documento";
+            this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
+            // 
             // fornecdorToolStripMenuItem
             // 
             this.fornecdorToolStripMenuItem.Name = "fornecdorToolStripMenuItem";
             this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecdorToolStripMenuItem.Text = "Fornecdor";
+            this.fornecdorToolStripMenuItem.Click += new System.EventHandler(this.fornecdorToolStripMenuItem_Click);
             // 
             // planoDeContasToolStripMenuItem
             // 
@@ -76,13 +84,6 @@
             this.situaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.situaçãoToolStripMenuItem.Text = "Situação";
             this.situaçãoToolStripMenuItem.Click += new System.EventHandler(this.situaçãoToolStripMenuItem_Click);
-            // 
-            // documentoToolStripMenuItem
-            // 
-            this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
-            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.documentoToolStripMenuItem.Text = "Documento";
-            this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
             // 
             // Frm_Home
             // 

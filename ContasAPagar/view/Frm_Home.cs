@@ -30,5 +30,12 @@ namespace ContasAPagar.view
             documento.MdiParent = this;
             documento.Show();
         }
+
+        private void fornecdorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Fornecedor fornecedor = new Frm_Fornecedor();
+            fornecedor.MdiParent = this;
+            fornecedor.Show();
+        }
     }
 }
