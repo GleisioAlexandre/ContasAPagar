@@ -52,6 +52,12 @@
     <Compile Include="view\FrmCadSituacao.Designer.cs">
       <DependentUpon>FrmCadSituacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmContasAPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmContasAPagar.Designer.cs">
+      <DependentUpon>FrmContasAPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Frm_Documento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="view\FrmCadSituacao.resx">
       <DependentUpon>FrmCadSituacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmContasAPagar.resx">
+      <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Frm_Documento.resx">
       <DependentUpon>Frm_Documento.cs</DependentUpon>
