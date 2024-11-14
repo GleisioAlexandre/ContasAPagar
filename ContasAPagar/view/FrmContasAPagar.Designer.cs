@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.dtgContasAPagar = new System.Windows.Forms.DataGridView();
+            this.btnNovoLancamento = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +54,10 @@
             this.dtgContasAPagar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descricao,
+            this.documento,
             this.valor,
+            this.tipo,
+            this.lancamento,
             this.vencimento,
             this.pagamento,
             this.devedor,
@@ -58,8 +65,19 @@
             this.dtgContasAPagar.Location = new System.Drawing.Point(12, 160);
             this.dtgContasAPagar.Name = "dtgContasAPagar";
             this.dtgContasAPagar.ReadOnly = true;
-            this.dtgContasAPagar.Size = new System.Drawing.Size(1309, 391);
+            this.dtgContasAPagar.Size = new System.Drawing.Size(1045, 391);
             this.dtgContasAPagar.TabIndex = 0;
+            // 
+            // btnNovoLancamento
+            // 
+            this.btnNovoLancamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNovoLancamento.Location = new System.Drawing.Point(12, 567);
+            this.btnNovoLancamento.Name = "btnNovoLancamento";
+            this.btnNovoLancamento.Size = new System.Drawing.Size(89, 44);
+            this.btnNovoLancamento.TabIndex = 1;
+            this.btnNovoLancamento.Text = "Novo Lançamento";
+            this.btnNovoLancamento.UseVisualStyleBackColor = true;
+            this.btnNovoLancamento.Click += new System.EventHandler(this.btnNovoLancamento_Click);
             // 
             // codigo
             // 
@@ -73,11 +91,29 @@
             this.descricao.Name = "descricao";
             this.descricao.ReadOnly = true;
             // 
+            // documento
+            // 
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            // 
             // valor
             // 
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // lancamento
+            // 
+            this.lancamento.HeaderText = "Lançamento";
+            this.lancamento.Name = "lancamento";
+            this.lancamento.ReadOnly = true;
             // 
             // vencimento
             // 
@@ -109,9 +145,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 623);
+            this.ClientSize = new System.Drawing.Size(1069, 623);
+            this.Controls.Add(this.btnNovoLancamento);
             this.Controls.Add(this.dtgContasAPagar);
             this.Name = "FrmContasAPagar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmContasAPagar";
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).EndInit();
             this.ResumeLayout(false);
@@ -121,9 +159,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgContasAPagar;
+        private System.Windows.Forms.Button btnNovoLancamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lancamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn devedor;

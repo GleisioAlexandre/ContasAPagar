@@ -58,6 +58,12 @@
     <Compile Include="view\FrmContasAPagar.Designer.cs">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmLancamentoContasAReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmLancamentoContasAReceber.Designer.cs">
+      <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Frm_Documento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmContasAPagar.resx">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmLancamentoContasAReceber.resx">
+      <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Frm_Documento.resx">
       <DependentUpon>Frm_Documento.cs</DependentUpon>

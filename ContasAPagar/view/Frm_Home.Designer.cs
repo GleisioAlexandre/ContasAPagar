@@ -34,13 +34,16 @@
             this.fornecdorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.situaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestaçãoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem});
+            this.cadastroToolStripMenuItem,
+            this.prestaçãoDeContasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1238, 24);
@@ -61,29 +64,44 @@
             // documentoToolStripMenuItem
             // 
             this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
-            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.documentoToolStripMenuItem.Text = "Documento";
             this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
             // 
             // fornecdorToolStripMenuItem
             // 
             this.fornecdorToolStripMenuItem.Name = "fornecdorToolStripMenuItem";
-            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.fornecdorToolStripMenuItem.Text = "Fornecdor";
             this.fornecdorToolStripMenuItem.Click += new System.EventHandler(this.fornecdorToolStripMenuItem_Click);
             // 
             // planoDeContasToolStripMenuItem
             // 
             this.planoDeContasToolStripMenuItem.Name = "planoDeContasToolStripMenuItem";
-            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.planoDeContasToolStripMenuItem.Text = "Plano de Contas";
             // 
             // situaçãoToolStripMenuItem
             // 
             this.situaçãoToolStripMenuItem.Name = "situaçãoToolStripMenuItem";
-            this.situaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.situaçãoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.situaçãoToolStripMenuItem.Text = "Situação";
             this.situaçãoToolStripMenuItem.Click += new System.EventHandler(this.situaçãoToolStripMenuItem_Click);
+            // 
+            // prestaçãoDeContasToolStripMenuItem
+            // 
+            this.prestaçãoDeContasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasAReceberToolStripMenuItem});
+            this.prestaçãoDeContasToolStripMenuItem.Name = "prestaçãoDeContasToolStripMenuItem";
+            this.prestaçãoDeContasToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.prestaçãoDeContasToolStripMenuItem.Text = "Prestação de Contas";
+            // 
+            // contasAReceberToolStripMenuItem
+            // 
+            this.contasAReceberToolStripMenuItem.Name = "contasAReceberToolStripMenuItem";
+            this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contasAReceberToolStripMenuItem.Text = "Contas a Pagar";
+            this.contasAReceberToolStripMenuItem.Click += new System.EventHandler(this.contasAReceberToolStripMenuItem_Click);
             // 
             // Frm_Home
             // 
@@ -113,5 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem planoDeContasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem situaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prestaçãoDeContasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
     }
 }

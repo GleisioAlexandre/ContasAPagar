@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ContasAPagar.view
 {
-    public partial class FrmContasAPagar : Form
+    public partial class FrmLancamentoContasAReceber : Form
     {
-        public FrmContasAPagar()
+        public FrmLancamentoContasAReceber()
         {
             InitializeComponent();
-        }
-
-        private void btnNovoLancamento_Click(object sender, EventArgs e)
-        {
-            FrmLancamentoContasAReceber lancamento = new FrmLancamentoContasAReceber();
-            lancamento.ShowDialog();
         }
     }
 }
