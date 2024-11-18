@@ -16,5 +16,10 @@ namespace ContasAPagar.view
         {
             InitializeComponent();
         }
+
+        private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
