@@ -19,7 +19,8 @@ namespace ContasAPagar.view
 
         private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
         {
-
+            // lblLancamento.TabStop = false;
+            gpbSituacao.TabStop = true;
         }
     }
 }

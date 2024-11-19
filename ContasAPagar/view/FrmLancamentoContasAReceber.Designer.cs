@@ -44,14 +44,14 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbSituacao = new System.Windows.Forms.GroupBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.lblLancamento = new System.Windows.Forms.MaskedTextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.gpbSituacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +93,7 @@
             this.textBox4.Location = new System.Drawing.Point(118, 146);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(220, 20);
-            this.textBox4.TabIndex = 7;
+            this.textBox4.TabIndex = 6;
             // 
             // label4
             // 
@@ -109,7 +109,7 @@
             this.textBox5.Location = new System.Drawing.Point(121, 56);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(110, 20);
-            this.textBox5.TabIndex = 9;
+            this.textBox5.TabIndex = 1;
             // 
             // label5
             // 
@@ -125,7 +125,7 @@
             this.textBox6.Location = new System.Drawing.Point(527, 56);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(264, 20);
-            this.textBox6.TabIndex = 11;
+            this.textBox6.TabIndex = 4;
             // 
             // label6
             // 
@@ -142,7 +142,7 @@
             this.label7.Location = new System.Drawing.Point(8, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 12;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Lançamento";
             // 
             // label8
@@ -161,7 +161,7 @@
             this.radioButton1.Location = new System.Drawing.Point(6, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(50, 17);
-            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Pago";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -172,38 +172,38 @@
             this.radioButton2.Location = new System.Drawing.Point(62, 18);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(63, 17);
-            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabIndex = 1;
             this.radioButton2.Text = "A Pagar";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 243);
+            this.button1.Location = new System.Drawing.Point(11, 205);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 43);
-            this.button1.TabIndex = 19;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(662, 243);
+            this.button2.Location = new System.Drawing.Point(662, 205);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 43);
-            this.button2.TabIndex = 20;
+            this.button2.TabIndex = 12;
             this.button2.Text = "Incluir Lançamento";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gpbSituacao
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(661, 131);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(130, 54);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Situação";
+            this.gpbSituacao.Controls.Add(this.radioButton1);
+            this.gpbSituacao.Controls.Add(this.radioButton2);
+            this.gpbSituacao.Location = new System.Drawing.Point(661, 112);
+            this.gpbSituacao.Name = "gpbSituacao";
+            this.gpbSituacao.Size = new System.Drawing.Size(130, 54);
+            this.gpbSituacao.TabIndex = 9;
+            this.gpbSituacao.TabStop = false;
+            this.gpbSituacao.Text = "Situação";
             // 
             // maskedTextBox1
             // 
@@ -211,7 +211,7 @@
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox1.TabIndex = 22;
+            this.maskedTextBox1.TabIndex = 5;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // maskedTextBox2
@@ -220,24 +220,24 @@
             this.maskedTextBox2.Mask = "00/00/0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox2.TabIndex = 23;
+            this.maskedTextBox2.TabIndex = 2;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox3
+            // lblLancamento
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(11, 56);
-            this.maskedTextBox3.Mask = "00/00/0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox3.TabIndex = 24;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.lblLancamento.Location = new System.Drawing.Point(11, 56);
+            this.lblLancamento.Mask = "00/00/0000";
+            this.lblLancamento.Name = "lblLancamento";
+            this.lblLancamento.Size = new System.Drawing.Size(72, 20);
+            this.lblLancamento.TabIndex = 0;
+            this.lblLancamento.ValidatingType = typeof(System.DateTime);
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(527, 146);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(105, 20);
-            this.textBox3.TabIndex = 26;
+            this.textBox3.TabIndex = 8;
             // 
             // label9
             // 
@@ -254,20 +254,20 @@
             this.comboBox1.Location = new System.Drawing.Point(379, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(110, 21);
-            this.comboBox1.TabIndex = 27;
+            this.comboBox1.TabIndex = 7;
             // 
             // FrmLancamentoContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 300);
+            this.ClientSize = new System.Drawing.Size(799, 253);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.lblLancamento);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbSituacao);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
@@ -287,8 +287,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lançamento de Despesas";
             this.Load += new System.EventHandler(this.FrmLancamentoContasAReceber_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbSituacao.ResumeLayout(false);
+            this.gpbSituacao.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,10 +312,10 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbSituacao;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox lblLancamento;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
