@@ -92,7 +92,7 @@
             // 
             // cadastropessoa
             // 
-            this.cadastropessoa.HeaderText = "Cadastro de Pessoa";
+            this.cadastropessoa.HeaderText = "CPF / CNPJ";
             this.cadastropessoa.Name = "cadastropessoa";
             this.cadastropessoa.ReadOnly = true;
             // 

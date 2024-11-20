@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContasAPagar.view
+namespace ContasAPagar.view.Cadastros.Plano_de_Contas
 {
-    public partial class Frm_Situacao : Form
+    public partial class Frm_PlanoDeContas : Form
     {
-        public Frm_Situacao()
+        public Frm_PlanoDeContas()
         {
             InitializeComponent();
-        }
-
-        private void btnNSituacao_Click(object sender, EventArgs e)
-        {
-            FrmCadSituacao situacao = new FrmCadSituacao();
-            situacao.ShowDialog();
         }
     }
 }

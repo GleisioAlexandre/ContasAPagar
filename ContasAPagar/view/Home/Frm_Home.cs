@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContasAPagar.view.Cadastros.Plano_de_Contas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,13 +16,6 @@ namespace ContasAPagar.view
         public Frm_Home()
         {
             InitializeComponent();
-        }
-
-        private void situaçãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_Situacao situacao = new Frm_Situacao();
-            situacao.MdiParent = this;
-            situacao.Show();
         }
 
         private void documentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,6 +37,13 @@ namespace ContasAPagar.view
             FrmContasAPagar contasAPagar = new FrmContasAPagar();
             contasAPagar.MdiParent = this;
             contasAPagar.Show();
+        }
+
+        private void planoDeContasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_PlanoDeContas planoDeContas = new Frm_PlanoDeContas();
+            planoDeContas.MdiParent = this;
+            planoDeContas.Show();
         }
     }
 }

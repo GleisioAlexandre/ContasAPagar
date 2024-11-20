@@ -46,78 +46,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="view\FrmCadSituacao.cs">
+    <Compile Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FrmCadSituacao.Designer.cs">
-      <DependentUpon>FrmCadSituacao.cs</DependentUpon>
+    <Compile Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.Designer.cs">
+      <DependentUpon>Frm_PlanoDeContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FrmContasAPagar.cs">
+    <Compile Include="view\Contas a Pagar\FrmContasAPagar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FrmContasAPagar.Designer.cs">
+    <Compile Include="view\Contas a Pagar\FrmContasAPagar.Designer.cs">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FrmLancamentoContasAReceber.cs">
+    <Compile Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAReceber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FrmLancamentoContasAReceber.Designer.cs">
+    <Compile Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAReceber.Designer.cs">
       <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Frm_Documento.cs">
+    <Compile Include="view\Cadastros\Documento\Frm_Documento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Frm_Documento.Designer.cs">
+    <Compile Include="view\Cadastros\Documento\Frm_Documento.Designer.cs">
       <DependentUpon>Frm_Documento.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Frm_Fornecedor.cs">
+    <Compile Include="view\Cadastros\Fornecedor\Frm_Fornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Frm_Fornecedor.Designer.cs">
+    <Compile Include="view\Cadastros\Fornecedor\Frm_Fornecedor.Designer.cs">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Frm_Situacao.cs">
+    <Compile Include="view\Home\Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Frm_Situacao.Designer.cs">
-      <DependentUpon>Frm_Situacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\Frm_Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\Frm_Home.Designer.cs">
+    <Compile Include="view\Home\Frm_Home.Designer.cs">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Frm_Login.cs">
+    <Compile Include="view\Login\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Frm_Login.Designer.cs">
+    <Compile Include="view\Login\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="view\FrmCadSituacao.resx">
-      <DependentUpon>FrmCadSituacao.cs</DependentUpon>
+    <EmbeddedResource Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.resx">
+      <DependentUpon>Frm_PlanoDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FrmContasAPagar.resx">
+    <EmbeddedResource Include="view\Contas a Pagar\FrmContasAPagar.resx">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FrmLancamentoContasAReceber.resx">
+    <EmbeddedResource Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAReceber.resx">
       <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Frm_Documento.resx">
+    <EmbeddedResource Include="view\Cadastros\Documento\Frm_Documento.resx">
       <DependentUpon>Frm_Documento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Frm_Fornecedor.resx">
+    <EmbeddedResource Include="view\Cadastros\Fornecedor\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Frm_Situacao.resx">
-      <DependentUpon>Frm_Situacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\Frm_Home.resx">
+    <EmbeddedResource Include="view\Home\Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Frm_Login.resx">
+    <EmbeddedResource Include="view\Login\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

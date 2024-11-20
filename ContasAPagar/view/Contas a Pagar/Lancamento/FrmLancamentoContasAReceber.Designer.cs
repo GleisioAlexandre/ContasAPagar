@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPlanoDeContas = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,35 +45,35 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.gpbSituacao = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.lblLancamento = new System.Windows.Forms.MaskedTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPagamento = new System.Windows.Forms.MaskedTextBox();
+            this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.cbxDevdor = new System.Windows.Forms.ComboBox();
             this.gpbSituacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(376, 131);
+            this.label1.Location = new System.Drawing.Point(121, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo ";
+            this.label1.Text = "Tipo de Documento";
             // 
-            // textBox2
+            // txtValor
             // 
-            this.textBox2.Location = new System.Drawing.Point(379, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtValor.Location = new System.Drawing.Point(11, 122);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(72, 20);
+            this.txtValor.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(376, 40);
+            this.label2.Location = new System.Drawing.Point(8, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 2;
@@ -82,55 +82,55 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 40);
+            this.label3.Location = new System.Drawing.Point(272, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Vencimento";
             // 
-            // textBox4
+            // txtPlanoDeContas
             // 
-            this.textBox4.Location = new System.Drawing.Point(118, 146);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(220, 20);
-            this.textBox4.TabIndex = 6;
+            this.txtPlanoDeContas.Location = new System.Drawing.Point(105, 56);
+            this.txtPlanoDeContas.Name = "txtPlanoDeContas";
+            this.txtPlanoDeContas.Size = new System.Drawing.Size(220, 20);
+            this.txtPlanoDeContas.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 130);
+            this.label4.Location = new System.Drawing.Point(102, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Plano de Contas";
             // 
-            // textBox5
+            // txtDocumento
             // 
-            this.textBox5.Location = new System.Drawing.Point(121, 56);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(110, 20);
-            this.textBox5.TabIndex = 1;
+            this.txtDocumento.Location = new System.Drawing.Point(633, 56);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(151, 20);
+            this.txtDocumento.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 40);
+            this.label5.Location = new System.Drawing.Point(630, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Documento";
             // 
-            // textBox6
+            // txtFornecedor
             // 
-            this.textBox6.Location = new System.Drawing.Point(527, 56);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(264, 20);
-            this.textBox6.TabIndex = 4;
+            this.txtFornecedor.Location = new System.Drawing.Point(347, 56);
+            this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.Size = new System.Drawing.Size(264, 20);
+            this.txtFornecedor.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(524, 40);
+            this.label6.Location = new System.Drawing.Point(344, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 10;
@@ -148,7 +148,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 127);
+            this.label8.Location = new System.Drawing.Point(385, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 14;
@@ -169,7 +169,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(62, 18);
+            this.radioButton2.Location = new System.Drawing.Point(83, 19);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(63, 17);
             this.radioButton2.TabIndex = 1;
@@ -178,19 +178,19 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 205);
+            this.button1.Location = new System.Drawing.Point(12, 198);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 43);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(662, 205);
+            this.button2.Location = new System.Drawing.Point(658, 198);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 43);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Incluir Lançamento";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -198,88 +198,89 @@
             // 
             this.gpbSituacao.Controls.Add(this.radioButton1);
             this.gpbSituacao.Controls.Add(this.radioButton2);
-            this.gpbSituacao.Location = new System.Drawing.Point(661, 112);
+            this.gpbSituacao.Location = new System.Drawing.Point(633, 112);
             this.gpbSituacao.Name = "gpbSituacao";
-            this.gpbSituacao.Size = new System.Drawing.Size(130, 54);
+            this.gpbSituacao.Size = new System.Drawing.Size(152, 49);
             this.gpbSituacao.TabIndex = 9;
             this.gpbSituacao.TabStop = false;
             this.gpbSituacao.Text = "Situação";
             // 
-            // maskedTextBox1
+            // txtPagamento
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(11, 146);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox1.TabIndex = 5;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtPagamento.Location = new System.Drawing.Point(388, 122);
+            this.txtPagamento.Mask = "00/00/0000";
+            this.txtPagamento.Name = "txtPagamento";
+            this.txtPagamento.Size = new System.Drawing.Size(72, 20);
+            this.txtPagamento.TabIndex = 7;
+            this.txtPagamento.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox2
+            // txtVencimento
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(269, 56);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(72, 20);
-            this.maskedTextBox2.TabIndex = 2;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.txtVencimento.Location = new System.Drawing.Point(275, 122);
+            this.txtVencimento.Mask = "00/00/0000";
+            this.txtVencimento.Name = "txtVencimento";
+            this.txtVencimento.Size = new System.Drawing.Size(72, 20);
+            this.txtVencimento.TabIndex = 6;
+            this.txtVencimento.ValidatingType = typeof(System.DateTime);
             // 
-            // lblLancamento
+            // txtLancamento
             // 
-            this.lblLancamento.Location = new System.Drawing.Point(11, 56);
-            this.lblLancamento.Mask = "00/00/0000";
-            this.lblLancamento.Name = "lblLancamento";
-            this.lblLancamento.Size = new System.Drawing.Size(72, 20);
-            this.lblLancamento.TabIndex = 0;
-            this.lblLancamento.ValidatingType = typeof(System.DateTime);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(527, 146);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(105, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtLancamento.Location = new System.Drawing.Point(11, 56);
+            this.txtLancamento.Mask = "00/00/0000";
+            this.txtLancamento.Name = "txtLancamento";
+            this.txtLancamento.Size = new System.Drawing.Size(72, 20);
+            this.txtLancamento.TabIndex = 0;
+            this.txtLancamento.ValidatingType = typeof(System.DateTime);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(524, 131);
+            this.label9.Location = new System.Drawing.Point(498, 106);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 25;
             this.label9.Text = "Devedor";
             // 
-            // comboBox1
+            // cbxTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 145);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(110, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Location = new System.Drawing.Point(124, 122);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(110, 21);
+            this.cbxTipo.TabIndex = 5;
+            // 
+            // cbxDevdor
+            // 
+            this.cbxDevdor.FormattingEnabled = true;
+            this.cbxDevdor.Location = new System.Drawing.Point(501, 122);
+            this.cbxDevdor.Name = "cbxDevdor";
+            this.cbxDevdor.Size = new System.Drawing.Size(110, 21);
+            this.cbxDevdor.TabIndex = 8;
             // 
             // FrmLancamentoContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 253);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.cbxDevdor);
+            this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.lblLancamento);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtLancamento);
+            this.Controls.Add(this.txtVencimento);
+            this.Controls.Add(this.txtPagamento);
             this.Controls.Add(this.gpbSituacao);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPlanoDeContas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -297,14 +298,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPlanoDeContas;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -313,11 +314,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox gpbSituacao;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox lblLancamento;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MaskedTextBox txtPagamento;
+        private System.Windows.Forms.MaskedTextBox txtVencimento;
+        private System.Windows.Forms.MaskedTextBox txtLancamento;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.ComboBox cbxDevdor;
     }
 }

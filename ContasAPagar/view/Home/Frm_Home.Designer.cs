@@ -33,7 +33,6 @@
             this.documentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecdorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.situaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestaçãoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -55,8 +54,7 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentoToolStripMenuItem,
             this.fornecdorToolStripMenuItem,
-            this.planoDeContasToolStripMenuItem,
-            this.situaçãoToolStripMenuItem});
+            this.planoDeContasToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -64,29 +62,23 @@
             // documentoToolStripMenuItem
             // 
             this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
-            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.documentoToolStripMenuItem.Text = "Documento";
             this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
             // 
             // fornecdorToolStripMenuItem
             // 
             this.fornecdorToolStripMenuItem.Name = "fornecdorToolStripMenuItem";
-            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.fornecdorToolStripMenuItem.Text = "Fornecdor";
+            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecdorToolStripMenuItem.Text = "Fornecedor";
             this.fornecdorToolStripMenuItem.Click += new System.EventHandler(this.fornecdorToolStripMenuItem_Click);
             // 
             // planoDeContasToolStripMenuItem
             // 
             this.planoDeContasToolStripMenuItem.Name = "planoDeContasToolStripMenuItem";
-            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.planoDeContasToolStripMenuItem.Text = "Plano de Contas";
-            // 
-            // situaçãoToolStripMenuItem
-            // 
-            this.situaçãoToolStripMenuItem.Name = "situaçãoToolStripMenuItem";
-            this.situaçãoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.situaçãoToolStripMenuItem.Text = "Situação";
-            this.situaçãoToolStripMenuItem.Click += new System.EventHandler(this.situaçãoToolStripMenuItem_Click);
+            this.planoDeContasToolStripMenuItem.Click += new System.EventHandler(this.planoDeContasToolStripMenuItem_Click);
             // 
             // prestaçãoDeContasToolStripMenuItem
             // 
@@ -129,7 +121,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fornecdorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planoDeContasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem situaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestaçãoDeContasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
