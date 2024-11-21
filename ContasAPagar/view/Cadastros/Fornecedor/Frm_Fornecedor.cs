@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContasAPagar.view.Cadastros.Fornecedor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace ContasAPagar.view
         public Frm_Fornecedor()
         {
             InitializeComponent();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            Frm_CadFornecedor cadFornecedor = new Frm_CadFornecedor();
+            cadFornecedor.ShowDialog();
         }
     }
 }

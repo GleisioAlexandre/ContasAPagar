@@ -33,6 +33,9 @@
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadastropessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +44,6 @@
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +56,9 @@
             this.codigo,
             this.nome,
             this.cadastropessoa,
+            this.telefone,
+            this.celular,
+            this.email,
             this.cep,
             this.logradouro,
             this.numero,
@@ -61,8 +66,7 @@
             this.bairro,
             this.cidade,
             this.estado,
-            this.uf,
-            this.obs});
+            this.uf});
             this.dataGridView1.Location = new System.Drawing.Point(12, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -77,6 +81,7 @@
             this.btnNovo.TabIndex = 1;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // codigo
             // 
@@ -86,15 +91,34 @@
             // 
             // nome
             // 
-            this.nome.HeaderText = "Nome";
+            this.nome.HeaderText = "Nome / Razão Social";
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
+            this.nome.Width = 150;
             // 
             // cadastropessoa
             // 
             this.cadastropessoa.HeaderText = "CPF / CNPJ";
             this.cadastropessoa.Name = "cadastropessoa";
             this.cadastropessoa.ReadOnly = true;
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // cep
             // 
@@ -113,6 +137,7 @@
             this.numero.HeaderText = "Nº";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
+            this.numero.Width = 50;
             // 
             // complemento
             // 
@@ -144,12 +169,6 @@
             this.uf.Name = "uf";
             this.uf.ReadOnly = true;
             // 
-            // obs
-            // 
-            this.obs.HeaderText = "OBS";
-            this.obs.Name = "obs";
-            this.obs.ReadOnly = true;
-            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +192,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn cadastropessoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn cep;
         private System.Windows.Forms.DataGridViewTextBoxColumn logradouro;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
@@ -181,6 +203,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn uf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
     }
 }
