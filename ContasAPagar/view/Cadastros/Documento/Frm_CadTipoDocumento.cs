@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ContasAPagar.controller;
+using ContasAPagar.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace ContasAPagar.view.Cadastros.Documento
         public Frm_CadTipoDocumento()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string descricao = txtDescricao.Text.Trim();
+            ClasseDoc doc = new ClasseDoc();
+            doc.InsertDoc(descricao);
+            this.Close();
         }
     }
 }
