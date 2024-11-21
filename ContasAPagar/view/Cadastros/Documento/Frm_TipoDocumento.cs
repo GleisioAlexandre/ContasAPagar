@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContasAPagar.view.Cadastros.Documento;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,19 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContasAPagar.view.Cadastros.Plano_de_Contas
+namespace ContasAPagar.view
 {
-    public partial class Frm_PlanoDeContas : Form
+    public partial class Frm_Documento : Form
     {
-        public Frm_PlanoDeContas()
+        public Frm_Documento()
         {
             InitializeComponent();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            Frm_CadPlanoDeContas cadPlanoDeContas = new Frm_CadPlanoDeContas();
-            cadPlanoDeContas.ShowDialog();
+            Frm_CadTipoDocumento cadTipoDocumento = new Frm_CadTipoDocumento();
+            cadTipoDocumento.ShowDialog();
         }
     }
 }

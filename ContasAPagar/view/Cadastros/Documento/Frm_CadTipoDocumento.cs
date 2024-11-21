@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContasAPagar.view
+namespace ContasAPagar.view.Cadastros.Documento
 {
-    public partial class Frm_Documento : Form
+    public partial class Frm_CadTipoDocumento : Form
     {
-        public Frm_Documento()
+        public Frm_CadTipoDocumento()
         {
             InitializeComponent();
         }

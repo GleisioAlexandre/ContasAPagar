@@ -78,11 +78,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Util\BuscaCep.cs" />
+    <Compile Include="view\Cadastros\Documento\Frm_CadTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Cadastros\Documento\Frm_CadTipoDocumento.Designer.cs">
+      <DependentUpon>Frm_CadTipoDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Cadastros\Fornecedor\Frm_CadFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\Cadastros\Fornecedor\Frm_CadFornecedor.Designer.cs">
       <DependentUpon>Frm_CadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Cadastros\Plano de Contas\Frm_CadPlanoDeContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Cadastros\Plano de Contas\Frm_CadPlanoDeContas.Designer.cs">
+      <DependentUpon>Frm_CadPlanoDeContas.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.cs">
       <SubType>Form</SubType>
@@ -102,11 +114,11 @@
     <Compile Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAReceber.Designer.cs">
       <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Cadastros\Documento\Frm_Documento.cs">
+    <Compile Include="view\Cadastros\Documento\Frm_TipoDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Cadastros\Documento\Frm_Documento.Designer.cs">
-      <DependentUpon>Frm_Documento.cs</DependentUpon>
+    <Compile Include="view\Cadastros\Documento\Frm_TipoDocumento.Designer.cs">
+      <DependentUpon>Frm_TipoDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Cadastros\Fornecedor\Frm_Fornecedor.cs">
       <SubType>Form</SubType>
@@ -128,8 +140,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\Cadastros\Documento\Frm_CadTipoDocumento.resx">
+      <DependentUpon>Frm_CadTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Cadastros\Fornecedor\Frm_CadFornecedor.resx">
       <DependentUpon>Frm_CadFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Cadastros\Plano de Contas\Frm_CadPlanoDeContas.resx">
+      <DependentUpon>Frm_CadPlanoDeContas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.resx">
       <DependentUpon>Frm_PlanoDeContas.cs</DependentUpon>
@@ -140,8 +158,8 @@
     <EmbeddedResource Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAReceber.resx">
       <DependentUpon>FrmLancamentoContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Cadastros\Documento\Frm_Documento.resx">
-      <DependentUpon>Frm_Documento.cs</DependentUpon>
+    <EmbeddedResource Include="view\Cadastros\Documento\Frm_TipoDocumento.resx">
+      <DependentUpon>Frm_TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Cadastros\Fornecedor\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
@@ -183,6 +201,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Icones\correios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar-ficheiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar-arquivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ContasAPagar.view.Cadastros.Plano_de_Contas
 {
-    public partial class Frm_PlanoDeContas : Form
+    public partial class Frm_CadPlanoDeContas : Form
     {
-        public Frm_PlanoDeContas()
+        public Frm_CadPlanoDeContas()
         {
             InitializeComponent();
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            Frm_CadPlanoDeContas cadPlanoDeContas = new Frm_CadPlanoDeContas();
-            cadPlanoDeContas.ShowDialog();
         }
     }
 }
