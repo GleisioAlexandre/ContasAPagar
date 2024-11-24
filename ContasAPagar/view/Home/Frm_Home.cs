@@ -20,7 +20,7 @@ namespace ContasAPagar.view
 
         private void documentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Documento documento = new Frm_Documento();
+            Frm_TipoDocumento documento = new Frm_TipoDocumento();
             documento.MdiParent = this;
             documento.Show();
         }

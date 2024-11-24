@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadTipoDocumento));
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,44 +50,46 @@
             this.txtDescricao.Location = new System.Drawing.Point(15, 25);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(316, 20);
-            this.txtDescricao.TabIndex = 4;
+            this.txtDescricao.TabIndex = 0;
             // 
-            // button3
+            // btnDeletar
             // 
-            this.button3.Image = global::ContasAPagar.Properties.Resources.erro;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(255, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Deletar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDeletar.Image = global::ContasAPagar.Properties.Resources.erro;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.Location = new System.Drawing.Point(255, 51);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(76, 32);
+            this.btnDeletar.TabIndex = 3;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(135, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(135, 51);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(73, 32);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // button1
+            // btnIncluir
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(15, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Incluir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluir.Image")));
+            this.btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIncluir.Location = new System.Drawing.Point(15, 51);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(73, 32);
+            this.btnIncluir.TabIndex = 1;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // Frm_CadTipoDocumento
             // 
@@ -96,9 +98,9 @@
             this.ClientSize = new System.Drawing.Size(343, 87);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnIncluir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_CadTipoDocumento";
@@ -111,9 +113,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescricao;
     }
