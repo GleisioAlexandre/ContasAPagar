@@ -58,5 +58,48 @@ namespace ContasAPagar.controller
                 throw new Exception($"Erro ao insserir os dados: {ex.Message}");
             }
         }
+        public void EditarPlanoDeContas(int id, string descricao)
+        {
+            try
+            {
+                using (FbConnection cx = new FbConnection(stringDeConexao))
+                {
+                    string query = "update placontas set descricao = @descricao where id = @id";
+
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@descricao", descricao);
+                        command.Parameters.AddWithValue("@id", id);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao atualizar o registro: {ex.Message}");
+            }
+        }
+        public void DeletarPlanoDeContas(int id)
+        {
+            try
+            {
+                using (FbConnection cx = new FbConnection(stringDeConexao))
+                {
+                    string query = "delete from placontas where id = @id";
+
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao remover o registro: {ex.Message}");
+            }
+        }
     }
 }
