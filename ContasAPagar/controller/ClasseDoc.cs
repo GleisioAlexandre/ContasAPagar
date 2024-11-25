@@ -1,4 +1,5 @@
-﻿using ContasAPagar.model;
+﻿using ContasAPagar.Config;
+using ContasAPagar.model;
 using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
@@ -11,38 +12,46 @@ namespace ContasAPagar.controller
 {
     class ClasseDoc
     {
-        private string stringDeConexao = "User=SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/Gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB";
-       
+        ClasseConfig config = new ClasseConfig();
+
         public List<ClasseTipoDoc> CarregaGridTipoDoc()
         {
-            List<ClasseTipoDoc> lista = new List<ClasseTipoDoc>();
-
-            using (FbConnection cx = new FbConnection(stringDeConexao))
+            try
             {
-                string query = "select id, descricao from tipodocumento";
+                List<ClasseTipoDoc> lista = new List<ClasseTipoDoc>();
 
-                using (FbCommand command = new FbCommand(query, cx))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    cx.Open();
-                    using (FbDataReader reader = command.ExecuteReader())
+                    string query = "select id, descricao from tipodocumento";
+
+                    using (FbCommand command = new FbCommand(query, cx))
                     {
-                        while (reader.Read())
+                        cx.Open();
+                        using (FbDataReader reader = command.ExecuteReader())
                         {
-                            lista.Add(new ClasseTipoDoc {
-                                Id = reader.GetInt32(0),
-                                DesCricao = reader.GetString(1)
-                            });
+                            while (reader.Read())
+                            {
+                                lista.Add(new ClasseTipoDoc
+                                {
+                                    Id = reader.GetInt32(0),
+                                    DesCricao = reader.GetString(1)
+                                });
+                            }
                         }
                     }
+                    return lista;
                 }
-                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao carregar os dados: {ex.Message}");
             }
         }
         public void InserirDoc(string descricao)
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
 
                     string query = "insert into tipodocumento (descricao) values (@descricao)";
@@ -64,7 +73,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
 
                     string query = "update tipodocumento set descricao = @descricao where id = @id";
@@ -87,7 +96,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
                     string query = "delete from tipodocumento where id = @id";
 

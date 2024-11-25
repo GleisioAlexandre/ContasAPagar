@@ -75,6 +75,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeletar
             // 
@@ -87,6 +88,7 @@
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // Frm_CadPlanoDeContas
             // 

@@ -36,5 +36,26 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         {
             CarregaGrid();
         }
+
+        private void dtgPlanoDeContas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex > 0)
+                {
+                    int id = Convert.ToInt32(dtgPlanoDeContas.Rows[e.RowIndex].Cells[0].Value);
+                    string descricao = dtgPlanoDeContas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    if (!string.IsNullOrWhiteSpace(descricao))
+                    {
+                        Frm_CadPlanoDeContas frm_CadPlanoDeContas = new Frm_CadPlanoDeContas(this, id, descricao);
+                        frm_CadPlanoDeContas.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao abrir o formulario: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

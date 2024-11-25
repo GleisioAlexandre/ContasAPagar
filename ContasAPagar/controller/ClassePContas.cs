@@ -1,4 +1,5 @@
-﻿using ContasAPagar.model;
+﻿using ContasAPagar.Config;
+using ContasAPagar.model;
 using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
@@ -10,38 +11,46 @@ namespace ContasAPagar.controller
 {
     class ClassePContas
     {
-        private string stringDeConexao = "User=SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/Gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB";
+        ClasseConfig config = new ClasseConfig();
 
         public List<ClassePlanoDeContas> CarregaGridPDContas()
         {
-            List<ClassePlanoDeContas> lista = new List<ClassePlanoDeContas>();
-
-            using (FbConnection cx = new FbConnection(stringDeConexao))
+            try
             {
-                string query = "select id, descricao from placontas";
+                List<ClassePlanoDeContas> lista = new List<ClassePlanoDeContas>();
 
-                using (FbCommand command = new FbCommand(query, cx))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    cx.Open();
-                    using (FbDataReader reader = command.ExecuteReader())
+                    string query = "select id, descricao from placontas";
+
+                    using (FbCommand command = new FbCommand(query, cx))
                     {
-                        while (reader.Read())
+                        cx.Open();
+                        using (FbDataReader reader = command.ExecuteReader())
                         {
-                            lista.Add(new ClassePlanoDeContas { 
-                                Id = reader.GetInt32(0),
-                                Descricao = reader.GetString(1)
+                            while (reader.Read())
+                            {
+                                lista.Add(new ClassePlanoDeContas
+                                {
+                                    Id = reader.GetInt32(0),
+                                    Descricao = reader.GetString(1)
                                 });
+                            }
                         }
                     }
                 }
-            }
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao carregar os dados: {ex.Message}");
+            }
         }
         public void InserirPlanoDeContas(string descricao)
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
                     string query = "insert into placontas (descricao) values (@descricao)";
 
@@ -62,7 +71,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
                     string query = "update placontas set descricao = @descricao where id = @id";
 
@@ -84,7 +93,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(stringDeConexao))
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
                     string query = "delete from placontas where id = @id";
 

@@ -74,7 +74,7 @@ namespace ContasAPagar.view.Cadastros.Documento
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao salvar o registro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao Editar o registro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void DeletarRegistro()

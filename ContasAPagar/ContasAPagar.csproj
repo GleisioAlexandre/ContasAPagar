@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\ClasseConfig.cs" />
     <Compile Include="controller\ClasseDoc.cs" />
     <Compile Include="controller\ClassePContas.cs" />
     <Compile Include="model\ClassePlanoDeContas.cs" />
