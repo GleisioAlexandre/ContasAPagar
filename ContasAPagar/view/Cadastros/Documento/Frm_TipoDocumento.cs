@@ -21,21 +21,13 @@ namespace ContasAPagar.view
         {
             InitializeComponent();
         }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            Frm_CadTipoDocumento cadTipoDocumento = new Frm_CadTipoDocumento(this);
-            cadTipoDocumento.ShowDialog();
-        }
-
         public void CarregaGrid()
         {
-            var lista = classeDoc.CaregaGridTipoDoc();
+            var lista = classeDoc.CarregaGridTipoDoc();
             bindingSource.DataSource = new BindingList<ClasseTipoDoc>(lista);
             dtgTipoDoc.DataSource = bindingSource;
             bindingNavigator.BindingSource = bindingSource;
         }
-
         private void dtgTipoDoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -64,5 +56,11 @@ namespace ContasAPagar.view
         {
             CarregaGrid();
         }
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            Frm_CadTipoDocumento cadTipoDocumento = new Frm_CadTipoDocumento(this);
+            cadTipoDocumento.ShowDialog();
+        }
+
     }
 }

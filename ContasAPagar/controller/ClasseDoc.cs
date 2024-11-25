@@ -13,13 +13,14 @@ namespace ContasAPagar.controller
     {
         private string stringDeConexao = "User=SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/Gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB";
        
-        public List<ClasseTipoDoc> CaregaGridTipoDoc()
+        public List<ClasseTipoDoc> CarregaGridTipoDoc()
         {
             List<ClasseTipoDoc> lista = new List<ClasseTipoDoc>();
 
             using (FbConnection cx = new FbConnection(stringDeConexao))
             {
                 string query = "select id, descricao from tipodocumento";
+
                 using (FbCommand command = new FbCommand(query, cx))
                 {
                     cx.Open();
@@ -39,17 +40,24 @@ namespace ContasAPagar.controller
         }
         public void InserirDoc(string descricao)
         {
-            using (FbConnection cx = new FbConnection(stringDeConexao))
+            try
             {
-                
-                string query = "insert into tipodocumento (descricao) values (@descricao)";
-
-                using (FbCommand command = new FbCommand(query, cx))
+                using (FbConnection cx = new FbConnection(stringDeConexao))
                 {
-                    command.Parameters.AddWithValue("@descricao", descricao);
-                    cx.Open();
-                    command.ExecuteNonQuery();
+
+                    string query = "insert into tipodocumento (descricao) values (@descricao)";
+
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@descricao", descricao);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao insserir os dados: {ex.Message}");
             }
         }
         public void EditarDoc(int id, string descricao)

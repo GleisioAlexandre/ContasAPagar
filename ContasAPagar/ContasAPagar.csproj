@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\ClasseDoc.cs" />
+    <Compile Include="controller\ClassePContas.cs" />
+    <Compile Include="model\ClassePlanoDeContas.cs" />
     <Compile Include="model\ClasseTipoDoc.cs" />
     <Compile Include="Util\BuscaCep.cs" />
     <Compile Include="view\Cadastros\Documento\Frm_CadTipoDocumento.cs">

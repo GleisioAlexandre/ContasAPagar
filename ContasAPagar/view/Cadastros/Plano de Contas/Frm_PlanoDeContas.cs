@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ContasAPagar.controller;
+using ContasAPagar.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +14,27 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
 {
     public partial class Frm_PlanoDeContas : Form
     {
+        private ClassePContas classePContas = new ClassePContas();
         public Frm_PlanoDeContas()
         {
             InitializeComponent();
         }
-
+        public void CarregaGrid()
+        {
+            var lista = classePContas.CarregaGridPDContas();
+            bindingSource.DataSource = new BindingList<ClassePlanoDeContas>(lista);
+            dtgPlanoDeContas.DataSource = bindingSource;
+            bindingNavigator.BindingSource = bindingSource;
+        }
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            Frm_CadPlanoDeContas cadPlanoDeContas = new Frm_CadPlanoDeContas();
+            Frm_CadPlanoDeContas cadPlanoDeContas = new Frm_CadPlanoDeContas(this);
             cadPlanoDeContas.ShowDialog();
+        }
+
+        private void Frm_PlanoDeContas_Load(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }
