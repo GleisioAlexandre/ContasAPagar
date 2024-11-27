@@ -25,19 +25,6 @@ namespace ContasAPagar.Config {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"User= SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/gleisi" +
-            "o/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB\"")]
-        public string stringDeConexao {
-            get {
-                return ((string)(this["stringDeConexao"]));
-            }
-            set {
-                this["stringDeConexao"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SYSDBA")]
         public string User {
             get {

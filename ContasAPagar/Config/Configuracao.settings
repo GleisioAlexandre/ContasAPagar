@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ContasAPagar.Config" GeneratedClassName="Configuracao">
   <Profiles />
   <Settings>
-    <Setting Name="stringDeConexao" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"User= SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB"</Value>
-    </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">SYSDBA</Value>
     </Setting>
