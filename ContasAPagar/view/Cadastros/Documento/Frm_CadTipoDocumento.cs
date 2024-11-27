@@ -90,13 +90,16 @@ namespace ContasAPagar.view.Cadastros.Documento
                 classeDoc.DeletarDoc(idTipoDoc.Value);
                 MessageBox.Show("Registro removido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                return;
+            }
             frm_TipoDocumento.CarregaGrid();
             this.Close();
         }
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             InserirDados();
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

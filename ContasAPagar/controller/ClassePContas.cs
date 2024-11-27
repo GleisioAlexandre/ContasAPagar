@@ -11,15 +11,14 @@ namespace ContasAPagar.controller
 {
     class ClassePContas
     {
-        ClasseConfig config = new ClasseConfig();
-
+        string stringDeConexao = Configuracao.Default.stringDeConexao;
         public List<ClassePlanoDeContas> CarregaGridPDContas()
         {
             try
             {
                 List<ClassePlanoDeContas> lista = new List<ClassePlanoDeContas>();
 
-                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                using (FbConnection cx = new FbConnection(stringDeConexao))
                 {
                     string query = "select id, descricao from placontas";
 
@@ -50,7 +49,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                using (FbConnection cx = new FbConnection(stringDeConexao))
                 {
                     string query = "insert into placontas (descricao) values (@descricao)";
 
@@ -71,7 +70,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                using (FbConnection cx = new FbConnection(stringDeConexao))
                 {
                     string query = "update placontas set descricao = @descricao where id = @id";
 
@@ -93,7 +92,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                using (FbConnection cx = new FbConnection(stringDeConexao))
                 {
                     string query = "delete from placontas where id = @id";
 

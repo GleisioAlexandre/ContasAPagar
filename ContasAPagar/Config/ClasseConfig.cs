@@ -10,10 +10,11 @@ namespace ContasAPagar.Config
     {
         public string StringDeConexa()
         {
-            string stringDeConexao = "User=SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/jucaf/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB";
+            string connectionTemplate = Configuracao.Default.stringDeConexao;
+            string stringDeConexao = connectionTemplate.Replace("{User}", Configuracao.Default.User);
 
             return stringDeConexao;
         }
-        
+        //"User=SYSDBA; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB"
     }
 }

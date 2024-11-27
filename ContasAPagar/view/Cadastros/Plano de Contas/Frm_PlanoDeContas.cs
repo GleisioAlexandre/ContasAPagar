@@ -41,7 +41,7 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         {
             try
             {
-                if (e.RowIndex > 0)
+                if (e.RowIndex >= 0)
                 {
                     int id = Convert.ToInt32(dtgPlanoDeContas.Rows[e.RowIndex].Cells[0].Value);
                     string descricao = dtgPlanoDeContas.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -49,6 +49,10 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
                     {
                         Frm_CadPlanoDeContas frm_CadPlanoDeContas = new Frm_CadPlanoDeContas(this, id, descricao);
                         frm_CadPlanoDeContas.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Descrição invalida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

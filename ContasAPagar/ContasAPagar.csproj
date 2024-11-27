@@ -81,6 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ClasseConfig.cs" />
+    <Compile Include="Config\Configuracao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Configuracao.settings</DependentUpon>
+    </Compile>
     <Compile Include="controller\ClasseDoc.cs" />
     <Compile Include="controller\ClassePContas.cs" />
     <Compile Include="model\ClassePlanoDeContas.cs" />
@@ -134,6 +139,12 @@
     <Compile Include="view\Cadastros\Fornecedor\Frm_Fornecedor.Designer.cs">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Frm_Configuracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Frm_Configuracoes.Designer.cs">
+      <DependentUpon>Frm_Configuracoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Home\Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +183,9 @@
     <EmbeddedResource Include="view\Cadastros\Fornecedor\Frm_Fornecedor.resx">
       <DependentUpon>Frm_Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\Frm_Configuracoes.resx">
+      <DependentUpon>Frm_Configuracoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Home\Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +202,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Config\Configuracao.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Configuracao.Designer.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
