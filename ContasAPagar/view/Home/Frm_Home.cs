@@ -45,5 +45,12 @@ namespace ContasAPagar.view
             planoDeContas.MdiParent = this;
             planoDeContas.Show();
         }
+
+        private void configuraçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Configuracoes configuracoes = new Frm_Configuracoes();
+            configuracoes.MdiParent = this;
+            configuracoes.Show();
+        }
     }
 }

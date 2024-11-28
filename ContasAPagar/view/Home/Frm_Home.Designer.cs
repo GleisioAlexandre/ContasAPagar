@@ -35,6 +35,8 @@
             this.planoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestaçãoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.prestaçãoDeContasToolStripMenuItem});
+            this.prestaçãoDeContasToolStripMenuItem,
+            this.utilitáriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1238, 24);
@@ -62,21 +65,21 @@
             // documentoToolStripMenuItem
             // 
             this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
-            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.documentoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.documentoToolStripMenuItem.Text = "Documento";
             this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
             // 
             // fornecdorToolStripMenuItem
             // 
             this.fornecdorToolStripMenuItem.Name = "fornecdorToolStripMenuItem";
-            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecdorToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.fornecdorToolStripMenuItem.Text = "Fornecedor";
             this.fornecdorToolStripMenuItem.Click += new System.EventHandler(this.fornecdorToolStripMenuItem_Click);
             // 
             // planoDeContasToolStripMenuItem
             // 
             this.planoDeContasToolStripMenuItem.Name = "planoDeContasToolStripMenuItem";
-            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planoDeContasToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.planoDeContasToolStripMenuItem.Text = "Plano de Contas";
             this.planoDeContasToolStripMenuItem.Click += new System.EventHandler(this.planoDeContasToolStripMenuItem_Click);
             // 
@@ -94,6 +97,21 @@
             this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.contasAReceberToolStripMenuItem.Text = "Contas a Pagar";
             this.contasAReceberToolStripMenuItem.Click += new System.EventHandler(this.contasAReceberToolStripMenuItem_Click);
+            // 
+            // utilitáriosToolStripMenuItem
+            // 
+            this.utilitáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçãoToolStripMenuItem});
+            this.utilitáriosToolStripMenuItem.Name = "utilitáriosToolStripMenuItem";
+            this.utilitáriosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.utilitáriosToolStripMenuItem.Text = "Utilitários";
+            // 
+            // configuraçãoToolStripMenuItem
+            // 
+            this.configuraçãoToolStripMenuItem.Name = "configuraçãoToolStripMenuItem";
+            this.configuraçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuraçãoToolStripMenuItem.Text = "Configuração";
+            this.configuraçãoToolStripMenuItem.Click += new System.EventHandler(this.configuraçãoToolStripMenuItem_Click);
             // 
             // Frm_Home
             // 
@@ -124,5 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem documentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestaçãoDeContasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilitáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçãoToolStripMenuItem;
     }
 }

@@ -11,7 +11,12 @@ namespace ContasAPagar.Config
         public string StringDeConexa()
 
         {
-            string stringDeConexao = $"User={Configuracao.Default.User}; PASSWORD=masterkey; DataSource=localhost; DataBase=C:/Users/gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPAGAR.FDB";
+            string usuario = Configuracao.Default.User;
+            string senha = Configuracao.Default.Password;
+            string dataSource = Configuracao.Default.DataSource;
+            string dataBase = Configuracao.Default.DataBase;
+            int porta = Configuracao.Default.Porta;
+            string stringDeConexao = $"User={usuario}; PASSWORD={senha}; DataSource={dataSource}; DataBase={dataBase}; Port = {porta}";
 
             return stringDeConexao;
         }

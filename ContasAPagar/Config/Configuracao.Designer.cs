@@ -47,22 +47,40 @@ namespace ContasAPagar.Config {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
         public string DataSource {
             get {
                 return ((string)(this["DataSource"]));
             }
+            set {
+                this["DataSource"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:/Users/Gleisio/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASA" +
-            "PAGAR.FDB")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:/Users/jucaf/Source/Repos/ContasAPagar/ContasAPagar/Banco de Dados/DB_CONTASAPA" +
+            "GAR.FDB")]
         public string DataBase {
             get {
                 return ((string)(this["DataBase"]));
+            }
+            set {
+                this["DataBase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3050")]
+        public int Porta {
+            get {
+                return ((int)(this["Porta"]));
+            }
+            set {
+                this["Porta"] = value;
             }
         }
     }

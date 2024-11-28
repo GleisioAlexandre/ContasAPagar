@@ -34,7 +34,7 @@ namespace ContasAPagar.controller
                                 lista.Add(new ClasseTipoDoc
                                 {
                                     Id = reader.GetInt32(0),
-                                    DesCricao = reader.GetString(1)
+                                    DesCricao = reader.GetString(1),
                                 });
                             }
                         }

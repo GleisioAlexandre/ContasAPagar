@@ -1,4 +1,6 @@
-﻿using ContasAPagar.view.Cadastros.Fornecedor;
+﻿using ContasAPagar.controller;
+using ContasAPagar.model;
+using ContasAPagar.view.Cadastros.Fornecedor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +15,35 @@ namespace ContasAPagar.view
 {
     public partial class Frm_Fornecedor : Form
     {
+        ClasseFornecedores fornecedores = new ClasseFornecedores();
         public Frm_Fornecedor()
         {
             InitializeComponent();
+        }
+        private void CarregaGrid()
+        {
+            try
+            {
+                var lista = fornecedores.CarregaGRidFornecedor();
+                bindingSource.DataSource = new BindingList<ClasseFornecedor>(lista);
+                dtgFornecedor.DataSource = bindingSource;
+                bindingNavigator.BindingSource = bindingSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao Carregar os dados! \n\f Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             Frm_CadFornecedor cadFornecedor = new Frm_CadFornecedor();
             cadFornecedor.ShowDialog();
+        }
+        
+        private void Frm_Fornecedor_Load(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }
