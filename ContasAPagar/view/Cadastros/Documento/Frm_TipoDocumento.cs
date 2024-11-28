@@ -23,10 +23,18 @@ namespace ContasAPagar.view
         }
         public void CarregaGrid()
         {
-            var lista = classeDoc.CarregaGridTipoDoc();
-            bindingSource.DataSource = new BindingList<ClasseTipoDoc>(lista);
-            dtgTipoDoc.DataSource = bindingSource;
-            bindingNavigator.BindingSource = bindingSource;
+            try
+            {
+
+                var lista = classeDoc.CarregaGridTipoDoc();
+                bindingSource.DataSource = new BindingList<ClasseTipoDoc>(lista);
+                dtgTipoDoc.DataSource = bindingSource;
+                bindingNavigator.BindingSource = bindingSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void dtgTipoDoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

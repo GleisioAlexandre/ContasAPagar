@@ -45,5 +45,23 @@ namespace ContasAPagar.view
         {
             CarregaGrid();
         }
+
+        private void dtgFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int id = Convert.ToInt32(dtgFornecedor.Rows[e.RowIndex].Cells[0].Value?.ToString());
+                    string descricao = dtgFornecedor.Rows[e.RowIndex].Cells[1].Value?.ToString();
+
+                    Console.WriteLine(id + descricao);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

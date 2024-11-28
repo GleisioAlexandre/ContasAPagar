@@ -21,10 +21,17 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         }
         public void CarregaGrid()
         {
-            var lista = classePContas.CarregaGridPDContas();
-            bindingSource.DataSource = new BindingList<ClassePlanoDeContas>(lista);
-            dtgPlanoDeContas.DataSource = bindingSource;
-            bindingNavigator.BindingSource = bindingSource;
+            try
+            {
+                var lista = classePContas.CarregaGridPDContas();
+                bindingSource.DataSource = new BindingList<ClassePlanoDeContas>(lista);
+                dtgPlanoDeContas.DataSource = bindingSource;
+                bindingNavigator.BindingSource = bindingSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {

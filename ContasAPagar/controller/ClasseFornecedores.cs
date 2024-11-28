@@ -21,7 +21,7 @@ namespace ContasAPagar.controller
 
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "select * from fornecedor";
+                    string query = "select id, nome from fornecedor"; //, cep, logradouro, numero, complemento, bairro, cidade, estado, obs
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
@@ -33,7 +33,7 @@ namespace ContasAPagar.controller
                                 {
                                     Id = reader.GetInt32(0),
                                     Nome = reader.GetString(1),
-                                    CadastroDePessoa = reader.GetString(2),
+                                   /* CadastroDePessoa = reader.GetString(2),
                                     Cep = reader.GetString(3),
                                     Logradouro = reader.GetString(4),
                                     Numero = reader.GetInt32(5),
@@ -41,7 +41,7 @@ namespace ContasAPagar.controller
                                     Bairro = reader.GetString(7),
                                     Cidade = reader.GetString(8),
                                     Estado = reader.GetString(9),
-                                    Obs = reader.GetString(10)
+                                    Obs = reader.GetString(10)*/
 
                                 });
                             }
