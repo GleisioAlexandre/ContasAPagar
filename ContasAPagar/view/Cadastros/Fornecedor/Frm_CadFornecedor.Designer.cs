@@ -34,7 +34,7 @@
             this.txt_Cpf_Cnpj = new System.Windows.Forms.MaskedTextBox();
             this.cbx_Pj_Pf = new System.Windows.Forms.CheckBox();
             this.lbl_Cpf_Cnpj = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lbl_Nome_RasaoSocial = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBuscaCep = new System.Windows.Forms.Button();
@@ -46,9 +46,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,12 +60,15 @@
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,7 +76,7 @@
             this.groupBox1.Controls.Add(this.txt_Cpf_Cnpj);
             this.groupBox1.Controls.Add(this.cbx_Pj_Pf);
             this.groupBox1.Controls.Add(this.lbl_Cpf_Cnpj);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.lbl_Nome_RasaoSocial);
             this.groupBox1.Location = new System.Drawing.Point(12, 26);
             this.groupBox1.Name = "groupBox1";
@@ -112,12 +115,12 @@
             this.lbl_Cpf_Cnpj.TabIndex = 2;
             this.lbl_Cpf_Cnpj.Text = "CNPJ";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(763, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNome.Location = new System.Drawing.Point(6, 42);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(763, 20);
+            this.txtNome.TabIndex = 1;
             // 
             // lbl_Nome_RasaoSocial
             // 
@@ -138,9 +141,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtComplemento);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtLogradouro);
             this.groupBox2.Controls.Add(this.label1);
@@ -227,12 +230,12 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Complemento";
             // 
-            // textBox4
+            // txtComplemento
             // 
-            this.textBox4.Location = new System.Drawing.Point(60, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(231, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtComplemento.Location = new System.Drawing.Point(60, 127);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(231, 20);
+            this.txtComplemento.TabIndex = 8;
             // 
             // label3
             // 
@@ -243,12 +246,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Nº";
             // 
-            // textBox3
+            // txtNumero
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(40, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtNumero.Location = new System.Drawing.Point(6, 127);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(40, 20);
+            this.txtNumero.TabIndex = 7;
             // 
             // label2
             // 
@@ -348,53 +351,73 @@
             this.maskedTextBox2.Size = new System.Drawing.Size(80, 20);
             this.maskedTextBox2.TabIndex = 13;
             // 
-            // button4
+            // btnDeletar
             // 
-            this.button4.Image = global::ContasAPagar.Properties.Resources.erro;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(714, 390);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 32);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Deletar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDeletar.Image = global::ContasAPagar.Properties.Resources.erro;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.Location = new System.Drawing.Point(714, 390);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(73, 32);
+            this.btnDeletar.TabIndex = 18;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEditar
             // 
-            this.button3.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(363, 390);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 32);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Editar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(363, 390);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(73, 32);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnIncluir
             // 
-            this.button1.Image = global::ContasAPagar.Properties.Resources.adicionar_ficheiro;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 32);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Incluir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIncluir.Image = global::ContasAPagar.Properties.Resources.adicionar_ficheiro;
+            this.btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIncluir.Location = new System.Drawing.Point(12, 390);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(73, 32);
+            this.btnIncluir.TabIndex = 16;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtObs);
+            this.groupBox4.Location = new System.Drawing.Point(410, 312);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(377, 72);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "OBS";
+            // 
+            // txtObs
+            // 
+            this.txtObs.Location = new System.Drawing.Point(9, 19);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(361, 40);
+            this.txtObs.TabIndex = 15;
             // 
             // Frm_CadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 434);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnIncluir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_CadFornecedor";
@@ -406,19 +429,21 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbx_Pj_Pf;
         private System.Windows.Forms.Label lbl_Cpf_Cnpj;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbl_Nome_RasaoSocial;
         private System.Windows.Forms.MaskedTextBox txt_Cpf_Cnpj;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -431,9 +456,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -445,5 +470,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Button btnBuscaCep;
         private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtObs;
     }
 }

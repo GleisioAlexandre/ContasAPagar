@@ -31,8 +31,8 @@ namespace ContasAPagar.controller
                             {
                                 lista.Add(new ClassePlanoDeContas
                                 {
-                                    Id = reader.GetInt32(0),
-                                    Descricao = reader.GetString(1)
+                                    Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                                    Descricao = reader.IsDBNull(1) ? string.Empty : reader.GetString(1)
                                 });
                             }
                         }

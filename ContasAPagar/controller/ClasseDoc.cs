@@ -33,8 +33,8 @@ namespace ContasAPagar.controller
                             {
                                 lista.Add(new ClasseTipoDoc
                                 {
-                                    Id = reader.GetInt32(0),
-                                    DesCricao = reader.GetString(1),
+                                    Id = reader.IsDBNull(0) ? (0) : reader.GetInt32(0),
+                                    DesCricao = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
                                 });
                             }
                         }

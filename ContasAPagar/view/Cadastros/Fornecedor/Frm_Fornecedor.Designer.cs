@@ -66,6 +66,9 @@
             // 
             this.dtgFornecedor.AllowUserToAddRows = false;
             this.dtgFornecedor.AllowUserToDeleteRows = false;
+            this.dtgFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -296,6 +299,7 @@
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dtgFornecedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_Fornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
