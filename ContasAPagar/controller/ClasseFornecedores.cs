@@ -3,9 +3,6 @@ using ContasAPagar.model;
 using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContasAPagar.controller
 {
@@ -21,7 +18,8 @@ namespace ContasAPagar.controller
 
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "select id, nome, cadastropessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs  from fornecedor"; 
+                    string query = "select ID, NOME, CADASTROPESSOA, CEP, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, TELEFONE, CELULAR, EMAIL, OBS  from fornecedor";
+
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
@@ -44,7 +42,7 @@ namespace ContasAPagar.controller
                                     Telefone = reader.IsDBNull(10) ? string.Empty : reader.GetString(10),
                                     Celular = reader.IsDBNull(11) ? string.Empty : reader.GetString(11),
                                     Email = reader.IsDBNull(12) ? string.Empty :reader.GetString(12),
-                                    Obs = reader.IsDBNull(10) ? string.Empty :  reader.GetString(13)
+                                    Obs = reader.IsDBNull(13) ? string.Empty :  reader.GetString(13)
 
                                 });
                             }
@@ -66,7 +64,7 @@ namespace ContasAPagar.controller
             {
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "insert into FORNECEDOR (NOME, CADASTROPESSOA, CEP, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, TELEFONE, CELULAR, EMAIL, OBS) values (@ID, @NOME, @CADASTROPESSOA, @CEP, @LOGRADOURO, @NUMERO, @COMPLEMENTO, @BAIRRO, @CIDADE, @ESTADO, @TELEFONE, @CELULAR, @EMAIL, @OBS)";
+                    string query = "insert into FORNECEDOR (NOME, CADASTROPESSOA, CEP, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, TELEFONE, CELULAR, EMAIL, OBS) values (@NOME, @CADASTROPESSOA, @CEP, @LOGRADOURO, @NUMERO, @COMPLEMENTO, @BAIRRO, @CIDADE, @ESTADO, @TELEFONE, @CELULAR, @EMAIL, @OBS)";
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         command.Parameters.AddWithValue("@NOME", nome);

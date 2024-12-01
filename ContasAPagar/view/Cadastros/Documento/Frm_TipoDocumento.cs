@@ -16,7 +16,6 @@ namespace ContasAPagar.view
     public partial class Frm_TipoDocumento : Form
     {
         private ClasseDoc classeDoc = new ClasseDoc();
-       
         public Frm_TipoDocumento()
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace ContasAPagar.view
         {
             try
             {
-
                 var lista = classeDoc.CarregaGridTipoDoc();
                 bindingSource.DataSource = new BindingList<ClasseTipoDoc>(lista);
                 dtgTipoDoc.DataSource = bindingSource;
@@ -44,7 +42,8 @@ namespace ContasAPagar.view
                 {
                     int id = Convert.ToInt32(dtgTipoDoc.Rows[e.RowIndex].Cells[0].Value);
                     string descricao = dtgTipoDoc.Rows[e.RowIndex].Cells[1].Value?.ToString();
-                    if (!string.IsNullOrWhiteSpace(descricao))
+
+                   if (!string.IsNullOrWhiteSpace(descricao))
                     {
                         Frm_CadTipoDocumento frm_CadTipo = new Frm_CadTipoDocumento(this, id, descricao);
                         frm_CadTipo.ShowDialog();

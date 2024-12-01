@@ -65,10 +65,12 @@
             // 
             this.dtgPlanoDeContas.AllowUserToAddRows = false;
             this.dtgPlanoDeContas.AllowUserToDeleteRows = false;
+            this.dtgPlanoDeContas.AutoGenerateColumns = false;
             this.dtgPlanoDeContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPlanoDeContas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.planodecontas});
+            this.dtgPlanoDeContas.DataSource = this.bindingSource;
             this.dtgPlanoDeContas.Location = new System.Drawing.Point(12, 70);
             this.dtgPlanoDeContas.Name = "dtgPlanoDeContas";
             this.dtgPlanoDeContas.ReadOnly = true;

@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Fornecedor));
             this.dtgFornecedor = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cadastropessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNovo = new System.Windows.Forms.Button();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -56,6 +45,20 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cadastropessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -69,6 +72,7 @@
             this.dtgFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgFornecedor.AutoGenerateColumns = false;
             this.dtgFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -81,92 +85,18 @@
             this.bairro,
             this.cidade,
             this.estado,
+            this.telefone,
+            this.celular,
+            this.email,
             this.Obs});
+            this.dtgFornecedor.DataSource = this.bindingSource;
             this.dtgFornecedor.Location = new System.Drawing.Point(12, 70);
             this.dtgFornecedor.Name = "dtgFornecedor";
             this.dtgFornecedor.ReadOnly = true;
+            this.dtgFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgFornecedor.Size = new System.Drawing.Size(776, 313);
             this.dtgFornecedor.TabIndex = 0;
             this.dtgFornecedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFornecedor_CellDoubleClick);
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "id";
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome / Razão Social";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.Width = 150;
-            // 
-            // cadastropessoa
-            // 
-            this.cadastropessoa.DataPropertyName = "cadastrodepessoa";
-            this.cadastropessoa.HeaderText = "CPF / CNPJ";
-            this.cadastropessoa.Name = "cadastropessoa";
-            this.cadastropessoa.ReadOnly = true;
-            // 
-            // cep
-            // 
-            this.cep.DataPropertyName = "cep";
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            this.cep.ReadOnly = true;
-            // 
-            // logradouro
-            // 
-            this.logradouro.DataPropertyName = "logradouro";
-            this.logradouro.HeaderText = "Logradouro";
-            this.logradouro.Name = "logradouro";
-            this.logradouro.ReadOnly = true;
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero";
-            this.numero.HeaderText = "Nº";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            this.numero.Width = 50;
-            // 
-            // complemento
-            // 
-            this.complemento.DataPropertyName = "complemento";
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            this.complemento.ReadOnly = true;
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.ReadOnly = true;
-            // 
-            // cidade
-            // 
-            this.cidade.DataPropertyName = "cidade";
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            this.cidade.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // Obs
-            // 
-            this.Obs.DataPropertyName = "obs";
-            this.Obs.HeaderText = "OBS";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
             // 
             // btnNovo
             // 
@@ -291,6 +221,106 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "id";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome / Razão Social";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 150;
+            // 
+            // cadastropessoa
+            // 
+            this.cadastropessoa.DataPropertyName = "cadastrodepessoa";
+            this.cadastropessoa.HeaderText = "CPF / CNPJ";
+            this.cadastropessoa.Name = "cadastropessoa";
+            this.cadastropessoa.ReadOnly = true;
+            // 
+            // cep
+            // 
+            this.cep.DataPropertyName = "cep";
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.ReadOnly = true;
+            // 
+            // logradouro
+            // 
+            this.logradouro.DataPropertyName = "logradouro";
+            this.logradouro.HeaderText = "Logradouro";
+            this.logradouro.Name = "logradouro";
+            this.logradouro.ReadOnly = true;
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            this.numero.HeaderText = "Nº";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Width = 50;
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            this.complemento.ReadOnly = true;
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // telefone
+            // 
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
+            // 
+            // celular
+            // 
+            this.celular.DataPropertyName = "celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // Obs
+            // 
+            this.Obs.DataPropertyName = "obs";
+            this.Obs.HeaderText = "OBS";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            // 
             // Frm_Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +372,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
     }
 }

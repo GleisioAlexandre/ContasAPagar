@@ -14,11 +14,32 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
 {
     public partial class Frm_CadFornecedor : Form
     {
-        private readonly BuscaCep buscaCep;
-        public Frm_CadFornecedor()
+        private Frm_Fornecedor Frm_Fornecedor;
+        private int? idFornecedor;
+        private ClasseFornecedores fornecedores = new ClasseFornecedores();
+
+        public Frm_CadFornecedor(Frm_Fornecedor fornecedor)
         {
             InitializeComponent();
-            buscaCep = new BuscaCep();
+            Frm_Fornecedor = fornecedor;
+            idFornecedor = null;
+        }
+        public Frm_CadFornecedor(Frm_Fornecedor fornecedor, int id, string nome, string cadastroPessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string telefone, string celular, string email, string obs): this(fornecedor)
+        {
+            idFornecedor = id;
+            txtNome.Text = nome.Trim();
+            txt_Cpf_Cnpj.Text = cadastroPessoa.Trim();
+            txtCep.Text = cep.Trim();
+            txtLogradouro.Text = logradouro.Trim();
+            txtNumero.Text = numero.ToString().Trim();
+            txtComplemento.Text = complemento.Trim();
+            txtBairro.Text = bairro.Trim();
+            txtCidade.Text = cidade.Trim();
+            txtEstado.Text = estado.Trim();
+            txtTelefone.Text = telefone.Trim();
+            txtCelular.Text = celular.Trim();
+            txtEmail.Text = email.Trim();
+            txtObs.Text = obs.Trim();
         }
 
         private void cbx_Pj_Pf_CheckedChanged(object sender, EventArgs e)
@@ -74,8 +95,9 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
                 string celular = txtCelular.Text.Trim();
                 string email = txtEmail.Text.Trim();
                 string obs = txtObs.Text.Trim();
-                ClasseFornecedores fornecedores = new ClasseFornecedores();
                 fornecedores.InserirFornecedor(nome, cadastroPessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs);
+                Frm_Fornecedor.CarregaGrid();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -84,6 +106,11 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_CadFornecedor_Load(object sender, EventArgs e)
         {
 
         }

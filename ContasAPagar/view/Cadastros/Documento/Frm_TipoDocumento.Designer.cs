@@ -55,10 +55,15 @@
             // 
             this.dtgTipoDoc.AllowUserToAddRows = false;
             this.dtgTipoDoc.AllowUserToDeleteRows = false;
+            this.dtgTipoDoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgTipoDoc.AutoGenerateColumns = false;
             this.dtgTipoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTipoDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descricao});
+            this.dtgTipoDoc.DataSource = this.bindingSource;
             this.dtgTipoDoc.Location = new System.Drawing.Point(12, 70);
             this.dtgTipoDoc.Name = "dtgTipoDoc";
             this.dtgTipoDoc.ReadOnly = true;

@@ -14,22 +14,20 @@ namespace ContasAPagar.view.Cadastros.Documento
 {
     public partial class Frm_CadTipoDocumento : Form
     {
-        private Frm_TipoDocumento frm_TipoDocumento;
+        private Frm_TipoDocumento Frm_TipoDocumento;
         private int? idTipoDoc;
         private ClasseDoc classeDoc = new ClasseDoc();
-       
        
         public Frm_CadTipoDocumento(Frm_TipoDocumento tipo_Documento)
         {
             InitializeComponent();
-            frm_TipoDocumento = tipo_Documento;
+            Frm_TipoDocumento = tipo_Documento;
             idTipoDoc = null;
         }
         public Frm_CadTipoDocumento(Frm_TipoDocumento tipoDocumento, int id, string descricao) : this(tipoDocumento)
         {
             idTipoDoc = id;
             txtDescricao.Text = descricao;
-
         }
         private void InserirDados()
         {
@@ -69,7 +67,7 @@ namespace ContasAPagar.view.Cadastros.Documento
                     classeDoc.EditarDoc(idTipoDoc.Value, descricao);
                     MessageBox.Show("Registro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                frm_TipoDocumento.CarregaGrid();
+                Frm_TipoDocumento.CarregaGrid();
                 this.Close();
             }
             catch (Exception ex)
@@ -94,7 +92,7 @@ namespace ContasAPagar.view.Cadastros.Documento
             {
                 return;
             }
-            frm_TipoDocumento.CarregaGrid();
+            Frm_TipoDocumento.CarregaGrid();
             this.Close();
         }
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -114,6 +112,10 @@ namespace ContasAPagar.view.Cadastros.Documento
                 DeletarRegistro();
             }
         }
+
+        private void Frm_CadTipoDocumento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-//MessageBox.Show("Tem certeza que deseja remover o registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)

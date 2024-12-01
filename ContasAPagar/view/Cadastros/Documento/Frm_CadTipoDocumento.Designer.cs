@@ -106,6 +106,7 @@
             this.Name = "Frm_CadTipoDocumento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Tipo Documento";
+            this.Load += new System.EventHandler(this.Frm_CadTipoDocumento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
