@@ -54,12 +54,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -288,12 +288,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.maskedTextBox3);
+            this.groupBox3.Controls.Add(this.txtCelular);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.maskedTextBox2);
+            this.groupBox3.Controls.Add(this.txtTelefone);
             this.groupBox3.Location = new System.Drawing.Point(12, 314);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(392, 72);
@@ -301,12 +301,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contato";
             // 
-            // textBox8
+            // txtEmail
             // 
-            this.textBox8.Location = new System.Drawing.Point(213, 39);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(173, 20);
-            this.textBox8.TabIndex = 15;
+            this.txtEmail.Location = new System.Drawing.Point(213, 39);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(173, 20);
+            this.txtEmail.TabIndex = 15;
             // 
             // label10
             // 
@@ -326,13 +326,13 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Celular";
             // 
-            // maskedTextBox3
+            // txtCelular
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(102, 39);
-            this.maskedTextBox3.Mask = "(99) 00000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(87, 20);
-            this.maskedTextBox3.TabIndex = 14;
+            this.txtCelular.Location = new System.Drawing.Point(102, 39);
+            this.txtCelular.Mask = "(99) 00000-0000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(87, 20);
+            this.txtCelular.TabIndex = 14;
             // 
             // label8
             // 
@@ -343,13 +343,13 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Telefone";
             // 
-            // maskedTextBox2
+            // txtTelefone
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(6, 39);
-            this.maskedTextBox2.Mask = "(99) 0000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(80, 20);
-            this.maskedTextBox2.TabIndex = 13;
+            this.txtTelefone.Location = new System.Drawing.Point(6, 39);
+            this.txtTelefone.Mask = "(99) 0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(80, 20);
+            this.txtTelefone.TabIndex = 13;
             // 
             // btnDeletar
             // 
@@ -374,6 +374,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnIncluir
             // 
@@ -462,12 +463,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Button btnBuscaCep;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.GroupBox groupBox4;

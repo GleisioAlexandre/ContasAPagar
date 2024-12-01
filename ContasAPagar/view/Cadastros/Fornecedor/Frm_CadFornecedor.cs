@@ -59,18 +59,33 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text.Trim();
-            string cadastroPessoa = txt_Cpf_Cnpj.Text.Trim();
-            string cep = txtCep.Text.Trim();
-            string logradouro = txtLogradouro.Text.Trim();
-            int numero = Convert.ToInt32(txtNumero.Text.Trim());
-            string complemento = txtComplemento.Text.Trim();
-            string bairro = txtBairro.Text.Trim();
-            string cidade = txtCidade.Text.Trim();
-            string estado = txtEstado.Text.Trim();
-            string obs = txtObs.Text.Trim();
-            ClasseFornecedores fornecedores = new ClasseFornecedores();
-            fornecedores.InserirFornecedor(nome, cadastroPessoa, cep, logradouro, numero, complemento,bairro,cidade,estado, obs);
+            try
+            {
+                string nome = txtNome.Text.Trim();
+                string cadastroPessoa = txt_Cpf_Cnpj.Text.Trim();
+                string cep = txtCep.Text.Trim();
+                string logradouro = txtLogradouro.Text.Trim();
+                int numero = Convert.ToInt32(txtNumero.Text.Trim());
+                string complemento = txtComplemento.Text.Trim();
+                string bairro = txtBairro.Text.Trim();
+                string cidade = txtCidade.Text.Trim();
+                string estado = txtEstado.Text.Trim();
+                string telefone = txtTelefone.Text.Trim();
+                string celular = txtCelular.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string obs = txtObs.Text.Trim();
+                ClasseFornecedores fornecedores = new ClasseFornecedores();
+                fornecedores.InserirFornecedor(nome, cadastroPessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

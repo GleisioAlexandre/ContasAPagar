@@ -21,7 +21,7 @@ namespace ContasAPagar.controller
 
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "select id, nome, cadastropessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, obs  from fornecedor"; //
+                    string query = "select id, nome, cadastropessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs  from fornecedor"; 
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
@@ -38,10 +38,13 @@ namespace ContasAPagar.controller
                                     Logradouro = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
                                     Numero = reader.IsDBNull(5) ? (0) : reader.GetInt32(5),
                                     Complemento = reader.IsDBNull(6) ? string.Empty : reader.GetString(6),
-                                    Bairro = reader.IsDBNull(7) ? string.Empty :  reader.GetString(7),
-                                    Cidade = reader.IsDBNull(8) ? string.Empty :  reader.GetString(8),
-                                    Estado = reader.IsDBNull(9) ? string.Empty :  reader.GetString(9),
-                                    Obs = reader.IsDBNull(10) ? string.Empty :  reader.GetString(10)
+                                    Bairro = reader.IsDBNull(7) ? string.Empty : reader.GetString(7),
+                                    Cidade = reader.IsDBNull(8) ? string.Empty : reader.GetString(8),
+                                    Estado = reader.IsDBNull(9) ? string.Empty : reader.GetString(9),
+                                    Telefone = reader.IsDBNull(10) ? string.Empty : reader.GetString(10),
+                                    Celular = reader.IsDBNull(11) ? string.Empty : reader.GetString(11),
+                                    Email = reader.IsDBNull(12) ? string.Empty :reader.GetString(12),
+                                    Obs = reader.IsDBNull(10) ? string.Empty :  reader.GetString(13)
 
                                 });
                             }
@@ -57,25 +60,28 @@ namespace ContasAPagar.controller
             }
            
         }
-        public void InserirFornecedor(string nome, string cadastropessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string obs )
+        public void InserirFornecedor(string nome, string cadastropessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string telefone, string celular, string email, string obs)
         {
             try
             {
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "insert into FORNECEDOR (NOME, CADASTROPESSOA, CEP, LOGRADOURO, NUMERO, COMPLEMENTO ,BAIRRO, CIDADE, ESTADO, OBS ) values(@nome, @cadastropessoa, @cep, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @obs) ";
+                    string query = "insert into FORNECEDOR (NOME, CADASTROPESSOA, CEP, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, ESTADO, TELEFONE, CELULAR, EMAIL, OBS) values (@ID, @NOME, @CADASTROPESSOA, @CEP, @LOGRADOURO, @NUMERO, @COMPLEMENTO, @BAIRRO, @CIDADE, @ESTADO, @TELEFONE, @CELULAR, @EMAIL, @OBS)";
                     using (FbCommand command = new FbCommand(query, cx))
                     {
-                        command.Parameters.AddWithValue("@nome", nome);
-                        command.Parameters.AddWithValue("@cadastropessoa", cadastropessoa);
-                        command.Parameters.AddWithValue("@cep", cep);
-                        command.Parameters.AddWithValue("@logradouro", logradouro);
-                        command.Parameters.AddWithValue("@numero", numero);
-                        command.Parameters.AddWithValue("@complemento", complemento);
-                        command.Parameters.AddWithValue("@bairro", bairro);
-                        command.Parameters.AddWithValue("@cidade", cidade);
-                        command.Parameters.AddWithValue("@estado", estado);
-                        command.Parameters.AddWithValue("@obs", obs);
+                        command.Parameters.AddWithValue("@NOME", nome);
+                        command.Parameters.AddWithValue("@CADASTROPESSOA", cadastropessoa);
+                        command.Parameters.AddWithValue("@CEP", cep);
+                        command.Parameters.AddWithValue("@LOGRADOURO", logradouro);
+                        command.Parameters.AddWithValue("@NUMERO", numero);
+                        command.Parameters.AddWithValue("@COMPLEMENTO", complemento);
+                        command.Parameters.AddWithValue("@BAIRRO", bairro);
+                        command.Parameters.AddWithValue("@CIDADE", cidade);
+                        command.Parameters.AddWithValue("@ESTADO", estado);
+                        command.Parameters.AddWithValue("@TELEFONE", telefone);
+                        command.Parameters.AddWithValue("@CELULAR", celular);
+                        command.Parameters.AddWithValue("@EMAIL", email);
+                        command.Parameters.AddWithValue("@OBS", obs);
                         cx.Open();
                         command.ExecuteNonQuery();
                     }
@@ -84,6 +90,38 @@ namespace ContasAPagar.controller
             catch (Exception ex)
             {
                 throw new Exception($"Erro ao insserir os dados: {ex.Message}");
+            }
+        }
+        public void EditarFornecedor(int id, string nome, string cadastropessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string telefone, string celular, string email, string obs)
+        {
+            try
+            {
+                using(FbConnection cx = new FbConnection(config.StringDeConexa()))
+                {
+                    string query = "update FORNECEDOR set NOME = @NOME, CADASTROPESSOA = @CADASTROPESSOA, CEP = @CEP, LOGRADOURO = @LOGRADOURO, NUMERO = @NUMERO, COMPLEMENTO = @COMPLEMENTO, BAIRRO = @BAIRRO, CIDADE = @CIDADE, ESTADO = @ESTADO, TELEFONE = @TELEFONE, CELULAR = @CELULAR, EMAIL = @EMAIL, OBS = @OBS where (ID = @ID) ";
+                    using(FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@NOME", nome);
+                        command.Parameters.AddWithValue("@CADASTROPESSOA", cadastropessoa);
+                        command.Parameters.AddWithValue("@CEP", cep);
+                        command.Parameters.AddWithValue("@LOGRADOURO", logradouro);
+                        command.Parameters.AddWithValue("@NUMERO", numero);
+                        command.Parameters.AddWithValue("@COMPLEMENTO", complemento);
+                        command.Parameters.AddWithValue("@BAIRRO", bairro);
+                        command.Parameters.AddWithValue("@CIDADE", cidade);
+                        command.Parameters.AddWithValue("@ESTADO", estado);
+                        command.Parameters.AddWithValue("@TELEFONE", telefone);
+                        command.Parameters.AddWithValue("@CELULAR", celular);
+                        command.Parameters.AddWithValue("@EMAIL", email);
+                        command.Parameters.AddWithValue("@OBS", obs);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao atualizar o registro: {ex.Message}");
             }
         }
     }
