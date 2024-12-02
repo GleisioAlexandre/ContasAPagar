@@ -112,6 +112,7 @@ namespace ContasAPagar.controller
                         command.Parameters.AddWithValue("@CELULAR", celular);
                         command.Parameters.AddWithValue("@EMAIL", email);
                         command.Parameters.AddWithValue("@OBS", obs);
+                        command.Parameters.AddWithValue("@ID", id);
                         cx.Open();
                         command.ExecuteNonQuery();
                     }
@@ -120,6 +121,26 @@ namespace ContasAPagar.controller
             catch (Exception ex)
             {
                 throw new Exception($"Erro ao atualizar o registro: {ex.Message}");
+            }
+        }
+        public void DeletarFornecedor(int id)
+        {
+            try
+            {
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                {
+                    string query = "delete from FORNECEDOR where(ID = @ID) ";
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao remover o registro: {ex.Message}");
             }
         }
     }

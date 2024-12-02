@@ -18,6 +18,93 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
         private int? idFornecedor;
         private ClasseFornecedores fornecedores = new ClasseFornecedores();
 
+        private void BuscaCep()
+        {
+            try
+            {
+                BuscaCep buscaCep = new BuscaCep();
+
+                txtCep.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Cep;
+                txtLogradouro.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Logradouro;
+                txtBairro.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Bairro;
+                txtCidade.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Localidade;
+                txtEstado.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).uf;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar o CEP: " + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void InseirirFornecedor()
+        {
+            try
+            {
+                string nome = txtNome.Text.Trim();
+                string cadastroPessoa = txt_Cpf_Cnpj.Text.Trim();
+                string cep = txtCep.Text.Trim();
+                string logradouro = txtLogradouro.Text.Trim();
+                int numero = Convert.ToInt32(txtNumero.Text.Trim());
+                string complemento = txtComplemento.Text.Trim();
+                string bairro = txtBairro.Text.Trim();
+                string cidade = txtCidade.Text.Trim();
+                string estado = txtEstado.Text.Trim();
+                string telefone = txtTelefone.Text.Trim();
+                string celular = txtCelular.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string obs = txtObs.Text.Trim();
+                fornecedores.InserirFornecedor(nome, cadastroPessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs);
+                Frm_Fornecedor.CarregaGrid();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao inseir o registro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void EditarFornecedor()
+        {
+            try
+            {
+                string nome = txtNome.Text.Trim();
+                string cadatroPessoa = txt_Cpf_Cnpj.Text.Trim();
+                string cep = txtCep.Text.Trim();
+                string logradouro = txtLogradouro.Text.Trim();
+                int numero = Convert.ToInt32(txtNumero.Text.Trim());
+                string complemento = txtComplemento.Text.Trim();
+                string bairro = txtBairro.Text.Trim();
+                string cidade = txtCidade.Text.Trim();
+                string estado = txtEstado.Text.Trim();
+                string telefone = txtTelefone.Text.Trim();
+                string celular = txtCelular.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string obs = txtObs.Text.Trim();
+
+                fornecedores.EditarFornecedor(idFornecedor.Value, nome, cadatroPessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs );
+                Frm_Fornecedor.CarregaGrid();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao Editar o registro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void DeletarFornecedor()
+        {
+            try
+            {
+                if (MessageBox.Show("Tem certeza que deseja remover o registro", "Alerte", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    fornecedores.DeletarFornecedor(idFornecedor.Value);
+                    Frm_Fornecedor.CarregaGrid();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao Remover o registro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public Frm_CadFornecedor(Frm_Fornecedor fornecedor)
         {
             InitializeComponent();
@@ -62,57 +149,22 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
 
         private void btnBuscaCep_Click(object sender, EventArgs e)
         {
-            try
-            {
-                BuscaCep buscaCep = new BuscaCep();
-
-                txtCep.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Cep;
-                txtLogradouro.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Logradouro;
-                txtBairro.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Bairro;
-                txtCidade.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).Localidade;
-                txtEstado.Text = buscaCep.ConsultaCep(txtCep.Text.Trim()).uf;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao consultar o CEP: " + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            BuscaCep();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string nome = txtNome.Text.Trim();
-                string cadastroPessoa = txt_Cpf_Cnpj.Text.Trim();
-                string cep = txtCep.Text.Trim();
-                string logradouro = txtLogradouro.Text.Trim();
-                int numero = Convert.ToInt32(txtNumero.Text.Trim());
-                string complemento = txtComplemento.Text.Trim();
-                string bairro = txtBairro.Text.Trim();
-                string cidade = txtCidade.Text.Trim();
-                string estado = txtEstado.Text.Trim();
-                string telefone = txtTelefone.Text.Trim();
-                string celular = txtCelular.Text.Trim();
-                string email = txtEmail.Text.Trim();
-                string obs = txtObs.Text.Trim();
-                fornecedores.InserirFornecedor(nome, cadastroPessoa, cep, logradouro, numero, complemento, bairro, cidade, estado, telefone, celular, email, obs);
-                Frm_Fornecedor.CarregaGrid();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            InseirirFornecedor();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            EditarFornecedor();
         }
 
-        private void Frm_CadFornecedor_Load(object sender, EventArgs e)
+        private void btnDeletar_Click(object sender, EventArgs e)
         {
-
+            DeletarFornecedor();
         }
     }
 }
