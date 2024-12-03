@@ -50,14 +50,14 @@
             this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.cbxDevdor = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gpbSituacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 106);
+            this.label1.Location = new System.Drawing.Point(102, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
@@ -69,6 +69,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(72, 20);
             this.txtValor.TabIndex = 4;
+            this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -82,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 106);
+            this.label3.Location = new System.Drawing.Point(234, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 4;
@@ -90,7 +91,7 @@
             // 
             // txtPlanoDeContas
             // 
-            this.txtPlanoDeContas.Location = new System.Drawing.Point(105, 56);
+            this.txtPlanoDeContas.Location = new System.Drawing.Point(391, 56);
             this.txtPlanoDeContas.Name = "txtPlanoDeContas";
             this.txtPlanoDeContas.Size = new System.Drawing.Size(220, 20);
             this.txtPlanoDeContas.TabIndex = 1;
@@ -98,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 40);
+            this.label4.Location = new System.Drawing.Point(388, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 6;
@@ -122,7 +123,7 @@
             // 
             // txtFornecedor
             // 
-            this.txtFornecedor.Location = new System.Drawing.Point(347, 56);
+            this.txtFornecedor.Location = new System.Drawing.Point(105, 56);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(264, 20);
             this.txtFornecedor.TabIndex = 2;
@@ -130,7 +131,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(344, 40);
+            this.label6.Location = new System.Drawing.Point(102, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 10;
@@ -148,7 +149,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(385, 106);
+            this.label8.Location = new System.Drawing.Point(328, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 14;
@@ -207,7 +208,7 @@
             // 
             // txtPagamento
             // 
-            this.txtPagamento.Location = new System.Drawing.Point(388, 122);
+            this.txtPagamento.Location = new System.Drawing.Point(331, 122);
             this.txtPagamento.Mask = "00/00/0000";
             this.txtPagamento.Name = "txtPagamento";
             this.txtPagamento.Size = new System.Drawing.Size(72, 20);
@@ -216,7 +217,7 @@
             // 
             // txtVencimento
             // 
-            this.txtVencimento.Location = new System.Drawing.Point(275, 122);
+            this.txtVencimento.Location = new System.Drawing.Point(237, 122);
             this.txtVencimento.Mask = "00/00/0000";
             this.txtVencimento.Name = "txtVencimento";
             this.txtVencimento.Size = new System.Drawing.Size(72, 20);
@@ -235,34 +236,35 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(498, 106);
+            this.label9.Location = new System.Drawing.Point(422, 106);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 13);
+            this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 25;
-            this.label9.Text = "Devedor";
+            this.label9.Text = "OBS";
             // 
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(124, 122);
+            this.cbxTipo.Location = new System.Drawing.Point(105, 122);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(110, 21);
             this.cbxTipo.TabIndex = 5;
             // 
-            // cbxDevdor
+            // textBox1
             // 
-            this.cbxDevdor.FormattingEnabled = true;
-            this.cbxDevdor.Location = new System.Drawing.Point(501, 122);
-            this.cbxDevdor.Name = "cbxDevdor";
-            this.cbxDevdor.Size = new System.Drawing.Size(110, 21);
-            this.cbxDevdor.TabIndex = 8;
+            this.textBox1.Location = new System.Drawing.Point(425, 122);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(184, 39);
+            this.textBox1.TabIndex = 26;
             // 
             // FrmLancamentoContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 253);
-            this.Controls.Add(this.cbxDevdor);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtLancamento);
@@ -283,6 +285,7 @@
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmLancamentoContasAReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -319,6 +322,6 @@
         private System.Windows.Forms.MaskedTextBox txtLancamento;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxTipo;
-        private System.Windows.Forms.ComboBox cbxDevdor;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
