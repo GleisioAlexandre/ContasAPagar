@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContasAPagar.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,9 @@ namespace ContasAPagar.view
         {
             InitializeComponent();
         }
-
+       
         private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
         {
-            // lblLancamento.TabStop = false;
-            gpbSituacao.TabStop = true;
         }
     }
 }

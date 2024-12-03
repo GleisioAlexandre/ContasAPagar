@@ -48,15 +48,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -75,19 +75,20 @@
             this.dtgContasAPagar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.lancamento,
-            this.descricao,
             this.fornecedor,
-            this.documento,
             this.valor,
+            this.descricao,
+            this.documento,
             this.tipo,
             this.vencimento,
             this.pagamento,
-            this.devedor,
-            this.situacao});
+            this.situacao,
+            this.devedor});
             this.dtgContasAPagar.DataSource = this.bindingSource;
             this.dtgContasAPagar.Location = new System.Drawing.Point(12, 160);
             this.dtgContasAPagar.Name = "dtgContasAPagar";
             this.dtgContasAPagar.ReadOnly = true;
+            this.dtgContasAPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgContasAPagar.Size = new System.Drawing.Size(1045, 391);
             this.dtgContasAPagar.TabIndex = 0;
             // 
@@ -227,6 +228,7 @@
             // 
             // codigo
             // 
+            this.codigo.DataPropertyName = "Id";
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -234,45 +236,52 @@
             // 
             // lancamento
             // 
+            this.lancamento.DataPropertyName = "Lancamento";
             this.lancamento.HeaderText = "Lançamento";
             this.lancamento.Name = "lancamento";
             this.lancamento.ReadOnly = true;
             this.lancamento.Width = 70;
             // 
-            // descricao
-            // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.HeaderText = "Plano de Contas";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
             // fornecedor
             // 
             this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fornecedor.DataPropertyName = "NomeFornecedor";
             this.fornecedor.HeaderText = "Fornecedor";
             this.fornecedor.Name = "fornecedor";
             this.fornecedor.ReadOnly = true;
             // 
-            // documento
-            // 
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            this.documento.ReadOnly = true;
-            // 
             // valor
             // 
+            this.valor.DataPropertyName = "Valor";
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
             // 
+            // descricao
+            // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.DataPropertyName = "PlanoDeContas";
+            this.descricao.HeaderText = "Plano de Contas";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // documento
+            // 
+            this.documento.DataPropertyName = "Documento";
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            // 
             // tipo
             // 
+            this.tipo.DataPropertyName = "TipoDocumento";
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
             // 
             // vencimento
             // 
+            this.vencimento.DataPropertyName = "DataVenc";
             this.vencimento.HeaderText = "Vencimento";
             this.vencimento.Name = "vencimento";
             this.vencimento.ReadOnly = true;
@@ -280,24 +289,27 @@
             // 
             // pagamento
             // 
+            this.pagamento.DataPropertyName = "DataPg";
             this.pagamento.HeaderText = "Pagamento";
             this.pagamento.Name = "pagamento";
             this.pagamento.ReadOnly = true;
             this.pagamento.Width = 70;
             // 
-            // devedor
-            // 
-            this.devedor.HeaderText = "Devedor";
-            this.devedor.Name = "devedor";
-            this.devedor.ReadOnly = true;
-            // 
             // situacao
             // 
+            this.situacao.DataPropertyName = "SITUACAO";
             this.situacao.HeaderText = "Situação";
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
             this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // devedor
+            // 
+            this.devedor.DataPropertyName = "obs";
+            this.devedor.HeaderText = "Devedor";
+            this.devedor.Name = "devedor";
+            this.devedor.ReadOnly = true;
             // 
             // FrmContasAPagar
             // 
@@ -311,6 +323,7 @@
             this.Name = "FrmContasAPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despesas";
+            this.Load += new System.EventHandler(this.FrmContasAPagar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
@@ -341,14 +354,14 @@
         private System.Windows.Forms.BindingSource bindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lancamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn devedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn devedor;
     }
 }
