@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 106);
+            this.label1.Location = new System.Drawing.Point(102, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(11, 122);
+            this.txtValor.Location = new System.Drawing.Point(11, 112);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(72, 20);
             this.txtValor.TabIndex = 4;
@@ -74,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 106);
+            this.label2.Location = new System.Drawing.Point(8, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 2;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(234, 106);
+            this.label3.Location = new System.Drawing.Point(234, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 4;
@@ -149,7 +149,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 106);
+            this.label8.Location = new System.Drawing.Point(328, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 14;
@@ -208,7 +208,7 @@
             // 
             // txtPagamento
             // 
-            this.txtPagamento.Location = new System.Drawing.Point(331, 122);
+            this.txtPagamento.Location = new System.Drawing.Point(331, 112);
             this.txtPagamento.Mask = "00/00/0000";
             this.txtPagamento.Name = "txtPagamento";
             this.txtPagamento.Size = new System.Drawing.Size(72, 20);
@@ -217,7 +217,7 @@
             // 
             // txtVencimento
             // 
-            this.txtVencimento.Location = new System.Drawing.Point(237, 122);
+            this.txtVencimento.Location = new System.Drawing.Point(237, 112);
             this.txtVencimento.Mask = "00/00/0000";
             this.txtVencimento.Name = "txtVencimento";
             this.txtVencimento.Size = new System.Drawing.Size(72, 20);
@@ -236,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(422, 106);
+            this.label9.Location = new System.Drawing.Point(422, 96);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 25;
@@ -245,18 +245,18 @@
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(105, 122);
+            this.cbxTipo.Location = new System.Drawing.Point(105, 112);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(110, 21);
             this.cbxTipo.TabIndex = 5;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(425, 122);
+            this.textBox1.Location = new System.Drawing.Point(425, 112);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(184, 39);
+            this.textBox1.Size = new System.Drawing.Size(184, 49);
             this.textBox1.TabIndex = 26;
             // 
             // FrmLancamentoContasAReceber
