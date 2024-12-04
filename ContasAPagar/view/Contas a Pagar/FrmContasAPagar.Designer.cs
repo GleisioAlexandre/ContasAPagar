@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContasAPagar));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgContasAPagar = new System.Windows.Forms.DataGridView();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNovoLancamento = new System.Windows.Forms.Button();
@@ -253,6 +254,9 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;

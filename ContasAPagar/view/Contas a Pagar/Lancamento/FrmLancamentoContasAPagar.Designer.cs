@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPlanoDeContas = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,7 +50,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbxPlanoDeContas = new System.Windows.Forms.ComboBox();
+            this.cbxFornecedor = new System.Windows.Forms.ComboBox();
+            this.bindingSourceFornecedor = new System.Windows.Forms.BindingSource(this.components);
             this.gpbSituacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,13 +92,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Vencimento";
             // 
-            // txtPlanoDeContas
-            // 
-            this.txtPlanoDeContas.Location = new System.Drawing.Point(391, 56);
-            this.txtPlanoDeContas.Name = "txtPlanoDeContas";
-            this.txtPlanoDeContas.Size = new System.Drawing.Size(220, 20);
-            this.txtPlanoDeContas.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -120,13 +116,6 @@
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Documento";
-            // 
-            // txtFornecedor
-            // 
-            this.txtFornecedor.Location = new System.Drawing.Point(105, 56);
-            this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(264, 20);
-            this.txtFornecedor.TabIndex = 2;
             // 
             // label6
             // 
@@ -259,11 +248,29 @@
             this.textBox1.Size = new System.Drawing.Size(184, 49);
             this.textBox1.TabIndex = 26;
             // 
+            // cbxPlanoDeContas
+            // 
+            this.cbxPlanoDeContas.FormattingEnabled = true;
+            this.cbxPlanoDeContas.Location = new System.Drawing.Point(391, 55);
+            this.cbxPlanoDeContas.Name = "cbxPlanoDeContas";
+            this.cbxPlanoDeContas.Size = new System.Drawing.Size(218, 21);
+            this.cbxPlanoDeContas.TabIndex = 27;
+            // 
+            // cbxFornecedor
+            // 
+            this.cbxFornecedor.FormattingEnabled = true;
+            this.cbxFornecedor.Location = new System.Drawing.Point(105, 56);
+            this.cbxFornecedor.Name = "cbxFornecedor";
+            this.cbxFornecedor.Size = new System.Drawing.Size(226, 21);
+            this.cbxFornecedor.TabIndex = 28;
+            // 
             // FrmLancamentoContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 253);
+            this.Controls.Add(this.cbxFornecedor);
+            this.Controls.Add(this.cbxPlanoDeContas);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.label9);
@@ -275,11 +282,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPlanoDeContas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtValor);
@@ -293,6 +298,7 @@
             this.Load += new System.EventHandler(this.FrmLancamentoContasAReceber_Load);
             this.gpbSituacao.ResumeLayout(false);
             this.gpbSituacao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,11 +310,9 @@
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPlanoDeContas;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -323,5 +327,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbxPlanoDeContas;
+        private System.Windows.Forms.ComboBox cbxFornecedor;
+        private System.Windows.Forms.BindingSource bindingSourceFornecedor;
     }
 }

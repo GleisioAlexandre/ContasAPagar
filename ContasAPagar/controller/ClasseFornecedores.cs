@@ -56,10 +56,46 @@ namespace ContasAPagar.controller
             {
                 throw new Exception($"Erro ao carregar os dados: {ex.Message}");
             }
-           
+                   
         }
-        public void InserirFornecedor(string nome, string cadastropessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string telefone, string celular, string email, string obs)
+
+        public List<ClasseFornecedor> CarregaComboxFornecedor()
         {
+            try
+            {
+                List<ClasseFornecedor> lista = new List<ClasseFornecedor>();
+
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                {
+                    string query = "select  ID, NOME  from fornecedor";
+
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        cx.Open();
+                        using (FbDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lista.Add(new ClasseFornecedor
+                                {
+                                    Id = reader.IsDBNull(0) ? (0) : reader.GetInt32(0),
+                                    Nome = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
+                                });
+                            }
+
+                        }
+                    }
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao carregar os dados: {ex.Message}");
+            }
+
+        }
+            public void InserirFornecedor(string nome, string cadastropessoa, string cep, string logradouro, int numero, string complemento, string bairro, string cidade, string estado, string telefone, string celular, string email, string obs)
+             {
             try
             {
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
