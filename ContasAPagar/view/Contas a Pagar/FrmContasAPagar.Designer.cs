@@ -56,7 +56,7 @@
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -83,7 +83,7 @@
             this.vencimento,
             this.pagamento,
             this.situacao,
-            this.devedor});
+            this.obs});
             this.dtgContasAPagar.DataSource = this.bindingSource;
             this.dtgContasAPagar.Location = new System.Drawing.Point(12, 160);
             this.dtgContasAPagar.Name = "dtgContasAPagar";
@@ -304,12 +304,12 @@
             this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // devedor
+            // obs
             // 
-            this.devedor.DataPropertyName = "obs";
-            this.devedor.HeaderText = "Devedor";
-            this.devedor.Name = "devedor";
-            this.devedor.ReadOnly = true;
+            this.obs.DataPropertyName = "obs";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.ReadOnly = true;
             // 
             // FrmContasAPagar
             // 
@@ -320,6 +320,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNovoLancamento);
             this.Controls.Add(this.dtgContasAPagar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmContasAPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despesas";
@@ -362,6 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn devedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
     }
 }
