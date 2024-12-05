@@ -17,6 +17,7 @@ namespace ContasAPagar.view
         ClasseDoc tipodoc = new ClasseDoc();
         ClassePContas planoDeContas = new ClassePContas();
         ClasseFornecedores fornecedores = new ClasseFornecedores();
+        ClasseContasAPagar contAPagar = new ClasseContasAPagar();
         public FrmLancamentoContasAReceber()
         {
             InitializeComponent();
@@ -25,9 +26,10 @@ namespace ContasAPagar.view
        private void CarregaComboBoxDocumento()
         {
             var tipoDocumento = tipodoc.CarregaGridTipoDoc();
-            cbxTipo.DataSource = tipoDocumento;
-            cbxTipo.DisplayMember = "Descricao";
-            cbxTipo.ValueMember = "Id";
+            cbxTipoDoc.DataSource = tipoDocumento;
+            cbxTipoDoc.DisplayMember = "Descricao";
+            cbxTipoDoc.ValueMember = "Id";
+            cbxTipoDoc.SelectedValue = -1;
         }
         private void CarregaComboBoxFornecedor()
         {
@@ -42,17 +44,44 @@ namespace ContasAPagar.view
             cbxPlanoDeContas.DataSource = listaPlanoDeContas;
             cbxPlanoDeContas.DisplayMember = "Descricao";
             cbxPlanoDeContas.ValueMember = "Id";
+            cbxPlanoDeContas.SelectedValue = -1;
+            
         }
        
         private void IncluirLancamento()
         {
-           // DateTime lancamento = Convert.ToDateTime(txtLancamento.Text);
-            //int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue.ToString());
-            int PlanoDeContas = cbxPlanoDeContas.SelectedIndex;
+            try
+            {
+                int situacao;
+                DateTime lancamento = Convert.ToDateTime(txtLancamento.Text.Trim()).Date;
+                DateTime pagamento = Convert.ToDateTime(txtPagamento.Text.Trim()).Date;
+                DateTime vencimento = Convert.ToDateTime(txtVencimento.Text.Trim()).Date;
+                int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue.ToString());
+                int idplanoDeContas = Convert.ToInt32(cbxPlanoDeContas.SelectedValue.ToString());
+                int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue.ToString());
+                string documento = txtDocumento.Text.Trim();
+                string obs = txtObs.Text.Trim();
+                double valor = Convert.ToDouble(txtValor.Text.Trim());
 
-            Console.WriteLine(planoDeContas);
-            //ClassePContas planoDeContas = new ClassePContas();
-            //planoDeContas.InserirPlanoDeContas();
+
+                if (rbApagar.Checked)
+                {
+                    situacao = 1;
+                }
+                else
+                {
+                    situacao = 2;
+                }
+
+
+                contAPagar.InserirContas(lancamento, idFornecedor, valor, documento, idTipoDocumento, idplanoDeContas, situacao, vencimento, pagamento, obs);
+
+                MessageBox.Show("Dados Inseridos com sucesso!");
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show($"Erro {ex}");
+            }
         }
         private void EditarLancamento()
         {
@@ -76,3 +105,8 @@ namespace ContasAPagar.view
         }
     }
 }
+
+
+//14,25
+//31,92
+//3,99

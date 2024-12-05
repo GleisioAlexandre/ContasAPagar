@@ -39,8 +39,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbPago = new System.Windows.Forms.RadioButton();
+            this.rbApagar = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIncluirLancamento = new System.Windows.Forms.Button();
             this.gpbSituacao = new System.Windows.Forms.GroupBox();
@@ -48,8 +48,8 @@
             this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
             this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbxTipoDoc = new System.Windows.Forms.ComboBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.cbxPlanoDeContas = new System.Windows.Forms.ComboBox();
             this.cbxFornecedor = new System.Windows.Forms.ComboBox();
             this.bindingSourceFornecedor = new System.Windows.Forms.BindingSource(this.components);
@@ -145,27 +145,27 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Pagamento";
             // 
-            // radioButton1
+            // rbPago
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pago";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbPago.AutoSize = true;
+            this.rbPago.Checked = true;
+            this.rbPago.Location = new System.Drawing.Point(6, 19);
+            this.rbPago.Name = "rbPago";
+            this.rbPago.Size = new System.Drawing.Size(50, 17);
+            this.rbPago.TabIndex = 0;
+            this.rbPago.TabStop = true;
+            this.rbPago.Text = "Pago";
+            this.rbPago.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbApagar
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(83, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(63, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "A Pagar";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbApagar.AutoSize = true;
+            this.rbApagar.Location = new System.Drawing.Point(83, 19);
+            this.rbApagar.Name = "rbApagar";
+            this.rbApagar.Size = new System.Drawing.Size(63, 17);
+            this.rbApagar.TabIndex = 1;
+            this.rbApagar.Text = "A Pagar";
+            this.rbApagar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
@@ -189,8 +189,8 @@
             // 
             // gpbSituacao
             // 
-            this.gpbSituacao.Controls.Add(this.radioButton1);
-            this.gpbSituacao.Controls.Add(this.radioButton2);
+            this.gpbSituacao.Controls.Add(this.rbPago);
+            this.gpbSituacao.Controls.Add(this.rbApagar);
             this.gpbSituacao.Location = new System.Drawing.Point(633, 112);
             this.gpbSituacao.Name = "gpbSituacao";
             this.gpbSituacao.Size = new System.Drawing.Size(152, 49);
@@ -234,22 +234,22 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "OBS";
             // 
-            // cbxTipo
+            // cbxTipoDoc
             // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(105, 112);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(110, 21);
-            this.cbxTipo.TabIndex = 5;
+            this.cbxTipoDoc.FormattingEnabled = true;
+            this.cbxTipoDoc.Location = new System.Drawing.Point(105, 112);
+            this.cbxTipoDoc.Name = "cbxTipoDoc";
+            this.cbxTipoDoc.Size = new System.Drawing.Size(110, 21);
+            this.cbxTipoDoc.TabIndex = 5;
             // 
-            // textBox1
+            // txtObs
             // 
-            this.textBox1.Location = new System.Drawing.Point(425, 112);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(184, 49);
-            this.textBox1.TabIndex = 26;
+            this.txtObs.Location = new System.Drawing.Point(425, 112);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObs.Size = new System.Drawing.Size(184, 49);
+            this.txtObs.TabIndex = 26;
             // 
             // cbxPlanoDeContas
             // 
@@ -284,8 +284,8 @@
             this.Controls.Add(this.btnEditarLancamento);
             this.Controls.Add(this.cbxFornecedor);
             this.Controls.Add(this.cbxPlanoDeContas);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.cbxTipo);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.cbxTipoDoc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.txtVencimento);
@@ -329,8 +329,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbPago;
+        private System.Windows.Forms.RadioButton rbApagar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnIncluirLancamento;
         private System.Windows.Forms.GroupBox gpbSituacao;
@@ -338,8 +338,8 @@
         private System.Windows.Forms.MaskedTextBox txtVencimento;
         private System.Windows.Forms.MaskedTextBox txtLancamento;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbxTipo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbxTipoDoc;
+        private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.ComboBox cbxPlanoDeContas;
         private System.Windows.Forms.ComboBox cbxFornecedor;
         private System.Windows.Forms.BindingSource bindingSourceFornecedor;
