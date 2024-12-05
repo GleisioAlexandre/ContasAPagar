@@ -31,10 +31,11 @@ namespace ContasAPagar.view
         private void CarregaComboBoxFornecedor()
         {
             var fornecedor = fornecedores.CarregaComboxFornecedor();
-            bindingSourceFornecedor.DataSource = fornecedores;
-            cbxPlanoDeContas.DataSource = bindingSourceFornecedor;
+            cbxFornecedor.DataSource = new BindingList<ClasseFornecedor>(fornecedores.CarregaComboxFornecedor());
+
             cbxFornecedor.DisplayMember = "Nome";
             cbxFornecedor.ValueMember = "Id";
+           
         }
         private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
         {

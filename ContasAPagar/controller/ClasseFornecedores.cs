@@ -63,7 +63,7 @@ namespace ContasAPagar.controller
         {
             try
             {
-                List<ClasseFornecedor> lista = new List<ClasseFornecedor>();
+                var lista = new List<ClasseFornecedor>();
 
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
@@ -81,6 +81,7 @@ namespace ContasAPagar.controller
                                     Id = reader.IsDBNull(0) ? (0) : reader.GetInt32(0),
                                     Nome = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
                                 });
+                                
                             }
 
                         }
