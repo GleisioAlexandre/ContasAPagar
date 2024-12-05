@@ -41,8 +41,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnIncluirLancamento = new System.Windows.Forms.Button();
             this.gpbSituacao = new System.Windows.Forms.GroupBox();
             this.txtPagamento = new System.Windows.Forms.MaskedTextBox();
             this.txtVencimento = new System.Windows.Forms.MaskedTextBox();
@@ -53,6 +53,7 @@
             this.cbxPlanoDeContas = new System.Windows.Forms.ComboBox();
             this.cbxFornecedor = new System.Windows.Forms.ComboBox();
             this.bindingSourceFornecedor = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEditarLancamento = new System.Windows.Forms.Button();
             this.gpbSituacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFornecedor)).BeginInit();
             this.SuspendLayout();
@@ -166,23 +167,25 @@
             this.radioButton2.Text = "A Pagar";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(12, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(655, 198);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(129, 43);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button2
+            // btnIncluirLancamento
             // 
-            this.button2.Location = new System.Drawing.Point(658, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 43);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Incluir Lançamento";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnIncluirLancamento.Location = new System.Drawing.Point(11, 198);
+            this.btnIncluirLancamento.Name = "btnIncluirLancamento";
+            this.btnIncluirLancamento.Size = new System.Drawing.Size(129, 43);
+            this.btnIncluirLancamento.TabIndex = 11;
+            this.btnIncluirLancamento.Text = "Incluir Lançamento";
+            this.btnIncluirLancamento.UseVisualStyleBackColor = true;
+            this.btnIncluirLancamento.Click += new System.EventHandler(this.btnIncluirLancamento_Click);
             // 
             // gpbSituacao
             // 
@@ -264,11 +267,21 @@
             this.cbxFornecedor.Size = new System.Drawing.Size(226, 21);
             this.cbxFornecedor.TabIndex = 28;
             // 
+            // btnEditarLancamento
+            // 
+            this.btnEditarLancamento.Location = new System.Drawing.Point(333, 198);
+            this.btnEditarLancamento.Name = "btnEditarLancamento";
+            this.btnEditarLancamento.Size = new System.Drawing.Size(129, 43);
+            this.btnEditarLancamento.TabIndex = 29;
+            this.btnEditarLancamento.Text = "Editar Lançamento";
+            this.btnEditarLancamento.UseVisualStyleBackColor = true;
+            // 
             // FrmLancamentoContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 253);
+            this.Controls.Add(this.btnEditarLancamento);
             this.Controls.Add(this.cbxFornecedor);
             this.Controls.Add(this.cbxPlanoDeContas);
             this.Controls.Add(this.textBox1);
@@ -278,8 +291,8 @@
             this.Controls.Add(this.txtVencimento);
             this.Controls.Add(this.txtPagamento);
             this.Controls.Add(this.gpbSituacao);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIncluirLancamento);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -318,8 +331,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnIncluirLancamento;
         private System.Windows.Forms.GroupBox gpbSituacao;
         private System.Windows.Forms.MaskedTextBox txtPagamento;
         private System.Windows.Forms.MaskedTextBox txtVencimento;
@@ -330,5 +343,6 @@
         private System.Windows.Forms.ComboBox cbxPlanoDeContas;
         private System.Windows.Forms.ComboBox cbxFornecedor;
         private System.Windows.Forms.BindingSource bindingSourceFornecedor;
+        private System.Windows.Forms.Button btnEditarLancamento;
     }
 }

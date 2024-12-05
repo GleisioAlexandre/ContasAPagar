@@ -19,7 +19,7 @@ namespace ContasAPagar.controller
                 List<ClasseContAPagar> lista = new List<ClasseContAPagar>();
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "SELECT cp.id, cp.lancamento, f.NOME AS NOME_FORNECEDOR, cp.valor, cp.documento, td.descricao AS TIPO_DOCUMENTO, pc.descricao AS PLANO_DE_CONTAS, s.DESCRICAO AS SITUACAO, cp.DATEVENC, cp.DATAPG, cp.OBS FROM CONTASAPAGAR cp LEFT JOIN  FORNECEDOR f ON cp.ID_FORNECEDOR = f.ID LEFT JOIN TIPODOCUMENTO td ON cp.ID_TIPODOCUMENTO = td.ID LEFT JOIN PLACONTAS pc ON cp.ID_PLANODECONTAS = pc.ID LEFT JOIN SITUACAO s ON cp.ID_SITUACAO = s.ID";
+                    string query = "SELECT cp.id, cp.lancamento, f.NOME AS NOME_FORNECEDOR, cp.valor, cp.documento, td.descricao AS TIPO_DOCUMENTO, pc.descricao AS PLANO_DE_CONTAS, s.DESCRICAO AS SITUACAO, cp.DATAVENC, cp.DATAPG, cp.OBS FROM CONTASAPAGAR cp LEFT JOIN  FORNECEDOR f ON cp.ID_FORNECEDOR = f.ID LEFT JOIN TIPODOCUMENTO td ON cp.ID_TIPODOCUMENTO = td.ID LEFT JOIN PLACONTAS pc ON cp.ID_PLANODECONTAS = pc.ID LEFT JOIN SITUACAO s ON cp.ID_SITUACAO = s.ID";
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
@@ -49,6 +49,35 @@ namespace ContasAPagar.controller
             catch (Exception ex)
             {
                 throw new Exception($"Erro ao carregar os dados: {ex.Message}");
+            }
+        }
+        public void InserirContas(DateTime lancamento, int idForneceodor, double valor, string documento, int idDocumento, int idPlanDeCont, int idSituacao, DateTime vencimento, DateTime pagamento, string obs)
+        {
+            try
+            {
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                {
+                    string query = "insert into CONTASAPAGAR (LANCAMENTO , ID_FORNECEDOR, VALOR, DOCUMENTO, ID_TIPODOCUMENTO, ID_PLANODECONTAS, ID_SITUACAO, DATAVENC, DATAPG, OBS  ) values (@lancamento, @idForneceodor, @valor, @documento, @idDocumento, @idPlanDeCont, @idPlanDeCont, @idSituacao, @vencimento, @pagamento, @obs)";
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@lancamento", lancamento);
+                        command.Parameters.AddWithValue("@idForneceodor", idForneceodor);
+                        command.Parameters.AddWithValue("@valor", valor);
+                        command.Parameters.AddWithValue("@documento", documento);
+                        command.Parameters.AddWithValue("@idDocumento", idDocumento);
+                        command.Parameters.AddWithValue("@idPlanDeCont", idPlanDeCont);
+                        command.Parameters.AddWithValue("@idSituacao", idSituacao);
+                        command.Parameters.AddWithValue("@vencimento", vencimento);
+                        command.Parameters.AddWithValue("@pagamento", pagamento);
+                        command.Parameters.AddWithValue("@obs", obs);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao insserir os dados: {ex.Message}");
             }
         }
     }
