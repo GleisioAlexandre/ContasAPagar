@@ -64,7 +64,7 @@ namespace ContasAPagar.view
                 double valor = Convert.ToDouble(txtValor.Text.Trim());
 
 
-                if (rbApagar.Checked)
+                if (rbPago.Checked)
                 {
                     situacao = 1;
                 }

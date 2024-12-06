@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,10 +51,8 @@
             this.txtObs = new System.Windows.Forms.TextBox();
             this.cbxPlanoDeContas = new System.Windows.Forms.ComboBox();
             this.cbxFornecedor = new System.Windows.Forms.ComboBox();
-            this.bindingSourceFornecedor = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditarLancamento = new System.Windows.Forms.Button();
             this.gpbSituacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +78,7 @@
             this.label2.Location = new System.Drawing.Point(8, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Valor";
             // 
             // label3
@@ -90,7 +87,7 @@
             this.label3.Location = new System.Drawing.Point(234, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Vencimento";
             // 
             // label4
@@ -99,7 +96,7 @@
             this.label4.Location = new System.Drawing.Point(388, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Plano de Contas";
             // 
             // txtDocumento
@@ -115,7 +112,7 @@
             this.label5.Location = new System.Drawing.Point(630, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Documento";
             // 
             // label6
@@ -124,7 +121,7 @@
             this.label6.Location = new System.Drawing.Point(102, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 10;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Fornecedor";
             // 
             // label7
@@ -142,7 +139,7 @@
             this.label8.Location = new System.Drawing.Point(328, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 14;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Pagamento";
             // 
             // rbPago
@@ -152,7 +149,7 @@
             this.rbPago.Location = new System.Drawing.Point(6, 19);
             this.rbPago.Name = "rbPago";
             this.rbPago.Size = new System.Drawing.Size(50, 17);
-            this.rbPago.TabIndex = 0;
+            this.rbPago.TabIndex = 9;
             this.rbPago.TabStop = true;
             this.rbPago.Text = "Pago";
             this.rbPago.UseVisualStyleBackColor = true;
@@ -163,7 +160,7 @@
             this.rbApagar.Location = new System.Drawing.Point(83, 19);
             this.rbApagar.Name = "rbApagar";
             this.rbApagar.Size = new System.Drawing.Size(63, 17);
-            this.rbApagar.TabIndex = 1;
+            this.rbApagar.TabIndex = 10;
             this.rbApagar.Text = "A Pagar";
             this.rbApagar.UseVisualStyleBackColor = true;
             // 
@@ -172,7 +169,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(655, 198);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 43);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -231,7 +228,7 @@
             this.label9.Location = new System.Drawing.Point(422, 96);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
-            this.label9.TabIndex = 25;
+            this.label9.TabIndex = 0;
             this.label9.Text = "OBS";
             // 
             // cbxTipoDoc
@@ -249,7 +246,7 @@
             this.txtObs.Name = "txtObs";
             this.txtObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObs.Size = new System.Drawing.Size(184, 49);
-            this.txtObs.TabIndex = 26;
+            this.txtObs.TabIndex = 8;
             // 
             // cbxPlanoDeContas
             // 
@@ -257,7 +254,7 @@
             this.cbxPlanoDeContas.Location = new System.Drawing.Point(391, 55);
             this.cbxPlanoDeContas.Name = "cbxPlanoDeContas";
             this.cbxPlanoDeContas.Size = new System.Drawing.Size(218, 21);
-            this.cbxPlanoDeContas.TabIndex = 27;
+            this.cbxPlanoDeContas.TabIndex = 2;
             // 
             // cbxFornecedor
             // 
@@ -265,14 +262,14 @@
             this.cbxFornecedor.Location = new System.Drawing.Point(105, 56);
             this.cbxFornecedor.Name = "cbxFornecedor";
             this.cbxFornecedor.Size = new System.Drawing.Size(226, 21);
-            this.cbxFornecedor.TabIndex = 28;
+            this.cbxFornecedor.TabIndex = 1;
             // 
             // btnEditarLancamento
             // 
             this.btnEditarLancamento.Location = new System.Drawing.Point(333, 198);
             this.btnEditarLancamento.Name = "btnEditarLancamento";
             this.btnEditarLancamento.Size = new System.Drawing.Size(129, 43);
-            this.btnEditarLancamento.TabIndex = 29;
+            this.btnEditarLancamento.TabIndex = 12;
             this.btnEditarLancamento.Text = "Editar Lançamento";
             this.btnEditarLancamento.UseVisualStyleBackColor = true;
             // 
@@ -311,7 +308,6 @@
             this.Load += new System.EventHandler(this.FrmLancamentoContasAReceber_Load);
             this.gpbSituacao.ResumeLayout(false);
             this.gpbSituacao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,7 +338,6 @@
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.ComboBox cbxPlanoDeContas;
         private System.Windows.Forms.ComboBox cbxFornecedor;
-        private System.Windows.Forms.BindingSource bindingSourceFornecedor;
         private System.Windows.Forms.Button btnEditarLancamento;
     }
 }

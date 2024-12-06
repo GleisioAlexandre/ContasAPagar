@@ -57,7 +57,7 @@ namespace ContasAPagar.controller
             {
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "insert into CONTASAPAGAR (LANCAMENTO , ID_FORNECEDOR, VALOR, DOCUMENTO, ID_TIPODOCUMENTO, ID_PLANODECONTAS, ID_SITUACAO, DATAVENC, DATAPG, OBS  ) values (@lancamento, @idForneceodor, @valor, @documento, @idDocumento, @idPlanDeCont, @idPlanDeCont, @idSituacao, @vencimento, @pagamento, @obs)";
+                    string query = "insert into CONTASAPAGAR (LANCAMENTO , ID_FORNECEDOR, VALOR, DOCUMENTO, ID_TIPODOCUMENTO, ID_PLANODECONTAS, ID_SITUACAO, DATAVENC, DATAPG, OBS  ) values (@lancamento, @idForneceodor, @valor, @documento, @idDocumento, @idPlanDeCont, @idSituacao, @vencimento, @pagamento, @obs)";
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         command.Parameters.AddWithValue("@lancamento", lancamento);
