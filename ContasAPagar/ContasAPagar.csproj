@@ -120,10 +120,10 @@
     <Compile Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.Designer.cs">
       <DependentUpon>Frm_PlanoDeContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Contas a Pagar\FrmContasAPagar.cs">
+    <Compile Include="view\Contas a Pagar\Lancamento\FrmContasAPagar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Contas a Pagar\FrmContasAPagar.Designer.cs">
+    <Compile Include="view\Contas a Pagar\Lancamento\FrmContasAPagar.Designer.cs">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAPagar.cs">
@@ -176,7 +176,7 @@
     <EmbeddedResource Include="view\Cadastros\Plano de Contas\Frm_PlanoDeContas.resx">
       <DependentUpon>Frm_PlanoDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Contas a Pagar\FrmContasAPagar.resx">
+    <EmbeddedResource Include="view\Contas a Pagar\Lancamento\FrmContasAPagar.resx">
       <DependentUpon>FrmContasAPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Contas a Pagar\Lancamento\FrmLancamentoContasAPagar.resx">

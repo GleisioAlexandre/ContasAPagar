@@ -14,15 +14,27 @@ namespace ContasAPagar.view
 {
     public partial class FrmLancamentoContasAReceber : Form
     {
+        FrmContasAPagar contasAPagar;
+        private int? idConta;
         ClasseDoc tipodoc = new ClasseDoc();
         ClassePContas planoDeContas = new ClassePContas();
         ClasseFornecedores fornecedores = new ClasseFornecedores();
         ClasseContasAPagar contAPagar = new ClasseContasAPagar();
-        public FrmLancamentoContasAReceber()
+        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar)
         {
             InitializeComponent();
-           
+            contasAPagar = contAPAgar;
+            idConta = null;
         }
+
+        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento,string fornecedor) : this(contAPAgar)
+        {
+            Console.WriteLine("Id: " + id + " Fornecedor: " + fornecedor);
+            idConta = id;
+            txtLancamento.Text = lancamento.ToString();
+            cbxFornecedor.Text = "Erro";
+        }
+
        private void CarregaComboBoxDocumento()
         {
             var tipoDocumento = tipodoc.CarregaGridTipoDoc();
