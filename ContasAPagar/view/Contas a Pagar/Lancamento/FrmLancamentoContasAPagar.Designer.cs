@@ -263,6 +263,7 @@
             this.cbxFornecedor.Name = "cbxFornecedor";
             this.cbxFornecedor.Size = new System.Drawing.Size(226, 21);
             this.cbxFornecedor.TabIndex = 1;
+            this.cbxFornecedor.SelectedIndexChanged += new System.EventHandler(this.cbxFornecedor_SelectedIndexChanged);
             // 
             // btnEditarLancamento
             // 

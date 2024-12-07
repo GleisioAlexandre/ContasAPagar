@@ -29,10 +29,9 @@ namespace ContasAPagar.view
 
         public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento,string fornecedor) : this(contAPAgar)
         {
-            Console.WriteLine("Id: " + id + " Fornecedor: " + fornecedor);
             idConta = id;
             txtLancamento.Text = lancamento.ToString();
-            cbxFornecedor.Text = "Erro";
+            cbxFornecedor.Text = fornecedor;
         }
 
        private void CarregaComboBoxDocumento()
@@ -45,10 +44,14 @@ namespace ContasAPagar.view
         }
         private void CarregaComboBoxFornecedor()
         {
-            cbxFornecedor.DataSource = new BindingList<ClasseFornecedor>(fornecedores.CarregaComboxFornecedor());
-            cbxFornecedor.DisplayMember = "Nome";
-            cbxFornecedor.ValueMember = "Id";
-            cbxFornecedor.SelectedValue = -1;
+            foreach (var fornecedor in fornecedores.CarregaComboxFornecedor())
+            {
+                cbxFornecedor.Items.Add(fornecedor.Nome);
+                cbxFornecedor.DisplayMember = fornecedor.Nome;
+                cbxFornecedor.ValueMember = fornecedor.Id.ToString();
+                Console.WriteLine($"Id: {cbxFornecedor.DisplayMember = fornecedor.Id.ToString()} \n\f Fornecedor: {cbxFornecedor.DisplayMember = fornecedor.Nome}"); 
+            }
+           
         }
         private void CarregaComboxPlanoDeContas()
         {
@@ -62,14 +65,15 @@ namespace ContasAPagar.view
        
         private void IncluirLancamento()
         {
+            
             try
             {
                 int situacao;
                 DateTime lancamento = Convert.ToDateTime(txtLancamento.Text.Trim()).Date;
                 DateTime pagamento = Convert.ToDateTime(txtPagamento.Text.Trim()).Date;
                 DateTime vencimento = Convert.ToDateTime(txtVencimento.Text.Trim()).Date;
-                int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue.ToString());
-                int idplanoDeContas = Convert.ToInt32(cbxPlanoDeContas.SelectedValue.ToString());
+                int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue);
+                int idplanoDeContas = Convert.ToInt32(cbxPlanoDeContas.SelectedValue);
                 int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue.ToString());
                 string documento = txtDocumento.Text.Trim();
                 string obs = txtObs.Text.Trim();
@@ -115,10 +119,11 @@ namespace ContasAPagar.view
         {
             IncluirLancamento();
         }
+
+        private void cbxFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
 
 
-//14,25
-//31,92
-//3,99
