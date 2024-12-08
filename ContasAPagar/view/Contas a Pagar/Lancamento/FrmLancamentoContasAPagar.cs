@@ -14,7 +14,7 @@ namespace ContasAPagar.view
 {
     public partial class FrmLancamentoContasAReceber : Form
     {
-        FrmContasAPagar contasAPagar;
+        private FrmContasAPagar ContasAPagar;
         private int? idConta;
         private int? fornecedorId;
         private int? documentoId;
@@ -26,11 +26,15 @@ namespace ContasAPagar.view
         public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar)
         {
             InitializeComponent();
-            contasAPagar = contAPAgar;
+            ContasAPagar = contAPAgar;
             idConta = null;
             fornecedorId = -1;
             documentoId = -1;
             planoDeContasId = -1;
+        }
+        public FrmLancamentoContasAReceber(FrmContasAPagar contAPagar, int id)
+        {
+            idConta = id;
         }
 
         public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento, int idFornecedor, int idDocumetno, int idPlanoDeContas, double valor, DateTime vencimento, DateTime pagamento, int idSituacao, string documento, string obs) : this(contAPAgar)
@@ -88,7 +92,7 @@ namespace ContasAPagar.view
             
             try
             {
-                int situacao;
+                int situacao = rbPago.Checked ? 1 : 2;
                 DateTime lancamento = Convert.ToDateTime(txtLancamento.Text.Trim()).Date;
                 DateTime pagamento = Convert.ToDateTime(txtPagamento.Text.Trim()).Date;
                 DateTime vencimento = Convert.ToDateTime(txtVencimento.Text.Trim()).Date;
@@ -98,21 +102,10 @@ namespace ContasAPagar.view
                 string documento = txtDocumento.Text.Trim();
                 string obs = txtObs.Text.Trim();
                 double valor = Convert.ToDouble(txtValor.Text.Trim());
-
-
-                if (rbPago.Checked)
-                {
-                    situacao = 1;
-                }
-                else
-                {
-                    situacao = 2;
-                }
-
-
                 contAPagar.InserirContas(lancamento, idFornecedor, valor, documento, idTipoDocumento, idplanoDeContas, situacao, vencimento, pagamento, obs);
-
-                MessageBox.Show("Dados Inseridos com sucesso!");
+                MessageBox.Show("Dados Inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ContasAPagar.CarregaGridContasAPagar();
+                this.Close();
             }
             catch (Exception ex )
             {
@@ -121,13 +114,35 @@ namespace ContasAPagar.view
         }
         private void EditarLancamento()
         {
-
+            try
+            {
+                int situacao = rbPago.Checked ? 1 : 2;
+                DateTime lancamento = Convert.ToDateTime(txtLancamento.Text.Trim()).Date;
+                DateTime pagamento = Convert.ToDateTime(txtPagamento.Text.Trim()).Date;
+                DateTime vencimento = Convert.ToDateTime(txtVencimento.Text.Trim()).Date;
+                int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue);
+                int idplanoDeContas = Convert.ToInt32(cbxPlanoDeContas.SelectedValue);
+                int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue);
+                string documento = txtDocumento.Text.Trim();
+                string obs = txtObs.Text.Trim();
+                double valor = Convert.ToDouble(txtValor.Text.Trim());
+                contAPagar.EditarContas(lancamento, idFornecedor, idplanoDeContas, documento, valor, idTipoDocumento, vencimento, pagamento, obs, situacao, idConta.Value);
+                MessageBox.Show("Dados Atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ContasAPagar.CarregaGridContasAPagar();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro {ex}");
+            }
         }
         private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
         {
             CarregaComboBoxDocumento(documentoId.Value);
             CarregaComboxPlanoDeContas(planoDeContasId.Value);
             CarregaComboBoxFornecedor(fornecedorId.Value);
+            btnEditarLancamento.Enabled = idConta != null;
+            btnIncluirLancamento.Enabled = idConta == null;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -140,8 +155,9 @@ namespace ContasAPagar.view
             IncluirLancamento();
         }
 
-        private void cbxFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnEditarLancamento_Click(object sender, EventArgs e)
         {
+            EditarLancamento();
         }
     }
 }

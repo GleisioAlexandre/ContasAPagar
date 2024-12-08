@@ -21,7 +21,7 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
-        private void CarregaGridContasAPagar()
+        public void CarregaGridContasAPagar()
         {
            try
             {

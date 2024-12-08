@@ -425,6 +425,7 @@
             this.Name = "Frm_CadFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedor";
+            this.Load += new System.EventHandler(this.Frm_CadFornecedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

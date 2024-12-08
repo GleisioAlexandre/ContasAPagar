@@ -166,6 +166,12 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
         {
             DeletarFornecedor();
         }
+
+        private void Frm_CadFornecedor_Load(object sender, EventArgs e)
+        {
+            btnEditar.Enabled = idFornecedor!= null;
+            btnIncluir.Enabled = idFornecedor == null;
+        }
     }
 }
 

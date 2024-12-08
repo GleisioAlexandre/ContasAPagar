@@ -15,7 +15,7 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
     public partial class Frm_CadPlanoDeContas : Form
     {
         private Frm_PlanoDeContas frm_PlanoDeContas;
-        private int? idContasAPagar;
+        private int? idPlanoDeContas;
         private ClassePContas classePContas = new ClassePContas();
         public Frm_CadPlanoDeContas(Frm_PlanoDeContas plano_De_Contas)
         {
@@ -24,7 +24,7 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         }
         public Frm_CadPlanoDeContas(Frm_PlanoDeContas planoDeContas, int id, string descricao): this(planoDeContas)
         {
-            idContasAPagar = id;
+            idPlanoDeContas = id;
             txtDescricao.Text = descricao;
         }
         public void InserirPlanoDeContas()
@@ -53,14 +53,14 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         {
             try
             {
-                int id = idContasAPagar.Value;
+                int id = idPlanoDeContas.Value;
                 string descricao = txtDescricao.Text.Trim();
                 if (string.IsNullOrWhiteSpace(descricao))
                 {
                     MessageBox.Show("O campos descrição é obrigatório!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (idContasAPagar.HasValue)
+                if (idPlanoDeContas.HasValue)
                 {
                     classePContas.EditarPlanoDeContas(id, descricao);
                     MessageBox.Show("Registro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,14 +77,14 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         {
             try
             {
-                int id = idContasAPagar.Value;
+                int id = idPlanoDeContas.Value;
                 string descricao = txtDescricao.Text.Trim();
                 if (string.IsNullOrWhiteSpace(descricao))
                 {
                     MessageBox.Show("O campos descrição é obrigatório!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (idContasAPagar.HasValue)
+                if (idPlanoDeContas.HasValue)
                 {
                     if (MessageBox.Show("Tem certeza que deseja remover o registro", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
@@ -119,6 +119,12 @@ namespace ContasAPagar.view.Cadastros.Plano_de_Contas
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             DeletarPlanoDeContas();
+        }
+
+        private void Frm_CadPlanoDeContas_Load(object sender, EventArgs e)
+        {
+            btnEditar.Enabled = idPlanoDeContas != null;
+            btnIncluir.Enabled = idPlanoDeContas == null;
         }
     }
 }

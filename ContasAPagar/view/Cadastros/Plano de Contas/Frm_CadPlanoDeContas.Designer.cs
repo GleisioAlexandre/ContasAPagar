@@ -104,6 +104,7 @@
             this.Name = "Frm_CadPlanoDeContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Plano de Contas";
+            this.Load += new System.EventHandler(this.Frm_CadPlanoDeContas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

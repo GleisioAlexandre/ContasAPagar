@@ -84,5 +84,39 @@ namespace ContasAPagar.controller
                 throw new Exception($"Erro ao insserir os dados: {ex.Message}");
             }
         }
+        public void EditarContas(DateTime LANCAMENTO, int ID_FORNECEDOR, int ID_PLANODECONTAS, string DOCUMENTO, double VALOR, int ID_TIPODOCUMENTO, DateTime DATAVENC, DateTime DATAPG, string OBS, int ID_SITUACAO, int IDCONTAS)
+        {
+            try
+            {
+                using (FbConnection cx = new FbConnection(config.StringDeConexa()))
+                {
+                    string query = "update CONTASAPAGAR set  LANCAMENTO = @LANCAMENTO, ID_FORNECEDOR = @ID_FORNECEDOR, ID_PLANODECONTAS = @ID_PLANODECONTAS, DOCUMENTO = @DOCUMENTO, VALOR = @VALOR, ID_TIPODOCUMENTO = @ID_TIPODOCUMENTO, DATAVENC = @DATAVENC, DATAPG = @DATAPG, OBS = @OBS, ID_SITUACAO = @ID_SITUACAO where (ID = @ID)";
+                    using (FbCommand command = new FbCommand(query, cx))
+                    {
+                        command.Parameters.AddWithValue("@LANCAMENTO", LANCAMENTO);
+                        command.Parameters.AddWithValue("@ID_FORNECEDOR", ID_FORNECEDOR);
+                        command.Parameters.AddWithValue("@ID_PLANODECONTAS", ID_PLANODECONTAS);
+                        command.Parameters.AddWithValue("@DOCUMENTO", DOCUMENTO);
+                        command.Parameters.AddWithValue("@VALOR", VALOR);
+                        command.Parameters.AddWithValue("@ID_TIPODOCUMENTO", ID_TIPODOCUMENTO);
+                        command.Parameters.AddWithValue("@DATAVENC", DATAVENC);
+                        command.Parameters.AddWithValue("@DATAPG", DATAPG);
+                        command.Parameters.AddWithValue("@OBS", OBS);
+                        command.Parameters.AddWithValue("@ID_SITUACAO", ID_SITUACAO);
+                        command.Parameters.AddWithValue("@ID", IDCONTAS);
+                        cx.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao atualizar os dados: {ex.Message}");
+            }
+            
+        }
     }
 }
+
+
+

@@ -45,7 +45,9 @@ namespace ContasAPagar.view.Cadastros.Documento
                 Frm_TipoDocumento frm_TipoDocumento = (Frm_TipoDocumento)Application.OpenForms["Frm_TipoDocumento"];
                 frm_TipoDocumento.CarregaGrid();
                 this.Close();
+               
 
+                
             }
             catch (Exception ex)
             {
@@ -115,7 +117,8 @@ namespace ContasAPagar.view.Cadastros.Documento
 
         private void Frm_CadTipoDocumento_Load(object sender, EventArgs e)
         {
-
+            btnEditar.Enabled = idTipoDoc != null;
+            btnIncluir.Enabled = idTipoDoc == null;
         }
     }
 }
