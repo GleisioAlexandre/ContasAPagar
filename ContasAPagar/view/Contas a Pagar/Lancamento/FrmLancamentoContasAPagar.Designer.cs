@@ -93,7 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(388, 40);
+            this.label4.Location = new System.Drawing.Point(422, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 0;
@@ -101,15 +101,16 @@
             // 
             // txtDocumento
             // 
-            this.txtDocumento.Location = new System.Drawing.Point(633, 56);
+            this.txtDocumento.Location = new System.Drawing.Point(639, 56);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(151, 20);
+            this.txtDocumento.Size = new System.Drawing.Size(143, 20);
             this.txtDocumento.TabIndex = 3;
+            this.txtDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(630, 40);
+            this.label5.Location = new System.Drawing.Point(636, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 0;
@@ -251,17 +252,17 @@
             // cbxPlanoDeContas
             // 
             this.cbxPlanoDeContas.FormattingEnabled = true;
-            this.cbxPlanoDeContas.Location = new System.Drawing.Point(391, 55);
+            this.cbxPlanoDeContas.Location = new System.Drawing.Point(425, 55);
             this.cbxPlanoDeContas.Name = "cbxPlanoDeContas";
-            this.cbxPlanoDeContas.Size = new System.Drawing.Size(218, 21);
+            this.cbxPlanoDeContas.Size = new System.Drawing.Size(184, 21);
             this.cbxPlanoDeContas.TabIndex = 2;
             // 
             // cbxFornecedor
             // 
             this.cbxFornecedor.FormattingEnabled = true;
-            this.cbxFornecedor.Location = new System.Drawing.Point(105, 56);
+            this.cbxFornecedor.Location = new System.Drawing.Point(106, 56);
             this.cbxFornecedor.Name = "cbxFornecedor";
-            this.cbxFornecedor.Size = new System.Drawing.Size(226, 21);
+            this.cbxFornecedor.Size = new System.Drawing.Size(297, 21);
             this.cbxFornecedor.TabIndex = 1;
             this.cbxFornecedor.SelectedIndexChanged += new System.EventHandler(this.cbxFornecedor_SelectedIndexChanged);
             // 

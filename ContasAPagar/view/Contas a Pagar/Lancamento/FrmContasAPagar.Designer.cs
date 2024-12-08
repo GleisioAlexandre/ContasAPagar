@@ -61,6 +61,7 @@
             this.id_Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPlanoDeConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSituicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -90,7 +91,8 @@
             this.obs,
             this.id_Fornecedor,
             this.idDocumento,
-            this.idPlanoDeConta});
+            this.idPlanoDeConta,
+            this.idSituicao});
             this.dtgContasAPagar.DataSource = this.bindingSource;
             this.dtgContasAPagar.Location = new System.Drawing.Point(12, 160);
             this.dtgContasAPagar.Name = "dtgContasAPagar";
@@ -324,7 +326,7 @@
             // 
             // id_Fornecedor
             // 
-            this.id_Fornecedor.DataPropertyName = "IDFORNECEDOR";
+            this.id_Fornecedor.DataPropertyName = "idfornecedor";
             this.id_Fornecedor.HeaderText = "IdFornecedor";
             this.id_Fornecedor.Name = "id_Fornecedor";
             this.id_Fornecedor.ReadOnly = true;
@@ -345,6 +347,14 @@
             this.idPlanoDeConta.Name = "idPlanoDeConta";
             this.idPlanoDeConta.ReadOnly = true;
             this.idPlanoDeConta.Visible = false;
+            // 
+            // idSituicao
+            // 
+            this.idSituicao.DataPropertyName = "IdSituacao";
+            this.idSituicao.HeaderText = "IDSITUACAO";
+            this.idSituicao.Name = "idSituicao";
+            this.idSituicao.ReadOnly = true;
+            this.idSituicao.Visible = false;
             // 
             // FrmContasAPagar
             // 
@@ -402,5 +412,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanoDeConta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSituicao;
     }
 }

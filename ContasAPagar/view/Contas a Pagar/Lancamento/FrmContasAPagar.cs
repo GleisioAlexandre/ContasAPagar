@@ -15,15 +15,11 @@ namespace ContasAPagar.view
     public partial class FrmContasAPagar : Form
     {
         private int? idFornecedor;
-        private int? idDocumetno;
-        private int? idPlanoDeContas;
         ClasseContasAPagar contAPagar = new ClasseContasAPagar();
         public FrmContasAPagar()
         {
             InitializeComponent();
             idFornecedor = null;
-            idDocumetno = null;
-            idPlanoDeContas = null;
         }
         private void CarregaGridContasAPagar()
         {
@@ -61,12 +57,15 @@ namespace ContasAPagar.view
                     int id = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[0].Value);
                     DateTime lancamento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[1].Value);
                     double valor = Convert.ToDouble(dtgContasAPagar.Rows[e.RowIndex].Cells[3].Value);
+                    string documento = dtgContasAPagar.Rows[e.RowIndex].Cells[5].Value.ToString();
                     DateTime vencimento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[7].Value);
                     DateTime pagamento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[8].Value);
+                    string obs = dtgContasAPagar.Rows[e.RowIndex].Cells[10].Value.ToString();
                     int idFornecedorSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[11].Value);
                     int idDocumentoSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[12].Value);
                     int idPlanoDeContasSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[13].Value);
-                    FrmLancamentoContasAReceber lancamentoContasAReceber = new FrmLancamentoContasAReceber(this, id, lancamento, idFornecedorSelecionado, idDocumentoSelecionado, idPlanoDeContasSelecionado, valor, vencimento, pagamento);
+                    int idSituacao = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[14].Value);
+                    FrmLancamentoContasAReceber lancamentoContasAReceber = new FrmLancamentoContasAReceber(this, id, lancamento, idFornecedorSelecionado, idDocumentoSelecionado, idPlanoDeContasSelecionado, valor, vencimento, pagamento, idSituacao, documento, obs);
                     lancamentoContasAReceber.ShowDialog();
 
                 }

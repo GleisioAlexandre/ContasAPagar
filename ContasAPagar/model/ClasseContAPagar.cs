@@ -22,5 +22,6 @@ namespace ContasAPagar.model
         public int IdFornecedor { get; set; }
         public int IdPlanoDeContas { get; set; }
         public int IdDocumento { get; set; }
+        public int IdSituacao { get; set; }
     }
 }

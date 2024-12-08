@@ -33,7 +33,7 @@ namespace ContasAPagar.view
             planoDeContasId = -1;
         }
 
-        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento, int idFornecedor, int idDocumetno, int idPlanoDeContas, double valor, DateTime vencimento, DateTime pagamento) : this(contAPAgar)
+        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento, int idFornecedor, int idDocumetno, int idPlanoDeContas, double valor, DateTime vencimento, DateTime pagamento, int idSituacao, string documento, string obs) : this(contAPAgar)
         {
             fornecedorId = idFornecedor;
             documentoId = idDocumetno;
@@ -46,6 +46,11 @@ namespace ContasAPagar.view
             txtValor.Text = valor.ToString();
             txtVencimento.Text = vencimento.ToString();
             txtPagamento.Text = pagamento.ToString();
+            rbPago.Checked = (idSituacao == 1);
+            txtDocumento.Text = documento;
+            rbPago.Checked = (idSituacao == 1);
+            rbApagar.Checked = !rbPago.Checked;
+            txtObs.Text = obs;
         }
 
        private void CarregaComboBoxDocumento(int documentoIdSelecionado)
