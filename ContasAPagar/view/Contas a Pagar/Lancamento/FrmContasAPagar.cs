@@ -23,7 +23,7 @@ namespace ContasAPagar.view
         }
         public void CarregaGridContasAPagar()
         {
-           try
+            try
             {
                 var lista = contAPagar.CarregaGridContasAPagar();
                 bindingSource.DataSource = new BindingList<ClasseContAPagar>(lista);
@@ -36,18 +36,15 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro ao Carregar os dados! \n\f Erro: {ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnNovoLancamento_Click(object sender, EventArgs e)
         {
             FrmLancamentoContasAReceber lancamento = new FrmLancamentoContasAReceber(this);
             lancamento.ShowDialog();
         }
-       
         private void FrmContasAPagar_Load(object sender, EventArgs e)
         {
             CarregaGridContasAPagar();
         }
-
         private void dtgContasAPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -67,7 +64,6 @@ namespace ContasAPagar.view
                     int idSituacao = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[14].Value);
                     FrmLancamentoContasAReceber lancamentoContasAReceber = new FrmLancamentoContasAReceber(this, id, lancamento, idFornecedorSelecionado, idDocumentoSelecionado, idPlanoDeContasSelecionado, valor, vencimento, pagamento, idSituacao, documento, obs);
                     lancamentoContasAReceber.ShowDialog();
-
                 }
             }
             catch (Exception ex)
@@ -75,10 +71,33 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro: {ex}");
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void rbDoc_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (rbDoc.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por documento";
+            }
+        }
+        private void rbLancamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbLancamento.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa pelo lançamento";
+            }
+        }
+        private void rbVencimento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbVencimento.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa pelo vencimento";
+            }
+        }
+        private void rbPagamento_CheckedChanged(object sender, EventArgs e)
+        {
+             if (rbPagamento.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa pelo Pagamento";
+            }
         }
     }
 }
