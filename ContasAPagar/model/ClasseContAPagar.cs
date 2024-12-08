@@ -19,5 +19,8 @@ namespace ContasAPagar.model
         public DateTime? DataVenc { get; set; }
         public DateTime? DataPg { get; set; }
         public string Obs { get; set; }
+        public int IdFornecedor { get; set; }
+        public int IdPlanoDeContas { get; set; }
+        public int IdDocumento { get; set; }
     }
 }

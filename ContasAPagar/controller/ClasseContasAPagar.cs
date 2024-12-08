@@ -19,7 +19,7 @@ namespace ContasAPagar.controller
                 List<ClasseContAPagar> lista = new List<ClasseContAPagar>();
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
-                    string query = "SELECT cp.id, cp.lancamento, f.NOME AS NOME_FORNECEDOR, cp.valor, cp.documento, td.descricao AS TIPO_DOCUMENTO, pc.descricao AS PLANO_DE_CONTAS, s.DESCRICAO AS SITUACAO, cp.DATAVENC, cp.DATAPG, cp.OBS FROM CONTASAPAGAR cp LEFT JOIN  FORNECEDOR f ON cp.ID_FORNECEDOR = f.ID LEFT JOIN TIPODOCUMENTO td ON cp.ID_TIPODOCUMENTO = td.ID LEFT JOIN PLACONTAS pc ON cp.ID_PLANODECONTAS = pc.ID LEFT JOIN SITUACAO s ON cp.ID_SITUACAO = s.ID";
+                    string query = "SELECT cp.id, cp.lancamento, f.nome , cp.valor, cp.documento, td.descricao , pc.descricao, s.DESCRICAO, cp.DATAVENC, cp.DATAPG, cp.OBS ,cp.ID_FORNECEDOR, cp.id_tipodocumento, cp.id_planodecontas FROM CONTASAPAGAR cp LEFT JOIN  FORNECEDOR f ON cp.ID_FORNECEDOR = f.ID LEFT JOIN TIPODOCUMENTO td ON cp.ID_TIPODOCUMENTO = td.ID LEFT JOIN PLACONTAS pc ON cp.ID_PLANODECONTAS = pc.ID LEFT JOIN SITUACAO s ON cp.ID_SITUACAO = s.ID";
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
@@ -39,6 +39,9 @@ namespace ContasAPagar.controller
                                     DataVenc = reader.IsDBNull(8) ? (DateTime?)null : reader.GetDateTime(8),
                                     DataPg = reader.IsDBNull(9) ? (DateTime?)null : reader.GetDateTime(9),
                                     Obs = reader.IsDBNull(10) ? string.Empty : reader.GetString(10),
+                                    IdFornecedor = reader.IsDBNull(11) ? (0) : reader.GetInt32(11),
+                                    IdDocumento = reader.IsDBNull(12) ? (0) : reader.GetInt32(12),
+                                    IdPlanoDeContas = reader.IsDBNull(13) ? (0) : reader.GetInt32(13),
                                 });
                             }
                         }

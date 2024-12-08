@@ -14,17 +14,24 @@ namespace ContasAPagar.view
 {
     public partial class FrmContasAPagar : Form
     {
+        private int? idFornecedor;
+        private int? idDocumetno;
+        private int? idPlanoDeContas;
         ClasseContasAPagar contAPagar = new ClasseContasAPagar();
         public FrmContasAPagar()
         {
             InitializeComponent();
+            idFornecedor = null;
+            idDocumetno = null;
+            idPlanoDeContas = null;
         }
         private void CarregaGridContasAPagar()
         {
-            try
+           try
             {
                 var lista = contAPagar.CarregaGridContasAPagar();
                 bindingSource.DataSource = new BindingList<ClasseContAPagar>(lista);
+                idFornecedor = Convert.ToInt32(dtgContasAPagar.SelectedRows[0].Cells["ID_FORNECEDOR"].Value);
                 dtgContasAPagar.DataSource = bindingSource;
                 bindingNavigator.BindingSource = bindingSource;
             }
@@ -53,18 +60,26 @@ namespace ContasAPagar.view
                 {
                     int id = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[0].Value);
                     DateTime lancamento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[1].Value);
-                    string fornecedor = dtgContasAPagar.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-                    FrmLancamentoContasAReceber lancamentoContasAReceber = new FrmLancamentoContasAReceber(this, id, lancamento, fornecedor);
+                    double valor = Convert.ToDouble(dtgContasAPagar.Rows[e.RowIndex].Cells[3].Value);
+                    DateTime vencimento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[7].Value);
+                    DateTime pagamento = Convert.ToDateTime(dtgContasAPagar.Rows[e.RowIndex].Cells[8].Value);
+                    int idFornecedorSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[11].Value);
+                    int idDocumentoSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[12].Value);
+                    int idPlanoDeContasSelecionado = Convert.ToInt32(dtgContasAPagar.Rows[e.RowIndex].Cells[13].Value);
+                    FrmLancamentoContasAReceber lancamentoContasAReceber = new FrmLancamentoContasAReceber(this, id, lancamento, idFornecedorSelecionado, idDocumentoSelecionado, idPlanoDeContasSelecionado, valor, vencimento, pagamento);
                     lancamentoContasAReceber.ShowDialog();
-                    Console.WriteLine("Id:" + id + " Fornecedor: " + fornecedor);
 
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Erro: {ex}");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

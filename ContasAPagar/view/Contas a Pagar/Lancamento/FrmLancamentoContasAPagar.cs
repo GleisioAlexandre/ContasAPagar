@@ -16,6 +16,9 @@ namespace ContasAPagar.view
     {
         FrmContasAPagar contasAPagar;
         private int? idConta;
+        private int? fornecedorId;
+        private int? documentoId;
+        private int? planoDeContasId;
         ClasseDoc tipodoc = new ClasseDoc();
         ClassePContas planoDeContas = new ClassePContas();
         ClasseFornecedores fornecedores = new ClasseFornecedores();
@@ -25,41 +28,53 @@ namespace ContasAPagar.view
             InitializeComponent();
             contasAPagar = contAPAgar;
             idConta = null;
+            fornecedorId = -1;
+            documentoId = -1;
+            planoDeContasId = -1;
         }
 
-        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento,string fornecedor) : this(contAPAgar)
+        public FrmLancamentoContasAReceber(FrmContasAPagar contAPAgar, int id, DateTime lancamento, int idFornecedor, int idDocumetno, int idPlanoDeContas, double valor, DateTime vencimento, DateTime pagamento) : this(contAPAgar)
         {
+            fornecedorId = idFornecedor;
+            documentoId = idDocumetno;
+            planoDeContasId = idPlanoDeContas;
             idConta = id;
             txtLancamento.Text = lancamento.ToString();
-            cbxFornecedor.Text = fornecedor;
+            cbxFornecedor.SelectedValue = fornecedorId;
+            cbxTipoDoc.SelectedValue = idDocumetno;
+            cbxPlanoDeContas.SelectedValue = idPlanoDeContas;
+            txtValor.Text = valor.ToString();
+            txtVencimento.Text = vencimento.ToString();
+            txtPagamento.Text = pagamento.ToString();
         }
 
-       private void CarregaComboBoxDocumento()
+       private void CarregaComboBoxDocumento(int documentoIdSelecionado)
         {
+            documentoId = documentoIdSelecionado;
             var tipoDocumento = tipodoc.CarregaGridTipoDoc();
             cbxTipoDoc.DataSource = tipoDocumento;
             cbxTipoDoc.DisplayMember = "Descricao";
             cbxTipoDoc.ValueMember = "Id";
-            cbxTipoDoc.SelectedValue = -1;
+            cbxTipoDoc.SelectedValue = documentoIdSelecionado;
         }
-        private void CarregaComboBoxFornecedor()
+        private void CarregaComboBoxFornecedor(int fornecedorIdSelecionado)
         {
-            foreach (var fornecedor in fornecedores.CarregaComboxFornecedor())
-            {
-                cbxFornecedor.Items.Add(fornecedor.Nome);
-                cbxFornecedor.DisplayMember = fornecedor.Nome;
-                cbxFornecedor.ValueMember = fornecedor.Id.ToString();
-                Console.WriteLine($"Id: {cbxFornecedor.DisplayMember = fornecedor.Id.ToString()} \n\f Fornecedor: {cbxFornecedor.DisplayMember = fornecedor.Nome}"); 
-            }
-           
+            fornecedorId = fornecedorIdSelecionado;
+            var listaFornecedores = fornecedores.CarregaComboxFornecedor();
+            cbxFornecedor.DataSource = listaFornecedores;
+            cbxFornecedor.DisplayMember = "Nome";
+            cbxFornecedor.ValueMember = "Id";
+            cbxFornecedor.SelectedValue = fornecedorIdSelecionado;
+
         }
-        private void CarregaComboxPlanoDeContas()
+        private void CarregaComboxPlanoDeContas(int documentoIdSelecionado)
         {
+            documentoId = documentoIdSelecionado;
             var listaPlanoDeContas = planoDeContas.CarregaGridPDContas();
             cbxPlanoDeContas.DataSource = listaPlanoDeContas;
             cbxPlanoDeContas.DisplayMember = "Descricao";
             cbxPlanoDeContas.ValueMember = "Id";
-            cbxPlanoDeContas.SelectedValue = -1;
+            cbxPlanoDeContas.SelectedValue = documentoIdSelecionado;
             
         }
        
@@ -74,7 +89,7 @@ namespace ContasAPagar.view
                 DateTime vencimento = Convert.ToDateTime(txtVencimento.Text.Trim()).Date;
                 int idFornecedor = Convert.ToInt32(cbxFornecedor.SelectedValue);
                 int idplanoDeContas = Convert.ToInt32(cbxPlanoDeContas.SelectedValue);
-                int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue.ToString());
+                int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue);
                 string documento = txtDocumento.Text.Trim();
                 string obs = txtObs.Text.Trim();
                 double valor = Convert.ToDouble(txtValor.Text.Trim());
@@ -105,9 +120,9 @@ namespace ContasAPagar.view
         }
         private void FrmLancamentoContasAReceber_Load(object sender, EventArgs e)
         {
-            CarregaComboBoxDocumento();
-            CarregaComboxPlanoDeContas();
-            CarregaComboBoxFornecedor();
+            CarregaComboBoxDocumento(documentoId.Value);
+            CarregaComboxPlanoDeContas(planoDeContasId.Value);
+            CarregaComboBoxFornecedor(fornecedorId.Value);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
