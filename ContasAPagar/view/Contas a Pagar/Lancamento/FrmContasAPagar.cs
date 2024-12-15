@@ -25,11 +25,21 @@ namespace ContasAPagar.view
         {
             try
             {
-                var lista = contAPagar.CarregaGridContasAPagar();
-                bindingSource.DataSource = new BindingList<ClasseContAPagar>(lista);
+                DataTable dt = new DataTable();
+                dt = contAPagar.CarregaGridContasAPagar();
+                bindingSource.DataSource = dt;
                 idFornecedor = Convert.ToInt32(dtgContasAPagar.SelectedRows[0].Cells["ID_FORNECEDOR"].Value);
                 dtgContasAPagar.DataSource = bindingSource;
                 bindingNavigator.BindingSource = bindingSource;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        Console.WriteLine($"Coluna: {column.ColumnName}, Valor: {row[column]}");
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -82,21 +92,38 @@ namespace ContasAPagar.view
         {
             if (rbLancamento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa pelo lançamento";
+                lblDescricaoPesquisa.Text = "Pesquisa por lançamento";
             }
         }
         private void rbVencimento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbVencimento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa pelo vencimento";
+                lblDescricaoPesquisa.Text = "Pesquisa por vencimento";
             }
         }
-        private void rbPagamento_CheckedChanged(object sender, EventArgs e)
+       
+        private void rbsituacao_CheckedChanged(object sender, EventArgs e)
         {
-             if (rbPagamento.Checked)
+            if (rbsituacao.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa pelo Pagamento";
+                lblDescricaoPesquisa.Text = "Pesquisa por situação";
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (rbDoc.Checked)
+            {
+                bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
+            }
+            else if (rbFornecedor.Checked)
+            {
+                bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
+            }
+            else if (rbsituacao.Checked)
+            {
+                bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'"; 
             }
         }
     }

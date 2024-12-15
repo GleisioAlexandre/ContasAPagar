@@ -3,6 +3,7 @@ using ContasAPagar.model;
 using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,11 @@ namespace ContasAPagar.controller
     class ClasseContasAPagar
     {
         ClasseConfig config = new ClasseConfig();
-        public List<ClasseContAPagar> CarregaGridContasAPagar()
+        public DataTable CarregaGridContasAPagar()
         {
             try
             {
+                DataTable dt = new DataTable();
                 List<ClasseContAPagar> lista = new List<ClasseContAPagar>();
                 using (FbConnection cx = new FbConnection(config.StringDeConexa()))
                 {
@@ -23,32 +25,12 @@ namespace ContasAPagar.controller
                     using (FbCommand command = new FbCommand(query, cx))
                     {
                         cx.Open();
-                        using(FbDataReader reader =command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                lista.Add(new ClasseContAPagar {
-                                    Id = reader.IsDBNull(0) ? (0) : reader.GetInt32(0),
-                                    Lancamento = reader.IsDBNull(1) ? (DateTime?)null : reader.GetDateTime(1),
-                                    NomeFornecedor = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
-                                    Valor = reader.IsDBNull(3) ? (double?)null : reader.GetDouble(3),
-                                    Documento = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
-                                    TipoDocumento = reader.IsDBNull(5) ? string.Empty : reader.GetString(5),
-                                    PlanoDeContas = reader.IsDBNull(6) ? string.Empty : reader.GetString(6),
-                                    Situacao = reader.IsDBNull(7) ? string.Empty : reader.GetString(7),
-                                    DataVenc = reader.IsDBNull(8) ? (DateTime?)null : reader.GetDateTime(8),
-                                    DataPg = reader.IsDBNull(9) ? (DateTime?)null : reader.GetDateTime(9),
-                                    Obs = reader.IsDBNull(10) ? string.Empty : reader.GetString(10),
-                                    IdFornecedor = reader.IsDBNull(11) ? (0) : reader.GetInt32(11),
-                                    IdDocumento = reader.IsDBNull(12) ? (0) : reader.GetInt32(12),
-                                    IdPlanoDeContas = reader.IsDBNull(13) ? (0) : reader.GetInt32(13),
-                                    IdSituacao = reader.IsDBNull(14) ? (0) : reader.GetInt32(14),
-                                });
-                            }
-                        }
+                        FbDataAdapter adapter = new FbDataAdapter(command);
+                        adapter.Fill(dt);
+
+                        return dt;
                     }
                 }
-                    return lista;
             }
             catch (Exception ex)
             {
