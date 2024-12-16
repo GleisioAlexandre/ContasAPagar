@@ -21,6 +21,21 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
+        public void CalculoarValor()
+        {
+            double soma = 0;
+            foreach (DataGridViewRow row in dtgContasAPagar.Rows)
+            {
+                if (row.Cells["Valor"].Value != null && !row.IsNewRow)
+                {
+                    if (double.TryParse(row.Cells["Valor"].Value.ToString(), out double valor))
+                    {
+                        soma += valor;
+                    }
+                }
+            }
+            lblValor.Text = $"{soma:C2}";
+        }
         public void CarregaGridContasAPagar()
         {
             try
@@ -54,6 +69,7 @@ namespace ContasAPagar.view
         private void FrmContasAPagar_Load(object sender, EventArgs e)
         {
             CarregaGridContasAPagar();
+            CalculoarValor();
         }
         private void dtgContasAPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -154,31 +170,47 @@ namespace ContasAPagar.view
                 if (txtDados.Text != "")
                 {
                     bindingSource.Filter = $"LANCAMENTO = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
                     return;
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                    CalculoarValor();
                 }
             }
             else if (rbFornecedor.Checked)
             {
                 bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
             }
             else if (rbPlanoDeContas.Checked)
             {
                 bindingSource.Filter = $"DESCRICAO1 LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
             }
             else if (rbDoc.Checked)
             {
                 bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
             }
              else if (rbTipoPagamento.Checked)
             {
                 bindingSource.Filter = $"DESCRICAO LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
             }
             else if (rbVencimento.Checked)
             {
                 if (txtDados.Text != "")
                 {
                     bindingSource.Filter = $"DATAVENC = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
                     return;
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                    CalculoarValor();
                 }
             }
              else if (rbPagamento.Checked)
@@ -186,22 +218,40 @@ namespace ContasAPagar.view
                 if (txtDados.Text != "")
                 {
                     bindingSource.Filter = $"DATAPG = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
+                    return;
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                    CalculoarValor();
                 }
             }
            
             else if (rbsituacao.Checked)
             {
-                bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'"; 
-
-               
+                bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
             }
-            else if (txtDados.Text.Equals(""))
+            else 
             {
                 bindingSource.Filter = null;
+                CalculoarValor();
             }
+          
         }
 
-       
-       
+        private void imprimirToolStripButton_Click(object sender, EventArgs e)
+        {
+            Prints print = new Prints();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.Title = "Salvar PDF";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName);
+            }
+        }
     }
 }
