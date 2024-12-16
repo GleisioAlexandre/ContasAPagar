@@ -81,50 +81,127 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro: {ex}");
             }
         }
-        private void rbDoc_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbDoc.Checked)
-            {
-                lblDescricaoPesquisa.Text = "Pesquisa por documento";
-            }
-        }
+       
         private void rbLancamento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbLancamento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por lançamento";
+                lblDescricaoPesquisa.Text = "Pesquisa por Lançamento";
             }
         }
+
+        private void rbFornecedor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFornecedor.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por Fornecedor";
+            }
+        }
+
+        private void rbPlanoDeContas_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rbPlanoDeContas.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por Plano de Contas";
+            }
+        }
+
+        private void rbDoc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbDoc.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por Documento";
+            }
+        }
+
+        private void rbTipoPagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTipoPagamento.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por Tipo de Pagamento";
+            }
+
+        }
+
         private void rbVencimento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbVencimento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por vencimento";
+                lblDescricaoPesquisa.Text = "Pesquisa por Vencimento";
             }
         }
-       
+        private void rbPagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPagamento.Checked)
+            {
+                lblDescricaoPesquisa.Text = "Pesquisa por Pagamento";
+            }
+        }
         private void rbsituacao_CheckedChanged(object sender, EventArgs e)
         {
             if (rbsituacao.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por situação";
+                lblDescricaoPesquisa.Text = "Pesquisa por Situação";
             }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (rbDoc.Checked)
+           
+             if (rbLancamento.Checked)
             {
-                bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"LANCAMENTO = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                    return;
+                }
             }
             else if (rbFornecedor.Checked)
             {
                 bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
             }
+            else if (rbPlanoDeContas.Checked)
+            {
+                bindingSource.Filter = $"DESCRICAO1 LIKE '%{txtDados.Text}%'";
+            }
+            else if (rbDoc.Checked)
+            {
+                bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
+            }
+             else if (rbTipoPagamento.Checked)
+            {
+                bindingSource.Filter = $"DESCRICAO LIKE '%{txtDados.Text}%'";
+            }
+            else if (rbVencimento.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DATAVENC = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                    return;
+                }
+            }
+             else if (rbPagamento.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DATAPG = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
+                }
+            }
+           
             else if (rbsituacao.Checked)
             {
                 bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'"; 
+
+               
+            }
+            else if (txtDados.Text.Equals(""))
+            {
+                bindingSource.Filter = null;
             }
         }
+
+       
+       
     }
 }
