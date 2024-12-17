@@ -241,7 +241,7 @@ namespace ContasAPagar.view
           
         }
 
-        private void imprimirToolStripButton_Click(object sender, EventArgs e)
+        private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             Prints print = new Prints();
             SaveFileDialog saveFileDialog = new SaveFileDialog();

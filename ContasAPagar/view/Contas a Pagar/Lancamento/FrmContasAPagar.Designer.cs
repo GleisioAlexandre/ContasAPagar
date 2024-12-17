@@ -54,7 +54,6 @@
             this.txtDados = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.imprimirToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbTipoPagamento = new System.Windows.Forms.RadioButton();
             this.rbPlanoDeContas = new System.Windows.Forms.RadioButton();
@@ -65,6 +64,7 @@
             this.rbLancamento = new System.Windows.Forms.RadioButton();
             this.rbDoc = new System.Windows.Forms.RadioButton();
             this.lblValor = new System.Windows.Forms.Label();
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,7 +161,7 @@
             this.txtDados,
             this.toolStripButton1,
             this.toolStripSeparator,
-            this.imprimirToolStripButton});
+            this.salvarToolStripButton});
             this.bindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator.MoveFirstItem = null;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -256,16 +256,6 @@
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // imprimirToolStripButton
-            // 
-            this.imprimirToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.imprimirToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripButton.Image")));
-            this.imprimirToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.imprimirToolStripButton.Name = "imprimirToolStripButton";
-            this.imprimirToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.imprimirToolStripButton.Text = "&Imprimir";
-            this.imprimirToolStripButton.Click += new System.EventHandler(this.imprimirToolStripButton_Click);
             // 
             // groupBox1
             // 
@@ -385,6 +375,16 @@
             this.lblValor.TabIndex = 5;
             this.lblValor.Text = "R$";
             // 
+            // salvarToolStripButton
+            // 
+            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
+            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton.Name = "salvarToolStripButton";
+            this.salvarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.salvarToolStripButton.Text = "&Salvar";
+            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
+            // 
             // codigo
             // 
             this.codigo.DataPropertyName = "Id";
@@ -410,11 +410,12 @@
             // 
             // fornecedor
             // 
-            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fornecedor.DataPropertyName = "NOME";
             this.fornecedor.HeaderText = "Fornecedor";
             this.fornecedor.Name = "fornecedor";
             this.fornecedor.ReadOnly = true;
+            this.fornecedor.Width = 86;
             // 
             // valor
             // 
@@ -580,11 +581,11 @@
         private System.Windows.Forms.RadioButton rbVencimento;
         private System.Windows.Forms.RadioButton rbFornecedor;
         private System.Windows.Forms.ToolStripTextBox txtDados;
-        private System.Windows.Forms.ToolStripButton imprimirToolStripButton;
         private System.Windows.Forms.RadioButton rbTipoPagamento;
         private System.Windows.Forms.RadioButton rbPlanoDeContas;
         private System.Windows.Forms.RadioButton rbPagamento;
         private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lancamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn fornecedor;
