@@ -21,7 +21,20 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
-        public void CalculoarValor()
+        private void FormataTextbox()
+        {
+            string data = txtDados.Text.Replace("/", "");
+                if (data.Length > 8) data = data.Substring(0, 8);
+
+            if (data.Length >= 2)
+                data = data.Insert(2, "/");
+            if (data.Length >= 5)
+                data = data.Insert(5, "/");
+
+            txtDados.Text = data;
+            txtDados.SelectionStart = data.Length;
+        }
+            public void CalculoarValor()
         {
             double soma = 0;
             foreach (DataGridViewRow row in dtgContasAPagar.Rows)
@@ -103,6 +116,7 @@ namespace ContasAPagar.view
             if (rbLancamento.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Lançamento";
+                txtDados.Clear();
             }
         }
 
@@ -111,6 +125,7 @@ namespace ContasAPagar.view
             if (rbFornecedor.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Fornecedor";
+                txtDados.Clear();
             }
         }
 
@@ -120,6 +135,7 @@ namespace ContasAPagar.view
             if (rbPlanoDeContas.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Plano de Contas";
+                txtDados.Clear();
             }
         }
 
@@ -128,6 +144,7 @@ namespace ContasAPagar.view
             if (rbDoc.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Documento";
+                txtDados.Clear();
             }
         }
 
@@ -136,6 +153,7 @@ namespace ContasAPagar.view
             if (rbTipoPagamento.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Tipo de Pagamento";
+                txtDados.Clear();
             }
 
         }
@@ -145,6 +163,7 @@ namespace ContasAPagar.view
             if (rbVencimento.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Vencimento";
+                txtDados.Clear();
             }
         }
         private void rbPagamento_CheckedChanged(object sender, EventArgs e)
@@ -152,6 +171,7 @@ namespace ContasAPagar.view
             if (rbPagamento.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Pagamento";
+                txtDados.Clear();
             }
         }
         private void rbsituacao_CheckedChanged(object sender, EventArgs e)
@@ -159,6 +179,7 @@ namespace ContasAPagar.view
             if (rbsituacao.Checked)
             {
                 lblDescricaoPesquisa.Text = "Pesquisa por Situação";
+                txtDados.Clear();
             }
         }
 
@@ -169,6 +190,7 @@ namespace ContasAPagar.view
             {
                 if (txtDados.Text != "")
                 {
+
                     bindingSource.Filter = $"LANCAMENTO = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
                     CalculoarValor();
                     return;
@@ -252,6 +274,15 @@ namespace ContasAPagar.view
             {
                 print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName);
             }
+        }
+
+        private void txtDados_TextChanged(object sender, EventArgs e)
+        {
+            if (rbLancamento.Checked) FormataTextbox();
+            else if (rbVencimento.Checked) FormataTextbox();
+            else if (rbPagamento.Checked) FormataTextbox();
+
+           
         }
     }
 }
