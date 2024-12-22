@@ -146,22 +146,22 @@
             // rbPago
             // 
             this.rbPago.AutoSize = true;
-            this.rbPago.Checked = true;
             this.rbPago.Location = new System.Drawing.Point(6, 19);
             this.rbPago.Name = "rbPago";
             this.rbPago.Size = new System.Drawing.Size(50, 17);
             this.rbPago.TabIndex = 9;
-            this.rbPago.TabStop = true;
             this.rbPago.Text = "Pago";
             this.rbPago.UseVisualStyleBackColor = true;
             // 
             // rbApagar
             // 
             this.rbApagar.AutoSize = true;
+            this.rbApagar.Checked = true;
             this.rbApagar.Location = new System.Drawing.Point(83, 19);
             this.rbApagar.Name = "rbApagar";
             this.rbApagar.Size = new System.Drawing.Size(63, 17);
             this.rbApagar.TabIndex = 10;
+            this.rbApagar.TabStop = true;
             this.rbApagar.Text = "A Pagar";
             this.rbApagar.UseVisualStyleBackColor = true;
             // 

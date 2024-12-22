@@ -21,20 +21,109 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
-        private void FormataTextbox()
+        private void FiltroData()
         {
-            string data = txtDados.Text.Replace("/", "");
-                if (data.Length > 8) data = data.Substring(0, 8);
-
-            if (data.Length >= 2)
-                data = data.Insert(2, "/");
-            if (data.Length >= 5)
-                data = data.Insert(5, "/");
-
-            txtDados.Text = data;
-            txtDados.SelectionStart = data.Length;
+            if (rbFornecedor.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
+                    CalculoarValor();
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                }
+            }
+            else if (rbPlanoDeContas.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DESCRICAO1 LIKE '%{txtDados.Text}%'";
+                    CalculoarValor();
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                }
+                
+            }
+            else if (rbDoc.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
+                    CalculoarValor();
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                }
+            }
+            else if (rbTipoPagamento.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DESCRICAO LIKE '%{txtDados.Text}%'";
+                    CalculoarValor();
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                }
+               
+            }
+            else if (rbsituacao.Checked)
+            {
+                if (txtDados.Text != "")
+                {
+                    bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'";
+                    CalculoarValor();
+                }
+                else
+                {
+                    bindingSource.Filter = null;
+                }
+               
+            }
+            else if (rbLancamento.Checked)
+            {
+               if(txtDataInicio.Text == "" || txtDataFim.Text == "")
+                {
+                    bindingSource.Filter = null;
+                }
+                else
+                {
+                    bindingSource.Filter = $"LANCAMENTO >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND LANCAMENTO <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
+                }
+            }
+            else if (rbVencimento.Checked)
+            {
+                if (txtDataInicio.Text == "" || txtDataFim.Text == "")
+                {
+                    bindingSource.Filter = null;
+                }
+                else
+                {
+                    bindingSource.Filter = $"DATAVENC >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND DATAVENC <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
+                }
+            }
+            else if (rbPagamento.Checked)
+            {
+                if (txtDataInicio.Text == "" || txtDataFim.Text == "")
+                {
+                    bindingSource.Filter = null;
+                }
+                else
+                {
+                    bindingSource.Filter = $"DATAPG >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND DATAPG <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
+                    CalculoarValor();
+                }
+            }
         }
-            public void CalculoarValor()
+        private void CalculoarValor()
         {
             double soma = 0;
             foreach (DataGridViewRow row in dtgContasAPagar.Rows)
@@ -110,59 +199,92 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro: {ex}");
             }
         }
-       
         private void rbLancamento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbLancamento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Lançamento";
+                lblInicio.Enabled = true;
+                lblFiltroDescricao.Enabled = false;
+                txtDados.Enabled = false;
+                txtDados.Enabled = false;
+                txtDataInicio.Enabled = true;
+                lblFim.Enabled = true;
+                txtDataFim.Enabled = true;
                 txtDados.Clear();
             }
         }
-
         private void rbFornecedor_CheckedChanged(object sender, EventArgs e)
         {
             if (rbFornecedor.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Fornecedor";
+                lblFiltroDescricao.Text = "Fornecedor";
+                txtDados.Location = new Point(73, 77);
+                lblInicio.Enabled = false;
+                lblFiltroDescricao.Enabled = true;
+                txtDados.Enabled = true;
+                txtDataInicio.Enabled = false;
+                lblFim.Enabled = false;
+                txtDataFim.Enabled = false;
                 txtDados.Clear();
             }
         }
-
         private void rbPlanoDeContas_CheckedChanged(object sender, EventArgs e)
         {
 
             if (rbPlanoDeContas.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Plano de Contas";
+                lblFiltroDescricao.Text = "Plano de Contas";
+                txtDados.Location = new Point(97, 77);
+                lblInicio.Enabled = false;
+                lblFiltroDescricao.Enabled = true;
+                txtDados.Enabled = true;
+                txtDataInicio.Enabled = false;
+                lblFim.Enabled = false;
+                txtDataFim.Enabled = false;
                 txtDados.Clear();
             }
         }
-
         private void rbDoc_CheckedChanged(object sender, EventArgs e)
         {
             if (rbDoc.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Documento";
+                lblFiltroDescricao.Text = "Documento";
+                txtDados.Location = new Point(74, 77);
+                lblInicio.Enabled = false;
+                lblFiltroDescricao.Enabled = true;
+                txtDados.Enabled = true;
+                txtDataInicio.Enabled = false;
+                lblFim.Enabled = false;
+                txtDataFim.Enabled = false;
                 txtDados.Clear();
             }
         }
-
         private void rbTipoPagamento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbTipoPagamento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Tipo de Pagamento";
+                lblFiltroDescricao.Text = "Tipo de Pagamento";
+                txtDados.Location = new Point(112, 77);
+                lblInicio.Enabled = false;
+                lblFiltroDescricao.Enabled = true;
+                txtDados.Enabled = true;
+                txtDataInicio.Enabled = false;
+                lblFim.Enabled = false;
+                txtDataFim.Enabled = false;
                 txtDados.Clear();
             }
-
         }
-
         private void rbVencimento_CheckedChanged(object sender, EventArgs e)
         {
             if (rbVencimento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Vencimento";
+                lblInicio.Enabled = true;
+                lblFiltroDescricao.Enabled = false;
+                txtDados.Enabled = false;
+                txtDataInicio.Enabled = false;
+                txtDataInicio.Enabled = true;
+                lblFim.Enabled = true;
+                txtDataFim.Enabled = true;
                 txtDados.Clear();
             }
         }
@@ -170,7 +292,12 @@ namespace ContasAPagar.view
         {
             if (rbPagamento.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Pagamento";
+                lblInicio.Enabled = true;
+                lblFiltroDescricao.Enabled = false;
+                txtDados.Enabled = false;
+                txtDataInicio.Enabled = true;
+                lblFim.Enabled = true;
+                txtDataFim.Enabled = true;
                 txtDados.Clear();
             }
         }
@@ -178,91 +305,21 @@ namespace ContasAPagar.view
         {
             if (rbsituacao.Checked)
             {
-                lblDescricaoPesquisa.Text = "Pesquisa por Situação";
+                lblFiltroDescricao.Text = "Situação";
+                txtDados.Location = new Point(61, 77);
+                lblInicio.Enabled = false;
+                lblFiltroDescricao.Enabled = true;
+                txtDados.Enabled = true;
+                txtDataInicio.Enabled = false;
+                lblFim.Enabled = false;
+                txtDataFim.Enabled = false;
                 txtDados.Clear();
             }
         }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-           
-             if (rbLancamento.Checked)
-            {
-                if (txtDados.Text != "")
-                {
-
-                    bindingSource.Filter = $"LANCAMENTO = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                    return;
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                    CalculoarValor();
-                }
-            }
-            else if (rbFornecedor.Checked)
-            {
-                bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-            else if (rbPlanoDeContas.Checked)
-            {
-                bindingSource.Filter = $"DESCRICAO1 LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-            else if (rbDoc.Checked)
-            {
-                bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-             else if (rbTipoPagamento.Checked)
-            {
-                bindingSource.Filter = $"DESCRICAO LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-            else if (rbVencimento.Checked)
-            {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DATAVENC = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                    return;
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                    CalculoarValor();
-                }
-            }
-             else if (rbPagamento.Checked)
-            {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DATAPG = #{Convert.ToDateTime(txtDados.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                    return;
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                    CalculoarValor();
-                }
-            }
-           
-            else if (rbsituacao.Checked)
-            {
-                bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-            else 
-            {
-                bindingSource.Filter = null;
-                CalculoarValor();
-            }
-          
+            FiltroData();
         }
-
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             Prints print = new Prints();
@@ -274,15 +331,6 @@ namespace ContasAPagar.view
             {
                 print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName);
             }
-        }
-
-        private void txtDados_TextChanged(object sender, EventArgs e)
-        {
-            if (rbLancamento.Checked) FormataTextbox();
-            else if (rbVencimento.Checked) FormataTextbox();
-            else if (rbPagamento.Checked) FormataTextbox();
-
-           
         }
     }
 }
