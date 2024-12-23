@@ -21,106 +21,66 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
-        private void FiltroData()
+        private void AplicarFiltro()
         {
+            // Verifica o campo de texto e configura o filtro de forma genérica
             if (rbFornecedor.Checked)
             {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"NOME LIKE '%{txtDados.Text}%'";
-                    CalculoarValor();
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                }
+                AplicarFiltroTexto("NOME");
             }
             else if (rbPlanoDeContas.Checked)
             {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DESCRICAO1 LIKE '%{txtDados.Text}%'";
-                    CalculoarValor();
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                }
-                
+                AplicarFiltroTexto("DESCRICAO1");
             }
             else if (rbDoc.Checked)
             {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DOCUMENTO LIKE '%{txtDados.Text}%'";
-                    CalculoarValor();
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                }
+                AplicarFiltroTexto("DOCUMENTO");
             }
             else if (rbTipoPagamento.Checked)
             {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DESCRICAO LIKE '%{txtDados.Text}%'";
-                    CalculoarValor();
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                }
-               
+                AplicarFiltroTexto("DESCRICAO");
             }
             else if (rbsituacao.Checked)
             {
-                if (txtDados.Text != "")
-                {
-                    bindingSource.Filter = $"DESCRICAO2 LIKE '%{txtDados.Text}%'";
-                    CalculoarValor();
-                }
-                else
-                {
-                    bindingSource.Filter = null;
-                }
-               
+                AplicarFiltroTexto("DESCRICAO2");
             }
             else if (rbLancamento.Checked)
             {
-               if(txtDataInicio.Text == "" || txtDataFim.Text == "")
-                {
-                    bindingSource.Filter = null;
-                }
-                else
-                {
-                    bindingSource.Filter = $"LANCAMENTO >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND LANCAMENTO <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                }
+                AplicarFiltroData("LANCAMENTO");
             }
             else if (rbVencimento.Checked)
             {
-                if (txtDataInicio.Text == "" || txtDataFim.Text == "")
-                {
-                    bindingSource.Filter = null;
-                }
-                else
-                {
-                    bindingSource.Filter = $"DATAVENC >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND DATAVENC <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                }
+                AplicarFiltroData("DATAVENC");
             }
             else if (rbPagamento.Checked)
             {
-                if (txtDataInicio.Text == "" || txtDataFim.Text == "")
-                {
-                    bindingSource.Filter = null;
-                }
-                else
-                {
-                    bindingSource.Filter = $"DATAPG >= #{Convert.ToDateTime(txtDataInicio.Text).ToString("MM/dd/yyyy")}# AND DATAPG <= #{Convert.ToDateTime(txtDataFim.Text).ToString("MM/dd/yyyy")}#";
-                    CalculoarValor();
-                }
+                AplicarFiltroData("DATAPG");
+            }
+        }
+        private void AplicarFiltroTexto(string coluna)
+        {
+            if (!string.IsNullOrEmpty(txtDados.Text))
+            {
+                bindingSource.Filter = $"{coluna} LIKE '%{txtDados.Text}%'";
+                CalculoarValor();
+            }
+            else
+            {
+                bindingSource.Filter = null;
+            }
+        }
+
+        // Método para aplicar filtro com base em datas
+        private void AplicarFiltroData(string coluna)
+        {
+            if (string.IsNullOrEmpty(txtDataInicio.Text) || string.IsNullOrEmpty(txtDataFim.Text))
+            {
+                bindingSource.Filter = null;
+            }
+            else
+            {
+                bindingSource.Filter = $"{coluna} >= #{Convert.ToDateTime(txtDataInicio.Text):MM/dd/yyyy}# AND {coluna} <= #{Convert.ToDateTime(txtDataFim.Text):MM/dd/yyyy}#";
+                CalculoarValor();
             }
         }
         private void CalculoarValor()
@@ -318,7 +278,7 @@ namespace ContasAPagar.view
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            FiltroData();
+            AplicarFiltro();
         }
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {

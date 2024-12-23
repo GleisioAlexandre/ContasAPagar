@@ -294,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Banco de Dados\" />
+    <Folder Include="Filtros\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icones\correios.png" />
