@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContasAPagar));
             this.dtgContasAPagar = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,15 +122,15 @@
             this.dtgContasAPagar.Name = "dtgContasAPagar";
             this.dtgContasAPagar.ReadOnly = true;
             this.dtgContasAPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgContasAPagar.Size = new System.Drawing.Size(1045, 391);
+            this.dtgContasAPagar.Size = new System.Drawing.Size(1081, 391);
             this.dtgContasAPagar.TabIndex = 0;
             this.dtgContasAPagar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgContasAPagar_CellDoubleClick);
             // 
             // codigo
             // 
             this.codigo.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle8;
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -140,10 +140,10 @@
             // lancamento
             // 
             this.lancamento.DataPropertyName = "Lancamento";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.lancamento.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.lancamento.DefaultCellStyle = dataGridViewCellStyle9;
             this.lancamento.HeaderText = "Lançamento";
             this.lancamento.Name = "lancamento";
             this.lancamento.ReadOnly = true;
@@ -161,10 +161,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle10;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -188,8 +188,8 @@
             // tipo
             // 
             this.tipo.DataPropertyName = "DESCRICAO";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tipo.DefaultCellStyle = dataGridViewCellStyle11;
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
@@ -197,10 +197,10 @@
             // vencimento
             // 
             this.vencimento.DataPropertyName = "DataVenc";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.vencimento.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "d";
+            dataGridViewCellStyle12.NullValue = null;
+            this.vencimento.DefaultCellStyle = dataGridViewCellStyle12;
             this.vencimento.HeaderText = "Vencimento";
             this.vencimento.Name = "vencimento";
             this.vencimento.ReadOnly = true;
@@ -209,10 +209,10 @@
             // pagamento
             // 
             this.pagamento.DataPropertyName = "DataPg";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.pagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.pagamento.DefaultCellStyle = dataGridViewCellStyle13;
             this.pagamento.HeaderText = "Pagamento";
             this.pagamento.Name = "pagamento";
             this.pagamento.ReadOnly = true;
@@ -221,8 +221,8 @@
             // situacao
             // 
             this.situacao.DataPropertyName = "DESCRICAO2";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.situacao.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.situacao.DefaultCellStyle = dataGridViewCellStyle14;
             this.situacao.HeaderText = "Situação";
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
@@ -283,7 +283,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(968, 567);
+            this.button1.Location = new System.Drawing.Point(1004, 567);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 44);
             this.button1.TabIndex = 2;
@@ -316,7 +316,7 @@
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(1069, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(1105, 25);
             this.bindingNavigator.TabIndex = 3;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
@@ -428,24 +428,26 @@
             this.groupBox1.Controls.Add(this.rbDoc);
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1045, 116);
+            this.groupBox1.Size = new System.Drawing.Size(1081, 116);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
             // txtDataFim
             // 
+            this.txtDataFim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataFim.Enabled = false;
-            this.txtDataFim.Location = new System.Drawing.Point(929, 81);
+            this.txtDataFim.Location = new System.Drawing.Point(965, 81);
             this.txtDataFim.Name = "txtDataFim";
             this.txtDataFim.Size = new System.Drawing.Size(100, 20);
             this.txtDataFim.TabIndex = 13;
             // 
             // lblFim
             // 
+            this.lblFim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFim.AutoSize = true;
             this.lblFim.Enabled = false;
-            this.lblFim.Location = new System.Drawing.Point(900, 84);
+            this.lblFim.Location = new System.Drawing.Point(936, 84);
             this.lblFim.Name = "lblFim";
             this.lblFim.Size = new System.Drawing.Size(23, 13);
             this.lblFim.TabIndex = 12;
@@ -453,17 +455,19 @@
             // 
             // txtDataInicio
             // 
+            this.txtDataInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataInicio.Enabled = false;
-            this.txtDataInicio.Location = new System.Drawing.Point(785, 81);
+            this.txtDataInicio.Location = new System.Drawing.Point(821, 81);
             this.txtDataInicio.Name = "txtDataInicio";
             this.txtDataInicio.Size = new System.Drawing.Size(100, 20);
             this.txtDataInicio.TabIndex = 11;
             // 
             // lblInicio
             // 
+            this.lblInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInicio.AutoSize = true;
             this.lblInicio.Enabled = false;
-            this.lblInicio.Location = new System.Drawing.Point(747, 84);
+            this.lblInicio.Location = new System.Drawing.Point(783, 84);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(32, 13);
             this.lblInicio.TabIndex = 10;
@@ -488,7 +492,7 @@
             // rbTipoPagamento
             // 
             this.rbTipoPagamento.AutoSize = true;
-            this.rbTipoPagamento.Location = new System.Drawing.Point(379, 31);
+            this.rbTipoPagamento.Location = new System.Drawing.Point(286, 31);
             this.rbTipoPagamento.Name = "rbTipoPagamento";
             this.rbTipoPagamento.Size = new System.Drawing.Size(118, 17);
             this.rbTipoPagamento.TabIndex = 7;
@@ -499,7 +503,7 @@
             // rbPlanoDeContas
             // 
             this.rbPlanoDeContas.AutoSize = true;
-            this.rbPlanoDeContas.Location = new System.Drawing.Point(122, 31);
+            this.rbPlanoDeContas.Location = new System.Drawing.Point(91, 31);
             this.rbPlanoDeContas.Name = "rbPlanoDeContas";
             this.rbPlanoDeContas.Size = new System.Drawing.Size(103, 17);
             this.rbPlanoDeContas.TabIndex = 6;
@@ -509,8 +513,10 @@
             // 
             // rbPagamento
             // 
+            this.rbPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbPagamento.AutoSize = true;
-            this.rbPagamento.Location = new System.Drawing.Point(929, 31);
+            this.rbPagamento.Location = new System.Drawing.Point(712, 31);
             this.rbPagamento.Name = "rbPagamento";
             this.rbPagamento.Size = new System.Drawing.Size(105, 17);
             this.rbPagamento.TabIndex = 5;
@@ -534,7 +540,7 @@
             // rbsituacao
             // 
             this.rbsituacao.AutoSize = true;
-            this.rbsituacao.Location = new System.Drawing.Point(534, 31);
+            this.rbsituacao.Location = new System.Drawing.Point(410, 31);
             this.rbsituacao.Name = "rbsituacao";
             this.rbsituacao.Size = new System.Drawing.Size(67, 17);
             this.rbsituacao.TabIndex = 3;
@@ -545,7 +551,7 @@
             // rbVencimento
             // 
             this.rbVencimento.AutoSize = true;
-            this.rbVencimento.Location = new System.Drawing.Point(785, 31);
+            this.rbVencimento.Location = new System.Drawing.Point(599, 31);
             this.rbVencimento.Name = "rbVencimento";
             this.rbVencimento.Size = new System.Drawing.Size(107, 17);
             this.rbVencimento.TabIndex = 2;
@@ -556,7 +562,7 @@
             // rbLancamento
             // 
             this.rbLancamento.AutoSize = true;
-            this.rbLancamento.Location = new System.Drawing.Point(638, 31);
+            this.rbLancamento.Location = new System.Drawing.Point(483, 31);
             this.rbLancamento.Name = "rbLancamento";
             this.rbLancamento.Size = new System.Drawing.Size(110, 17);
             this.rbLancamento.TabIndex = 1;
@@ -567,7 +573,7 @@
             // rbDoc
             // 
             this.rbDoc.AutoSize = true;
-            this.rbDoc.Location = new System.Drawing.Point(262, 31);
+            this.rbDoc.Location = new System.Drawing.Point(200, 31);
             this.rbDoc.Name = "rbDoc";
             this.rbDoc.Size = new System.Drawing.Size(80, 17);
             this.rbDoc.TabIndex = 0;
@@ -577,6 +583,7 @@
             // 
             // lblValorTotal
             // 
+            this.lblValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Location = new System.Drawing.Point(131, 583);
             this.lblValorTotal.Name = "lblValorTotal";
@@ -588,7 +595,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 623);
+            this.ClientSize = new System.Drawing.Size(1105, 623);
             this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigator);
