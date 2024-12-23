@@ -84,7 +84,7 @@
             this.rbVencimento = new System.Windows.Forms.RadioButton();
             this.rbLancamento = new System.Windows.Forms.RadioButton();
             this.rbDoc = new System.Windows.Forms.RadioButton();
-            this.lblValor = new System.Windows.Forms.Label();
+            this.lblValorTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -575,21 +575,21 @@
             this.rbDoc.UseVisualStyleBackColor = true;
             this.rbDoc.CheckedChanged += new System.EventHandler(this.rbDoc_CheckedChanged);
             // 
-            // lblValor
+            // lblValorTotal
             // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(131, 583);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(21, 13);
-            this.lblValor.TabIndex = 5;
-            this.lblValor.Text = "R$";
+            this.lblValorTotal.AutoSize = true;
+            this.lblValorTotal.Location = new System.Drawing.Point(131, 583);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(21, 13);
+            this.lblValorTotal.TabIndex = 5;
+            this.lblValorTotal.Text = "R$";
             // 
             // FrmContasAPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 623);
-            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.button1);
@@ -638,7 +638,7 @@
         private System.Windows.Forms.RadioButton rbTipoPagamento;
         private System.Windows.Forms.RadioButton rbPlanoDeContas;
         private System.Windows.Forms.RadioButton rbPagamento;
-        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lancamento;

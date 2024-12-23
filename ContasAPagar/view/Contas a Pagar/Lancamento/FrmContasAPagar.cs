@@ -136,7 +136,7 @@ namespace ContasAPagar.view
                     }
                 }
             }
-            lblValor.Text = $"{soma:C2}";
+            lblValorTotal.Text = $"{soma:C2}";
         }
         public void CarregaGridContasAPagar()
         {
@@ -329,7 +329,7 @@ namespace ContasAPagar.view
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName);
+                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName, lblValorTotal.Text.Trim());
             }
         }
     }

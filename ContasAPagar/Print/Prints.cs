@@ -13,7 +13,7 @@ namespace ContasAPagar
 {
     class Prints
     {
-        public void ExportarDataGridViewParaPDF(DataGridView dataGridView, string caminhoPDF)
+        public void ExportarDataGridViewParaPDF(DataGridView dataGridView, string caminhoPDF, string ValorTotal)
         {
             try
             {
@@ -101,7 +101,21 @@ namespace ContasAPagar
                     }
                 }
 
-                // Adiciona a tabela ao documento PDF
+                // Adiciona uma linha de rodapé com o total
+                PdfPCell celulaRodapeTitulo = new PdfPCell(new Phrase("Total", fonteCabecalho));
+                celulaRodapeTitulo.Colspan = colunasVisiveis - 1; // Ocupa todas as colunas, exceto a última
+                celulaRodapeTitulo.HorizontalAlignment = Element.ALIGN_RIGHT;
+                celulaRodapeTitulo.Padding = 5;
+                celulaRodapeTitulo.BackgroundColor = BaseColor.LIGHT_GRAY;
+                tabela.AddCell(celulaRodapeTitulo);
+
+                PdfPCell celulaRodapeValor = new PdfPCell(new Phrase(ValorTotal, fonteCabecalho)); // Valor do total
+                celulaRodapeValor.HorizontalAlignment = Element.ALIGN_CENTER;
+                celulaRodapeValor.Padding = 5;
+                celulaRodapeValor.BackgroundColor = BaseColor.LIGHT_GRAY;
+                tabela.AddCell(celulaRodapeValor);
+
+                // Adiciona a tabela ao documento
                 documento.Add(tabela);
                 documento.Close();
 
@@ -113,7 +127,7 @@ namespace ContasAPagar
             }
         }
 
-        // Método para calcular larguras das colunas visíveis
+        // Método para calcular larguras proporcionais das colunas
         private float[] CalcularLarguraColunas(DataGridView dataGridView)
         {
             int colunasVisiveis = 0;
@@ -138,8 +152,5 @@ namespace ContasAPagar
             }
             return larguras;
         }
-
-       
-
     }
 }
