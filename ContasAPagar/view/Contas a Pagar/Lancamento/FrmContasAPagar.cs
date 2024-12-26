@@ -23,66 +23,87 @@ namespace ContasAPagar.view
         }
         private void AplicarFiltro()
         {
-            // Verifica o campo de texto e configura o filtro de forma genérica
-            if (rbFornecedor.Checked)
-            {
-                AplicarFiltroTexto("NOME");
-            }
-            else if (rbPlanoDeContas.Checked)
-            {
-                AplicarFiltroTexto("DESCRICAO1");
-            }
-            else if (rbDoc.Checked)
-            {
-                AplicarFiltroTexto("DOCUMENTO");
-            }
-            else if (rbTipoPagamento.Checked)
-            {
-                AplicarFiltroTexto("DESCRICAO");
-            }
-            else if (rbsituacao.Checked)
-            {
-                AplicarFiltroTexto("DESCRICAO2");
-            }
-            else if (rbLancamento.Checked)
-            {
-                AplicarFiltroData("LANCAMENTO");
-            }
-            else if (rbVencimento.Checked)
-            {
-                AplicarFiltroData("DATAVENC");
-            }
-            else if (rbPagamento.Checked)
-            {
-                AplicarFiltroData("DATAPG");
-            }
-        }
-        private void AplicarFiltroTexto(string coluna)
-        {
-            if (!string.IsNullOrEmpty(txtDados.Text))
-            {
-                bindingSource.Filter = $"{coluna} LIKE '%{txtDados.Text}%'";
-                CalculoarValor();
-            }
-            else
-            {
-                bindingSource.Filter = null;
-            }
-        }
+            // Filtros individuais
+            string filtroFornecedor = string.Empty;
+            string filtroPlanoDeContas = string.Empty;
+            string filtroDocumento = string.Empty;
+            string filtroTipoPagamento = string.Empty;
+            string filtroSituacao = string.Empty;
+            string filtroDatas = string.Empty;
 
-        // Método para aplicar filtro com base em datas
-        private void AplicarFiltroData(string coluna)
-        {
-            if (string.IsNullOrEmpty(txtDataInicio.Text) || string.IsNullOrEmpty(txtDataFim.Text))
+            // Combinação final de filtros
+            List<string> filtros = new List<string>();
+
+            // Filtro por fornecedor
+            if (cbxFornecedor.Checked && !string.IsNullOrEmpty(txtFornecedor.Text))
             {
-                bindingSource.Filter = null;
+                filtroFornecedor = $"NOME LIKE '%{txtFornecedor.Text}%'";
+                filtros.Add(filtroFornecedor);
             }
-            else
+
+            // Filtro por plano de contas
+            if (cbxPlanoDeContas.Checked && !string.IsNullOrEmpty(txtPlanoDeContas.Text))
             {
-                bindingSource.Filter = $"{coluna} >= #{Convert.ToDateTime(txtDataInicio.Text):MM/dd/yyyy}# AND {coluna} <= #{Convert.ToDateTime(txtDataFim.Text):MM/dd/yyyy}#";
-                CalculoarValor();
+                filtroPlanoDeContas = $"DESCRICAO1 LIKE '%{txtPlanoDeContas.Text}%'";
+                filtros.Add(filtroPlanoDeContas);
             }
+
+            // Filtro por documento
+            if (cbxDocumento.Checked && !string.IsNullOrEmpty(txtDocumento.Text))
+            {
+                filtroDocumento = $"DOCUMENTO LIKE '%{txtDocumento.Text}%'";
+                filtros.Add(filtroDocumento);
+            }
+
+            // Filtro por tipo de pagamento
+            if (cbxTipoPagamento.Checked && !string.IsNullOrEmpty(txtTipoPagamento.Text))
+            {
+                filtroTipoPagamento = $"DESCRICAO LIKE '%{txtTipoPagamento.Text}%'";
+                filtros.Add(filtroTipoPagamento);
+            }
+
+            // Filtro por situação
+            if (cbxSituacao.Checked && !string.IsNullOrEmpty(txtSituacao.Text))
+            {
+                filtroSituacao = $"DESCRICAO2 LIKE '%{txtSituacao.Text}%'";
+                filtros.Add(filtroSituacao);
+            }
+
+            // Filtro por datas (controlado pelos RadioButtons)
+            if (!string.IsNullOrEmpty(txtDataInicio.Text) && !string.IsNullOrEmpty(txtDataFim.Text))
+            {
+                if (DateTime.TryParse(txtDataInicio.Text, out DateTime dataInicio) && DateTime.TryParse(txtDataFim.Text, out DateTime dataFim))
+                {
+                    string colunaData = string.Empty;
+
+                    if (rbLancamento.Checked)
+                        colunaData = "LANCAMENTO";
+                    else if (rbVencimento.Checked)
+                        colunaData = "DATAVENC";
+                    else if (rbPagamento.Checked)
+                        colunaData = "DATAPG";
+
+                    if (!string.IsNullOrEmpty(colunaData))
+                    {
+                        filtroDatas = $"{colunaData} >= #{dataInicio:MM/dd/yyyy}# AND {colunaData} <= #{dataFim:MM/dd/yyyy}#";
+                        filtros.Add(filtroDatas);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Preencha as datas corretamente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bindingSource.Filter = null;
+                    return;
+                }
+            }
+
+            // Combina todos os filtros com AND
+            bindingSource.Filter = filtros.Count > 0 ? string.Join(" AND ", filtros) : null;
+
+            // Recalcula valores, se necessário
+            CalculoarValor();
         }
+       
         private void CalculoarValor()
         {
             double soma = 0;
@@ -159,127 +180,10 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro: {ex}");
             }
         }
-        private void rbLancamento_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbLancamento.Checked)
-            {
-                lblInicio.Enabled = true;
-                lblFiltroDescricao.Enabled = false;
-                txtDados.Enabled = false;
-                txtDados.Enabled = false;
-                txtDataInicio.Enabled = true;
-                lblFim.Enabled = true;
-                txtDataFim.Enabled = true;
-                txtDados.Clear();
-            }
-        }
-        private void rbFornecedor_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbFornecedor.Checked)
-            {
-                lblFiltroDescricao.Text = "Fornecedor";
-                txtDados.Location = new Point(73, 77);
-                lblInicio.Enabled = false;
-                lblFiltroDescricao.Enabled = true;
-                txtDados.Enabled = true;
-                txtDataInicio.Enabled = false;
-                lblFim.Enabled = false;
-                txtDataFim.Enabled = false;
-                txtDados.Clear();
-            }
-        }
-        private void rbPlanoDeContas_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (rbPlanoDeContas.Checked)
-            {
-                lblFiltroDescricao.Text = "Plano de Contas";
-                txtDados.Location = new Point(97, 77);
-                lblInicio.Enabled = false;
-                lblFiltroDescricao.Enabled = true;
-                txtDados.Enabled = true;
-                txtDataInicio.Enabled = false;
-                lblFim.Enabled = false;
-                txtDataFim.Enabled = false;
-                txtDados.Clear();
-            }
-        }
-        private void rbDoc_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbDoc.Checked)
-            {
-                lblFiltroDescricao.Text = "Documento";
-                txtDados.Location = new Point(74, 77);
-                lblInicio.Enabled = false;
-                lblFiltroDescricao.Enabled = true;
-                txtDados.Enabled = true;
-                txtDataInicio.Enabled = false;
-                lblFim.Enabled = false;
-                txtDataFim.Enabled = false;
-                txtDados.Clear();
-            }
-        }
-        private void rbTipoPagamento_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbTipoPagamento.Checked)
-            {
-                lblFiltroDescricao.Text = "Tipo de Pagamento";
-                txtDados.Location = new Point(112, 77);
-                lblInicio.Enabled = false;
-                lblFiltroDescricao.Enabled = true;
-                txtDados.Enabled = true;
-                txtDataInicio.Enabled = false;
-                lblFim.Enabled = false;
-                txtDataFim.Enabled = false;
-                txtDados.Clear();
-            }
-        }
-        private void rbVencimento_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbVencimento.Checked)
-            {
-                lblInicio.Enabled = true;
-                lblFiltroDescricao.Enabled = false;
-                txtDados.Enabled = false;
-                txtDataInicio.Enabled = false;
-                txtDataInicio.Enabled = true;
-                lblFim.Enabled = true;
-                txtDataFim.Enabled = true;
-                txtDados.Clear();
-            }
-        }
-        private void rbPagamento_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbPagamento.Checked)
-            {
-                lblInicio.Enabled = true;
-                lblFiltroDescricao.Enabled = false;
-                txtDados.Enabled = false;
-                txtDataInicio.Enabled = true;
-                lblFim.Enabled = true;
-                txtDataFim.Enabled = true;
-                txtDados.Clear();
-            }
-        }
-        private void rbsituacao_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbsituacao.Checked)
-            {
-                lblFiltroDescricao.Text = "Situação";
-                txtDados.Location = new Point(61, 77);
-                lblInicio.Enabled = false;
-                lblFiltroDescricao.Enabled = true;
-                txtDados.Enabled = true;
-                txtDataInicio.Enabled = false;
-                lblFim.Enabled = false;
-                txtDataFim.Enabled = false;
-                txtDados.Clear();
-            }
-        }
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            AplicarFiltro();
-        }
+     
+         
+        
+        
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             Prints print = new Prints();
@@ -290,6 +194,85 @@ namespace ContasAPagar.view
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName, lblValorTotal.Text.Trim());
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            AplicarFiltro();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Prints print = new Prints();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            saveFileDialog.Title = "Salvar PDF";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName, lblValorTotal.Text.Trim());
+            }
+        }
+
+      
+        private void cbxFornecedor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxFornecedor.Checked)
+            {
+                txtFornecedor.Enabled = true;
+            }
+            else
+            {
+                txtFornecedor.Enabled = false;
+            }
+        }
+
+        private void cbxPlanoDeContas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPlanoDeContas.Checked)
+            {
+                txtPlanoDeContas.Enabled = true;
+            }
+            else
+            {
+                txtPlanoDeContas.Enabled = false;
+            }
+        }
+
+        private void cbxDocumento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxDocumento.Checked)
+            {
+                txtDocumento.Enabled = true;
+            }
+            else
+            {
+                txtDocumento.Enabled = false;
+            }
+        }
+
+        private void cbxTipoPagamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxTipoPagamento.Checked)
+            {
+                txtTipoPagamento.Enabled = true;
+            }
+            else
+            {
+                txtTipoPagamento.Enabled = false;
+            }
+        }
+
+        private void cbxSituacao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxSituacao.Checked)
+            {
+                txtSituacao.Enabled = true;
+            }
+            else
+            {
+                txtSituacao.Enabled = false;
             }
         }
     }
