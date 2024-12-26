@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContasAPagar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,7 +36,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContasAPagar));
             this.dtgContasAPagar = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPlanoDeConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSituicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNovoLancamento = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,6 +70,20 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxSituacao = new System.Windows.Forms.CheckBox();
+            this.txtSituacao = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbxTipoPagamento = new System.Windows.Forms.CheckBox();
+            this.txtTipoPagamento = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbLancamento = new System.Windows.Forms.RadioButton();
+            this.rbPagamento = new System.Windows.Forms.RadioButton();
+            this.rbVencimento = new System.Windows.Forms.RadioButton();
+            this.txtDataFim = new System.Windows.Forms.MaskedTextBox();
+            this.txtDataInicio = new System.Windows.Forms.MaskedTextBox();
+            this.cbxDocumento = new System.Windows.Forms.CheckBox();
+            this.cbxPlanoDeContas = new System.Windows.Forms.CheckBox();
+            this.cbxFornecedor = new System.Windows.Forms.CheckBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPlanoDeContas = new System.Windows.Forms.TextBox();
@@ -64,35 +93,6 @@
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblFiltroDescricao = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
-            this.cbxFornecedor = new System.Windows.Forms.CheckBox();
-            this.cbxPlanoDeContas = new System.Windows.Forms.CheckBox();
-            this.cbxDocumento = new System.Windows.Forms.CheckBox();
-            this.txtDataInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtDataFim = new System.Windows.Forms.MaskedTextBox();
-            this.rbVencimento = new System.Windows.Forms.RadioButton();
-            this.rbPagamento = new System.Windows.Forms.RadioButton();
-            this.rbLancamento = new System.Windows.Forms.RadioButton();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPlanoDeConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSituicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbxTipoPagamento = new System.Windows.Forms.CheckBox();
-            this.txtTipoPagamento = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbxSituacao = new System.Windows.Forms.CheckBox();
-            this.txtSituacao = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -133,6 +133,150 @@
             this.dtgContasAPagar.Size = new System.Drawing.Size(1081, 359);
             this.dtgContasAPagar.TabIndex = 0;
             this.dtgContasAPagar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgContasAPagar_CellDoubleClick);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
+            this.codigo.Width = 50;
+            // 
+            // lancamento
+            // 
+            this.lancamento.DataPropertyName = "Lancamento";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.lancamento.DefaultCellStyle = dataGridViewCellStyle2;
+            this.lancamento.HeaderText = "Lançamento";
+            this.lancamento.Name = "lancamento";
+            this.lancamento.ReadOnly = true;
+            this.lancamento.Width = 80;
+            // 
+            // fornecedor
+            // 
+            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.fornecedor.DataPropertyName = "NOME";
+            this.fornecedor.HeaderText = "Fornecedor";
+            this.fornecedor.Name = "fornecedor";
+            this.fornecedor.ReadOnly = true;
+            this.fornecedor.Width = 86;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            this.valor.Width = 80;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "DESCRICAO1";
+            this.descricao.HeaderText = "Plano de Contas";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            this.descricao.Width = 110;
+            // 
+            // documento
+            // 
+            this.documento.DataPropertyName = "Documento";
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.DataPropertyName = "DESCRICAO";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tipo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.tipo.HeaderText = "Tipo Pagamento";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            this.tipo.Width = 120;
+            // 
+            // vencimento
+            // 
+            this.vencimento.DataPropertyName = "DataVenc";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.vencimento.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vencimento.HeaderText = "Vencimento";
+            this.vencimento.Name = "vencimento";
+            this.vencimento.ReadOnly = true;
+            this.vencimento.Width = 80;
+            // 
+            // pagamento
+            // 
+            this.pagamento.DataPropertyName = "DataPg";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.pagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            this.pagamento.HeaderText = "Pagamento";
+            this.pagamento.Name = "pagamento";
+            this.pagamento.ReadOnly = true;
+            this.pagamento.Width = 80;
+            // 
+            // situacao
+            // 
+            this.situacao.DataPropertyName = "DESCRICAO2";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.situacao.DefaultCellStyle = dataGridViewCellStyle7;
+            this.situacao.HeaderText = "Situação";
+            this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
+            this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.situacao.Width = 70;
+            // 
+            // obs
+            // 
+            this.obs.DataPropertyName = "OBS";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.ReadOnly = true;
+            // 
+            // id_Fornecedor
+            // 
+            this.id_Fornecedor.DataPropertyName = "ID_FORNECEDOR";
+            this.id_Fornecedor.HeaderText = "IdFornecedor";
+            this.id_Fornecedor.Name = "id_Fornecedor";
+            this.id_Fornecedor.ReadOnly = true;
+            this.id_Fornecedor.Visible = false;
+            // 
+            // idDocumento
+            // 
+            this.idDocumento.DataPropertyName = "ID_TIPODOCUMENTO";
+            this.idDocumento.HeaderText = "IDDOCUMENTO";
+            this.idDocumento.Name = "idDocumento";
+            this.idDocumento.ReadOnly = true;
+            this.idDocumento.Visible = false;
+            // 
+            // idPlanoDeConta
+            // 
+            this.idPlanoDeConta.DataPropertyName = "ID_PLANODECONTAS";
+            this.idPlanoDeConta.HeaderText = "IDPLANODECONTAS";
+            this.idPlanoDeConta.Name = "idPlanoDeConta";
+            this.idPlanoDeConta.ReadOnly = true;
+            this.idPlanoDeConta.Visible = false;
+            // 
+            // idSituicao
+            // 
+            this.idSituicao.DataPropertyName = "ID_SITUACAO";
+            this.idSituicao.HeaderText = "IDSITUACAO";
+            this.idSituicao.Name = "idSituicao";
+            this.idSituicao.ReadOnly = true;
+            this.idSituicao.Visible = false;
             // 
             // btnNovoLancamento
             // 
@@ -306,6 +450,145 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
+            // cbxSituacao
+            // 
+            this.cbxSituacao.AutoSize = true;
+            this.cbxSituacao.Location = new System.Drawing.Point(343, 122);
+            this.cbxSituacao.Name = "cbxSituacao";
+            this.cbxSituacao.Size = new System.Drawing.Size(15, 14);
+            this.cbxSituacao.TabIndex = 33;
+            this.cbxSituacao.UseVisualStyleBackColor = true;
+            this.cbxSituacao.CheckedChanged += new System.EventHandler(this.cbxSituacao_CheckedChanged);
+            // 
+            // txtSituacao
+            // 
+            this.txtSituacao.Enabled = false;
+            this.txtSituacao.Location = new System.Drawing.Point(97, 119);
+            this.txtSituacao.Name = "txtSituacao";
+            this.txtSituacao.Size = new System.Drawing.Size(231, 20);
+            this.txtSituacao.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Situação";
+            // 
+            // cbxTipoPagamento
+            // 
+            this.cbxTipoPagamento.AutoSize = true;
+            this.cbxTipoPagamento.Location = new System.Drawing.Point(343, 96);
+            this.cbxTipoPagamento.Name = "cbxTipoPagamento";
+            this.cbxTipoPagamento.Size = new System.Drawing.Size(15, 14);
+            this.cbxTipoPagamento.TabIndex = 30;
+            this.cbxTipoPagamento.UseVisualStyleBackColor = true;
+            this.cbxTipoPagamento.CheckedChanged += new System.EventHandler(this.cbxTipoPagamento_CheckedChanged);
+            // 
+            // txtTipoPagamento
+            // 
+            this.txtTipoPagamento.Enabled = false;
+            this.txtTipoPagamento.Location = new System.Drawing.Point(97, 93);
+            this.txtTipoPagamento.Name = "txtTipoPagamento";
+            this.txtTipoPagamento.Size = new System.Drawing.Size(231, 20);
+            this.txtTipoPagamento.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Tipo Pagamento";
+            // 
+            // rbLancamento
+            // 
+            this.rbLancamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbLancamento.AutoSize = true;
+            this.rbLancamento.Location = new System.Drawing.Point(990, 117);
+            this.rbLancamento.Name = "rbLancamento";
+            this.rbLancamento.Size = new System.Drawing.Size(84, 17);
+            this.rbLancamento.TabIndex = 27;
+            this.rbLancamento.Text = "Lançamento";
+            this.rbLancamento.UseVisualStyleBackColor = true;
+            // 
+            // rbPagamento
+            // 
+            this.rbPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbPagamento.AutoSize = true;
+            this.rbPagamento.Location = new System.Drawing.Point(990, 93);
+            this.rbPagamento.Name = "rbPagamento";
+            this.rbPagamento.Size = new System.Drawing.Size(79, 17);
+            this.rbPagamento.TabIndex = 26;
+            this.rbPagamento.Text = "Pagamento";
+            this.rbPagamento.UseVisualStyleBackColor = true;
+            // 
+            // rbVencimento
+            // 
+            this.rbVencimento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbVencimento.AutoSize = true;
+            this.rbVencimento.Checked = true;
+            this.rbVencimento.Location = new System.Drawing.Point(990, 69);
+            this.rbVencimento.Name = "rbVencimento";
+            this.rbVencimento.Size = new System.Drawing.Size(81, 17);
+            this.rbVencimento.TabIndex = 25;
+            this.rbVencimento.TabStop = true;
+            this.rbVencimento.Text = "Vencimento";
+            this.rbVencimento.UseVisualStyleBackColor = true;
+            // 
+            // txtDataFim
+            // 
+            this.txtDataFim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDataFim.Location = new System.Drawing.Point(1002, 42);
+            this.txtDataFim.Mask = "00/00/0000";
+            this.txtDataFim.Name = "txtDataFim";
+            this.txtDataFim.Size = new System.Drawing.Size(73, 20);
+            this.txtDataFim.TabIndex = 24;
+            this.txtDataFim.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDataInicio
+            // 
+            this.txtDataInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDataInicio.Location = new System.Drawing.Point(1002, 15);
+            this.txtDataInicio.Mask = "00/00/0000";
+            this.txtDataInicio.Name = "txtDataInicio";
+            this.txtDataInicio.Size = new System.Drawing.Size(73, 20);
+            this.txtDataInicio.TabIndex = 23;
+            this.txtDataInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // cbxDocumento
+            // 
+            this.cbxDocumento.AutoSize = true;
+            this.cbxDocumento.Location = new System.Drawing.Point(343, 70);
+            this.cbxDocumento.Name = "cbxDocumento";
+            this.cbxDocumento.Size = new System.Drawing.Size(15, 14);
+            this.cbxDocumento.TabIndex = 22;
+            this.cbxDocumento.UseVisualStyleBackColor = true;
+            this.cbxDocumento.CheckedChanged += new System.EventHandler(this.cbxDocumento_CheckedChanged);
+            // 
+            // cbxPlanoDeContas
+            // 
+            this.cbxPlanoDeContas.AutoSize = true;
+            this.cbxPlanoDeContas.Location = new System.Drawing.Point(343, 44);
+            this.cbxPlanoDeContas.Name = "cbxPlanoDeContas";
+            this.cbxPlanoDeContas.Size = new System.Drawing.Size(15, 14);
+            this.cbxPlanoDeContas.TabIndex = 21;
+            this.cbxPlanoDeContas.UseVisualStyleBackColor = true;
+            this.cbxPlanoDeContas.CheckedChanged += new System.EventHandler(this.cbxPlanoDeContas_CheckedChanged);
+            // 
+            // cbxFornecedor
+            // 
+            this.cbxFornecedor.AutoSize = true;
+            this.cbxFornecedor.Location = new System.Drawing.Point(343, 18);
+            this.cbxFornecedor.Name = "cbxFornecedor";
+            this.cbxFornecedor.Size = new System.Drawing.Size(15, 14);
+            this.cbxFornecedor.TabIndex = 20;
+            this.cbxFornecedor.UseVisualStyleBackColor = true;
+            this.cbxFornecedor.CheckedChanged += new System.EventHandler(this.cbxFornecedor_CheckedChanged);
+            // 
             // txtDocumento
             // 
             this.txtDocumento.Enabled = false;
@@ -386,284 +669,6 @@
             this.lblValorTotal.Size = new System.Drawing.Size(21, 13);
             this.lblValorTotal.TabIndex = 5;
             this.lblValorTotal.Text = "R$";
-            // 
-            // cbxFornecedor
-            // 
-            this.cbxFornecedor.AutoSize = true;
-            this.cbxFornecedor.Location = new System.Drawing.Point(343, 18);
-            this.cbxFornecedor.Name = "cbxFornecedor";
-            this.cbxFornecedor.Size = new System.Drawing.Size(15, 14);
-            this.cbxFornecedor.TabIndex = 20;
-            this.cbxFornecedor.UseVisualStyleBackColor = true;
-            this.cbxFornecedor.CheckedChanged += new System.EventHandler(this.cbxFornecedor_CheckedChanged);
-            // 
-            // cbxPlanoDeContas
-            // 
-            this.cbxPlanoDeContas.AutoSize = true;
-            this.cbxPlanoDeContas.Location = new System.Drawing.Point(343, 44);
-            this.cbxPlanoDeContas.Name = "cbxPlanoDeContas";
-            this.cbxPlanoDeContas.Size = new System.Drawing.Size(15, 14);
-            this.cbxPlanoDeContas.TabIndex = 21;
-            this.cbxPlanoDeContas.UseVisualStyleBackColor = true;
-            this.cbxPlanoDeContas.CheckedChanged += new System.EventHandler(this.cbxPlanoDeContas_CheckedChanged);
-            // 
-            // cbxDocumento
-            // 
-            this.cbxDocumento.AutoSize = true;
-            this.cbxDocumento.Location = new System.Drawing.Point(343, 70);
-            this.cbxDocumento.Name = "cbxDocumento";
-            this.cbxDocumento.Size = new System.Drawing.Size(15, 14);
-            this.cbxDocumento.TabIndex = 22;
-            this.cbxDocumento.UseVisualStyleBackColor = true;
-            this.cbxDocumento.CheckedChanged += new System.EventHandler(this.cbxDocumento_CheckedChanged);
-            // 
-            // txtDataInicio
-            // 
-            this.txtDataInicio.Location = new System.Drawing.Point(1002, 15);
-            this.txtDataInicio.Mask = "00/00/0000";
-            this.txtDataInicio.Name = "txtDataInicio";
-            this.txtDataInicio.Size = new System.Drawing.Size(73, 20);
-            this.txtDataInicio.TabIndex = 23;
-            this.txtDataInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtDataFim
-            // 
-            this.txtDataFim.Location = new System.Drawing.Point(1002, 42);
-            this.txtDataFim.Mask = "00/00/0000";
-            this.txtDataFim.Name = "txtDataFim";
-            this.txtDataFim.Size = new System.Drawing.Size(73, 20);
-            this.txtDataFim.TabIndex = 24;
-            this.txtDataFim.ValidatingType = typeof(System.DateTime);
-            // 
-            // rbVencimento
-            // 
-            this.rbVencimento.AutoSize = true;
-            this.rbVencimento.Checked = true;
-            this.rbVencimento.Location = new System.Drawing.Point(990, 69);
-            this.rbVencimento.Name = "rbVencimento";
-            this.rbVencimento.Size = new System.Drawing.Size(81, 17);
-            this.rbVencimento.TabIndex = 25;
-            this.rbVencimento.TabStop = true;
-            this.rbVencimento.Text = "Vencimento";
-            this.rbVencimento.UseVisualStyleBackColor = true;
-            // 
-            // rbPagamento
-            // 
-            this.rbPagamento.AutoSize = true;
-            this.rbPagamento.Location = new System.Drawing.Point(990, 93);
-            this.rbPagamento.Name = "rbPagamento";
-            this.rbPagamento.Size = new System.Drawing.Size(79, 17);
-            this.rbPagamento.TabIndex = 26;
-            this.rbPagamento.Text = "Pagamento";
-            this.rbPagamento.UseVisualStyleBackColor = true;
-            // 
-            // rbLancamento
-            // 
-            this.rbLancamento.AutoSize = true;
-            this.rbLancamento.Location = new System.Drawing.Point(990, 117);
-            this.rbLancamento.Name = "rbLancamento";
-            this.rbLancamento.Size = new System.Drawing.Size(84, 17);
-            this.rbLancamento.TabIndex = 27;
-            this.rbLancamento.Text = "Lançamento";
-            this.rbLancamento.UseVisualStyleBackColor = true;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Visible = false;
-            this.codigo.Width = 50;
-            // 
-            // lancamento
-            // 
-            this.lancamento.DataPropertyName = "Lancamento";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.lancamento.DefaultCellStyle = dataGridViewCellStyle2;
-            this.lancamento.HeaderText = "Lançamento";
-            this.lancamento.Name = "lancamento";
-            this.lancamento.ReadOnly = true;
-            this.lancamento.Width = 80;
-            // 
-            // fornecedor
-            // 
-            this.fornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.fornecedor.DataPropertyName = "NOME";
-            this.fornecedor.HeaderText = "Fornecedor";
-            this.fornecedor.Name = "fornecedor";
-            this.fornecedor.ReadOnly = true;
-            this.fornecedor.Width = 86;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            this.valor.Width = 80;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "DESCRICAO1";
-            this.descricao.HeaderText = "Plano de Contas";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            this.descricao.Width = 110;
-            // 
-            // documento
-            // 
-            this.documento.DataPropertyName = "Documento";
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            this.documento.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.DataPropertyName = "DESCRICAO";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.tipo.HeaderText = "Tipo Pagamento";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            this.tipo.Width = 120;
-            // 
-            // vencimento
-            // 
-            this.vencimento.DataPropertyName = "DataVenc";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.vencimento.DefaultCellStyle = dataGridViewCellStyle5;
-            this.vencimento.HeaderText = "Vencimento";
-            this.vencimento.Name = "vencimento";
-            this.vencimento.ReadOnly = true;
-            this.vencimento.Width = 80;
-            // 
-            // pagamento
-            // 
-            this.pagamento.DataPropertyName = "DataPg";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.pagamento.DefaultCellStyle = dataGridViewCellStyle6;
-            this.pagamento.HeaderText = "Pagamento";
-            this.pagamento.Name = "pagamento";
-            this.pagamento.ReadOnly = true;
-            this.pagamento.Width = 80;
-            // 
-            // situacao
-            // 
-            this.situacao.DataPropertyName = "DESCRICAO2";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.situacao.DefaultCellStyle = dataGridViewCellStyle7;
-            this.situacao.HeaderText = "Situação";
-            this.situacao.Name = "situacao";
-            this.situacao.ReadOnly = true;
-            this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.situacao.Width = 70;
-            // 
-            // obs
-            // 
-            this.obs.DataPropertyName = "OBS";
-            this.obs.HeaderText = "Observações";
-            this.obs.Name = "obs";
-            this.obs.ReadOnly = true;
-            // 
-            // id_Fornecedor
-            // 
-            this.id_Fornecedor.DataPropertyName = "ID_FORNECEDOR";
-            this.id_Fornecedor.HeaderText = "IdFornecedor";
-            this.id_Fornecedor.Name = "id_Fornecedor";
-            this.id_Fornecedor.ReadOnly = true;
-            this.id_Fornecedor.Visible = false;
-            // 
-            // idDocumento
-            // 
-            this.idDocumento.DataPropertyName = "ID_TIPODOCUMENTO";
-            this.idDocumento.HeaderText = "IDDOCUMENTO";
-            this.idDocumento.Name = "idDocumento";
-            this.idDocumento.ReadOnly = true;
-            this.idDocumento.Visible = false;
-            // 
-            // idPlanoDeConta
-            // 
-            this.idPlanoDeConta.DataPropertyName = "ID_PLANODECONTAS";
-            this.idPlanoDeConta.HeaderText = "IDPLANODECONTAS";
-            this.idPlanoDeConta.Name = "idPlanoDeConta";
-            this.idPlanoDeConta.ReadOnly = true;
-            this.idPlanoDeConta.Visible = false;
-            // 
-            // idSituicao
-            // 
-            this.idSituicao.DataPropertyName = "ID_SITUACAO";
-            this.idSituicao.HeaderText = "IDSITUACAO";
-            this.idSituicao.Name = "idSituicao";
-            this.idSituicao.ReadOnly = true;
-            this.idSituicao.Visible = false;
-            // 
-            // cbxTipoPagamento
-            // 
-            this.cbxTipoPagamento.AutoSize = true;
-            this.cbxTipoPagamento.Location = new System.Drawing.Point(343, 96);
-            this.cbxTipoPagamento.Name = "cbxTipoPagamento";
-            this.cbxTipoPagamento.Size = new System.Drawing.Size(15, 14);
-            this.cbxTipoPagamento.TabIndex = 30;
-            this.cbxTipoPagamento.UseVisualStyleBackColor = true;
-            this.cbxTipoPagamento.CheckedChanged += new System.EventHandler(this.cbxTipoPagamento_CheckedChanged);
-            // 
-            // txtTipoPagamento
-            // 
-            this.txtTipoPagamento.Enabled = false;
-            this.txtTipoPagamento.Location = new System.Drawing.Point(97, 93);
-            this.txtTipoPagamento.Name = "txtTipoPagamento";
-            this.txtTipoPagamento.Size = new System.Drawing.Size(231, 20);
-            this.txtTipoPagamento.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Tipo Pagamento";
-            // 
-            // cbxSituacao
-            // 
-            this.cbxSituacao.AutoSize = true;
-            this.cbxSituacao.Location = new System.Drawing.Point(343, 122);
-            this.cbxSituacao.Name = "cbxSituacao";
-            this.cbxSituacao.Size = new System.Drawing.Size(15, 14);
-            this.cbxSituacao.TabIndex = 33;
-            this.cbxSituacao.UseVisualStyleBackColor = true;
-            this.cbxSituacao.CheckedChanged += new System.EventHandler(this.cbxSituacao_CheckedChanged);
-            // 
-            // txtSituacao
-            // 
-            this.txtSituacao.Enabled = false;
-            this.txtSituacao.Location = new System.Drawing.Point(97, 119);
-            this.txtSituacao.Name = "txtSituacao";
-            this.txtSituacao.Size = new System.Drawing.Size(231, 20);
-            this.txtSituacao.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Situação";
             // 
             // FrmContasAPagar
             // 
