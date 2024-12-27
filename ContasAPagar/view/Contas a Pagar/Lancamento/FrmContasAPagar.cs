@@ -21,6 +21,33 @@ namespace ContasAPagar.view
             InitializeComponent();
             idFornecedor = null;
         }
+        private void CarregaComboBoxDocumento()
+        {
+            ClasseDoc tipodoc = new ClasseDoc();
+            var tipoDocumento = tipodoc.CarregaGridTipoDoc();
+            cbxPagamento.DataSource = tipoDocumento;
+            cbxPagamento.DisplayMember = "Descricao";
+            cbxPagamento.ValueMember = "Id";
+        }
+    
+        private void CarregaComboxPlanoDeContas()
+        {
+            ClassePContas planoDeContas = new ClassePContas();
+            var listaPlanoDeContas = planoDeContas.CarregaGridPDContas();
+            cbxPlanoDeConta.DataSource = listaPlanoDeContas;
+            cbxPlanoDeConta.DisplayMember = "Descricao";
+            cbxPlanoDeConta.ValueMember = "Id";
+
+        }
+        private void CarregaComboBoxFornecedor()
+        {
+            ClasseFornecedores fornecedores = new ClasseFornecedores();
+            var listaFornecedores = fornecedores.CarregaComboxFornecedor();
+            cbxFornecedores.DataSource = listaFornecedores;
+            cbxFornecedores.DisplayMember = "Nome";
+            cbxFornecedores.ValueMember = "Id";
+
+        }
         private void AplicarFiltro()
         {
             // Filtros individuais
@@ -35,16 +62,16 @@ namespace ContasAPagar.view
             List<string> filtros = new List<string>();
 
             // Filtro por fornecedor
-            if (cbxFornecedor.Checked && !string.IsNullOrEmpty(txtFornecedor.Text))
+            if (cbxFornecedor.Checked && !string.IsNullOrEmpty(cbxFornecedores.Text))
             {
-                filtroFornecedor = $"NOME LIKE '%{txtFornecedor.Text}%'";
+                filtroFornecedor = $"NOME LIKE '%{cbxFornecedores.Text}%'";
                 filtros.Add(filtroFornecedor);
             }
 
             // Filtro por plano de contas
-            if (cbxPlanoDeContas.Checked && !string.IsNullOrEmpty(txtPlanoDeContas.Text))
+            if (cbxPlanoDeContas.Checked && !string.IsNullOrEmpty(cbxPlanoDeConta.Text))
             {
-                filtroPlanoDeContas = $"DESCRICAO1 LIKE '%{txtPlanoDeContas.Text}%'";
+                filtroPlanoDeContas = $"DESCRICAO1 LIKE '%{cbxPlanoDeConta.Text}%'";
                 filtros.Add(filtroPlanoDeContas);
             }
 
@@ -56,9 +83,9 @@ namespace ContasAPagar.view
             }
 
             // Filtro por tipo de pagamento
-            if (cbxTipoPagamento.Checked && !string.IsNullOrEmpty(txtTipoPagamento.Text))
+            if (cbxTipoPagamento.Checked && !string.IsNullOrEmpty(cbxPagamento.Text))
             {
-                filtroTipoPagamento = $"DESCRICAO LIKE '%{txtTipoPagamento.Text}%'";
+                filtroTipoPagamento = $"DESCRICAO LIKE '%{cbxPagamento.Text}%'";
                 filtros.Add(filtroTipoPagamento);
             }
 
@@ -153,6 +180,9 @@ namespace ContasAPagar.view
         {
             CarregaGridContasAPagar();
             CalculoarValor();
+            CarregaComboBoxFornecedor();
+            CarregaComboxPlanoDeContas();
+            CarregaComboBoxDocumento();
         }
         private void dtgContasAPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -220,11 +250,11 @@ namespace ContasAPagar.view
         {
             if (cbxFornecedor.Checked)
             {
-                txtFornecedor.Enabled = true;
+                cbxFornecedores.Enabled = true;
             }
             else
             {
-                txtFornecedor.Enabled = false;
+                cbxFornecedores.Enabled = false;
             }
         }
 
@@ -232,11 +262,11 @@ namespace ContasAPagar.view
         {
             if (cbxPlanoDeContas.Checked)
             {
-                txtPlanoDeContas.Enabled = true;
+                cbxPlanoDeConta.Enabled = true;
             }
             else
             {
-                txtPlanoDeContas.Enabled = false;
+                cbxPlanoDeConta.Enabled = false;
             }
         }
 
@@ -256,11 +286,11 @@ namespace ContasAPagar.view
         {
             if (cbxTipoPagamento.Checked)
             {
-                txtTipoPagamento.Enabled = true;
+                cbxPagamento.Enabled = true;
             }
             else
             {
-                txtTipoPagamento.Enabled = false;
+                cbxPagamento.Enabled = false;
             }
         }
 

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContasAPagar));
             this.dtgContasAPagar = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +74,6 @@
             this.txtSituacao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxTipoPagamento = new System.Windows.Forms.CheckBox();
-            this.txtTipoPagamento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rbLancamento = new System.Windows.Forms.RadioButton();
             this.rbPagamento = new System.Windows.Forms.RadioButton();
@@ -86,13 +85,14 @@
             this.cbxFornecedor = new System.Windows.Forms.CheckBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPlanoDeContas = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFim = new System.Windows.Forms.Label();
             this.lblInicio = new System.Windows.Forms.Label();
-            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.lblFiltroDescricao = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
+            this.cbxFornecedores = new System.Windows.Forms.ComboBox();
+            this.cbxPlanoDeConta = new System.Windows.Forms.ComboBox();
+            this.cbxPagamento = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -137,8 +137,8 @@
             // codigo
             // 
             this.codigo.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle8;
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -148,10 +148,10 @@
             // lancamento
             // 
             this.lancamento.DataPropertyName = "Lancamento";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.lancamento.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.lancamento.DefaultCellStyle = dataGridViewCellStyle9;
             this.lancamento.HeaderText = "Lançamento";
             this.lancamento.Name = "lancamento";
             this.lancamento.ReadOnly = true;
@@ -169,10 +169,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle10;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -196,8 +196,8 @@
             // tipo
             // 
             this.tipo.DataPropertyName = "DESCRICAO";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tipo.DefaultCellStyle = dataGridViewCellStyle11;
             this.tipo.HeaderText = "Tipo Pagamento";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
@@ -206,10 +206,10 @@
             // vencimento
             // 
             this.vencimento.DataPropertyName = "DataVenc";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.vencimento.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "d";
+            dataGridViewCellStyle12.NullValue = null;
+            this.vencimento.DefaultCellStyle = dataGridViewCellStyle12;
             this.vencimento.HeaderText = "Vencimento";
             this.vencimento.Name = "vencimento";
             this.vencimento.ReadOnly = true;
@@ -218,10 +218,10 @@
             // pagamento
             // 
             this.pagamento.DataPropertyName = "DataPg";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.pagamento.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.pagamento.DefaultCellStyle = dataGridViewCellStyle13;
             this.pagamento.HeaderText = "Pagamento";
             this.pagamento.Name = "pagamento";
             this.pagamento.ReadOnly = true;
@@ -230,8 +230,8 @@
             // situacao
             // 
             this.situacao.DataPropertyName = "DESCRICAO2";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.situacao.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.situacao.DefaultCellStyle = dataGridViewCellStyle14;
             this.situacao.HeaderText = "Situação";
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
@@ -421,11 +421,13 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cbxPagamento);
+            this.groupBox1.Controls.Add(this.cbxPlanoDeConta);
+            this.groupBox1.Controls.Add(this.cbxFornecedores);
             this.groupBox1.Controls.Add(this.cbxSituacao);
             this.groupBox1.Controls.Add(this.txtSituacao);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbxTipoPagamento);
-            this.groupBox1.Controls.Add(this.txtTipoPagamento);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.rbLancamento);
             this.groupBox1.Controls.Add(this.rbPagamento);
@@ -437,11 +439,9 @@
             this.groupBox1.Controls.Add(this.cbxFornecedor);
             this.groupBox1.Controls.Add(this.txtDocumento);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtPlanoDeContas);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblFim);
             this.groupBox1.Controls.Add(this.lblInicio);
-            this.groupBox1.Controls.Add(this.txtFornecedor);
             this.groupBox1.Controls.Add(this.lblFiltroDescricao);
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
@@ -486,14 +486,6 @@
             this.cbxTipoPagamento.TabIndex = 30;
             this.cbxTipoPagamento.UseVisualStyleBackColor = true;
             this.cbxTipoPagamento.CheckedChanged += new System.EventHandler(this.cbxTipoPagamento_CheckedChanged);
-            // 
-            // txtTipoPagamento
-            // 
-            this.txtTipoPagamento.Enabled = false;
-            this.txtTipoPagamento.Location = new System.Drawing.Point(97, 93);
-            this.txtTipoPagamento.Name = "txtTipoPagamento";
-            this.txtTipoPagamento.Size = new System.Drawing.Size(231, 20);
-            this.txtTipoPagamento.TabIndex = 29;
             // 
             // label3
             // 
@@ -606,14 +598,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Documento";
             // 
-            // txtPlanoDeContas
-            // 
-            this.txtPlanoDeContas.Enabled = false;
-            this.txtPlanoDeContas.Location = new System.Drawing.Point(97, 41);
-            this.txtPlanoDeContas.Name = "txtPlanoDeContas";
-            this.txtPlanoDeContas.Size = new System.Drawing.Size(231, 20);
-            this.txtPlanoDeContas.TabIndex = 16;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -643,14 +627,6 @@
             this.lblInicio.TabIndex = 10;
             this.lblInicio.Text = "Inicio";
             // 
-            // txtFornecedor
-            // 
-            this.txtFornecedor.Enabled = false;
-            this.txtFornecedor.Location = new System.Drawing.Point(97, 15);
-            this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(231, 20);
-            this.txtFornecedor.TabIndex = 9;
-            // 
             // lblFiltroDescricao
             // 
             this.lblFiltroDescricao.AutoSize = true;
@@ -669,6 +645,33 @@
             this.lblValorTotal.Size = new System.Drawing.Size(21, 13);
             this.lblValorTotal.TabIndex = 5;
             this.lblValorTotal.Text = "R$";
+            // 
+            // cbxFornecedores
+            // 
+            this.cbxFornecedores.Enabled = false;
+            this.cbxFornecedores.FormattingEnabled = true;
+            this.cbxFornecedores.Location = new System.Drawing.Point(97, 10);
+            this.cbxFornecedores.Name = "cbxFornecedores";
+            this.cbxFornecedores.Size = new System.Drawing.Size(231, 21);
+            this.cbxFornecedores.TabIndex = 34;
+            // 
+            // cbxPlanoDeConta
+            // 
+            this.cbxPlanoDeConta.Enabled = false;
+            this.cbxPlanoDeConta.FormattingEnabled = true;
+            this.cbxPlanoDeConta.Location = new System.Drawing.Point(97, 41);
+            this.cbxPlanoDeConta.Name = "cbxPlanoDeConta";
+            this.cbxPlanoDeConta.Size = new System.Drawing.Size(231, 21);
+            this.cbxPlanoDeConta.TabIndex = 35;
+            // 
+            // cbxPagamento
+            // 
+            this.cbxPagamento.Enabled = false;
+            this.cbxPagamento.FormattingEnabled = true;
+            this.cbxPagamento.Location = new System.Drawing.Point(97, 92);
+            this.cbxPagamento.Name = "cbxPagamento";
+            this.cbxPagamento.Size = new System.Drawing.Size(231, 21);
+            this.cbxPagamento.TabIndex = 36;
             // 
             // FrmContasAPagar
             // 
@@ -720,12 +723,10 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Label lblFiltroDescricao;
-        private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Label lblFim;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPlanoDeContas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbxFornecedor;
         private System.Windows.Forms.CheckBox cbxDocumento;
@@ -751,10 +752,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanoDeConta;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSituicao;
         private System.Windows.Forms.CheckBox cbxTipoPagamento;
-        private System.Windows.Forms.TextBox txtTipoPagamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cbxSituacao;
         private System.Windows.Forms.TextBox txtSituacao;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbxFornecedores;
+        private System.Windows.Forms.ComboBox cbxPlanoDeConta;
+        private System.Windows.Forms.ComboBox cbxPagamento;
     }
 }
