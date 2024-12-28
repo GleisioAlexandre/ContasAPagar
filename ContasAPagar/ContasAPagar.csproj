@@ -162,6 +162,11 @@
     <Compile Include="Model\ClassePlanoDeContas.cs" />
     <Compile Include="Model\ClasseTipoDoc.cs" />
     <Compile Include="Print\Prints.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Util\BuscaCep.cs" />
     <Compile Include="View\Cadastros\Documento\Frm_CadTipoDocumento.cs">
       <SubType>Form</SubType>
@@ -266,14 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Config\Configuracao.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Configuracao.Designer.cs</LastGenOutput>
@@ -300,19 +300,17 @@
     <None Include="Icones\correios.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\adicionar-ficheiro.png" />
+    <None Include="Resources\adicionar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\editar-arquivo.png" />
+    <None Include="Resources\editar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\erro.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lupa.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Icones\pagar.ico" />
+    <None Include="Resources\pesquisa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

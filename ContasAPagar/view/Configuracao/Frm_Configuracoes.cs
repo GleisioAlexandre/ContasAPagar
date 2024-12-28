@@ -45,5 +45,23 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro ao tentar armazenar as informações do banco de dados! \n\f Erro:{ex}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnCaminho_Click(object sender, EventArgs e)
+        {
+            // Cria uma instância do OpenFileDialog
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Title = "Selecione o arquivo do banco de dados";
+                dialog.Filter = "Arquivos de banco de dados (*.fdb;*.db)|*.fdb;*.db|Todos os arquivos (*.*)|*.*"; // Filtro para extensões específicas
+                dialog.InitialDirectory = @"C:\"; // Pasta inicial
+
+                // Exibe o diálogo e verifica se o usuário selecionou um arquivo
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Insere o caminho completo do arquivo no TextBox
+                    txtCaminho.Text = dialog.FileName;
+                }
+            }
+        }
     }
 }

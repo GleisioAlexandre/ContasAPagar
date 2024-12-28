@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadTipoDocumento));
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
+            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(135, 51);
             this.btnEditar.Name = "btnEditar";
@@ -80,7 +79,7 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Image = ((System.Drawing.Image)(resources.GetObject("btnIncluir.Image")));
+            this.btnIncluir.Image = global::ContasAPagar.Properties.Resources.adicionar;
             this.btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIncluir.Location = new System.Drawing.Point(15, 51);
             this.btnIncluir.Name = "btnIncluir";

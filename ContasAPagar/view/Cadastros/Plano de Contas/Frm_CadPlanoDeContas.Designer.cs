@@ -53,7 +53,7 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Image = global::ContasAPagar.Properties.Resources.adicionar_ficheiro;
+            this.btnIncluir.Image = global::ContasAPagar.Properties.Resources.adicionar;
             this.btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIncluir.Location = new System.Drawing.Point(12, 51);
             this.btnIncluir.Name = "btnIncluir";
@@ -66,7 +66,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar_arquivo;
+            this.btnEditar.Image = global::ContasAPagar.Properties.Resources.editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(135, 51);
             this.btnEditar.Name = "btnEditar";
