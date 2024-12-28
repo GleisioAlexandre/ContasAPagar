@@ -7304,7 +7304,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Contas a Pagar"
         "ProductCode" = "8:{42DEAA17-7D51-4D6F-A36F-35676A16F5FF}"
-        "PackageCode" = "8:{43F3130C-2D46-47D2-9D83-DB6F27093DE1}"
+        "PackageCode" = "8:{38921800-2D10-4DE9-9E15-919CE6306D31}"
         "UpgradeCode" = "8:{1C84DB96-DEC0-4B83-A943-F957C4BA6F34}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

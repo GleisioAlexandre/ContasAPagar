@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -210,23 +211,6 @@ namespace ContasAPagar.view
                 MessageBox.Show($"Erro: {ex}");
             }
         }
-     
-         
-        
-        
-        private void salvarToolStripButton_Click(object sender, EventArgs e)
-        {
-            Prints print = new Prints();
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-            saveFileDialog.Title = "Salvar PDF";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName, lblValorTotal.Text.Trim());
-            }
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             AplicarFiltro();
@@ -234,18 +218,28 @@ namespace ContasAPagar.view
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Prints print = new Prints();
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-            saveFileDialog.Title = "Salvar PDF";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+
+            // Cria uma instância da classe responsável pela exportação
+            Prints print = new Prints();
+
+            // Configuração do diálogo de salvamento
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                print.ExportarDataGridViewParaPDF(dtgContasAPagar, saveFileDialog.FileName, lblValorTotal.Text.Trim());
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Salvar PDF";
+                saveFileDialog.FileName = DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.InvariantCulture) + ".pdf";
+                
+
+                // Mostra o diálogo de salvamento e verifica se o usuário clicou em "Salvar"
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Exporta o DataGridView para PDF
+                    string caminhoArquivo = saveFileDialog.FileName;
+                    print.ExportarDataGridViewParaPDF(dtgContasAPagar, caminhoArquivo, lblValorTotal.Text.Trim());
+                }
             }
         }
-
-      
         private void cbxFornecedor_CheckedChanged(object sender, EventArgs e)
         {
             if (cbxFornecedor.Checked)

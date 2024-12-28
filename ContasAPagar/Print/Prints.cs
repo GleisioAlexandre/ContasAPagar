@@ -34,10 +34,7 @@ namespace ContasAPagar
                 int colunasVisiveis = 0;
                 foreach (DataGridViewColumn coluna in dataGridView.Columns)
                 {
-                    if (coluna.Visible)
-                    {
-                        colunasVisiveis++;
-                    }
+                    if (coluna.Visible) colunasVisiveis++;
                 }
 
                 // Cria a tabela no PDF com base no número de colunas visíveis
@@ -46,79 +43,68 @@ namespace ContasAPagar
                 tabela.SetWidths(CalcularLarguraColunas(dataGridView)); // Larguras proporcionais das colunas
 
                 // Estilo para os cabeçalhos
-                Font fonteCabecalho = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLD, BaseColor.WHITE);
+                Font fonteCabecalho = new Font(Font.FontFamily.HELVETICA, 6, Font.BOLD, BaseColor.WHITE);
 
                 // Adiciona os cabeçalhos das colunas visíveis
                 foreach (DataGridViewColumn coluna in dataGridView.Columns)
                 {
                     if (coluna.Visible)
                     {
-                        PdfPCell celulaCabecalho = new PdfPCell(new Phrase(coluna.HeaderText, fonteCabecalho));
-                        celulaCabecalho.BackgroundColor = BaseColor.DARK_GRAY; // Cor de fundo
-                        celulaCabecalho.HorizontalAlignment = Element.ALIGN_CENTER; // Alinhamento centralizado
-                        celulaCabecalho.PaddingTop = 10; // Altura da célula
-                        celulaCabecalho.PaddingBottom = 10;
-                        celulaCabecalho.PaddingLeft = 15; // Aumenta o padding horizontal
-                        celulaCabecalho.PaddingRight = 15;
+                        PdfPCell celulaCabecalho = new PdfPCell(new Phrase(coluna.HeaderText, fonteCabecalho))
+                        {
+                            BackgroundColor = BaseColor.DARK_GRAY,
+                            HorizontalAlignment = Element.ALIGN_CENTER,
+                            PaddingTop = 5,
+                            PaddingBottom = 5
+                        };
                         tabela.AddCell(celulaCabecalho);
                     }
                 }
 
-                // Adiciona as células com os dados das linhas, somente para as colunas visíveis
-                Font fonteDados = new Font(Font.FontFamily.HELVETICA, 5);
+                // Adiciona os dados das linhas visíveis
+                Font fonteDados = new Font(Font.FontFamily.HELVETICA, 6);
                 foreach (DataGridViewRow linha in dataGridView.Rows)
                 {
-                    if (!linha.IsNewRow) // Ignora a última linha em branco
+                    if (!linha.IsNewRow)
                     {
                         foreach (DataGridViewCell celula in linha.Cells)
                         {
-                            if (celula.OwningColumn.Visible) // Verifica se a coluna está visível
+                            if (celula.OwningColumn.Visible)
                             {
-                                string texto = celula.Value?.ToString() ?? ""; // Trata valores nulos
+                                string texto = celula.Value?.ToString() ?? "";
 
-                                // Verifica se o valor da célula é uma data
+                                // Formatação para tipos específicos
                                 if (celula.Value is DateTime data)
-                                {
-                                    // Formata a data para mostrar apenas o dia, mês e ano
                                     texto = data.ToString("dd/MM/yyyy");
-                                }
-                                // Verifica se o valor da célula é um número (valor monetário)
-                                else if (celula.Value is decimal valor)
-                                {
-                                    // Formata o valor como moeda (2 casas decimais)
-                                    texto = valor.ToString("C2"); // Formato de moeda, exemplo: R$ 1.234,56
-                                }
+                                else if (decimal.TryParse(celula.Value?.ToString(), out decimal valor))
+                                    texto = valor.ToString("C2");
 
-                                PdfPCell celulaDados = new PdfPCell(new Phrase(texto, fonteDados));
-                                celulaDados.HorizontalAlignment = Element.ALIGN_CENTER; // Alinha à esquerda
-                                celulaDados.PaddingTop = 5; // Padding superior
-                                celulaDados.PaddingBottom = 5; // Padding inferior
-                                celulaDados.PaddingLeft = 5; // Padding lateral
-                                celulaDados.PaddingRight = 5;
+                                PdfPCell celulaDados = new PdfPCell(new Phrase(texto, fonteDados))
+                                {
+                                    HorizontalAlignment = Element.ALIGN_CENTER,
+                                    Padding = 5
+                                };
                                 tabela.AddCell(celulaDados);
                             }
                         }
                     }
                 }
 
-                // Adiciona uma linha de rodapé com o total
-                PdfPCell celulaRodapeTitulo = new PdfPCell(new Phrase("Total", fonteCabecalho));
-                celulaRodapeTitulo.Colspan = colunasVisiveis - 1; // Ocupa todas as colunas, exceto a última
-                celulaRodapeTitulo.HorizontalAlignment = Element.ALIGN_RIGHT;
-                celulaRodapeTitulo.Padding = 5;
-                celulaRodapeTitulo.BackgroundColor = BaseColor.LIGHT_GRAY;
-                tabela.AddCell(celulaRodapeTitulo);
-
-                PdfPCell celulaRodapeValor = new PdfPCell(new Phrase(ValorTotal, fonteCabecalho)); // Valor do total
-                celulaRodapeValor.HorizontalAlignment = Element.ALIGN_CENTER;
-                celulaRodapeValor.Padding = 5;
-                celulaRodapeValor.BackgroundColor = BaseColor.LIGHT_GRAY;
-                tabela.AddCell(celulaRodapeValor);
-
                 // Adiciona a tabela ao documento
                 documento.Add(tabela);
+
+                // Adiciona o rodapé com o valor total
+                Paragraph rodape = new Paragraph($"Total: {ValorTotal}", new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD))
+                {
+                    Alignment = Element.ALIGN_RIGHT,
+                    SpacingBefore = 10 // Espaçamento antes do rodapé
+                };
+                documento.Add(rodape);
+
+                // Fecha o documento
                 documento.Close();
 
+                // Exibe mensagem de sucesso
                 MessageBox.Show("PDF gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -133,10 +119,7 @@ namespace ContasAPagar
             int colunasVisiveis = 0;
             foreach (DataGridViewColumn coluna in dataGridView.Columns)
             {
-                if (coluna.Visible)
-                {
-                    colunasVisiveis++;
-                }
+                if (coluna.Visible) colunasVisiveis++;
             }
 
             float[] larguras = new float[colunasVisiveis];
@@ -146,11 +129,12 @@ namespace ContasAPagar
             {
                 if (coluna.Visible)
                 {
-                    larguras[index] = coluna.Width / 100f; // Ajusta proporcionalmente
+                    larguras[index] = (float)coluna.Width / dataGridView.Width;
                     index++;
                 }
             }
             return larguras;
         }
+
     }
 }
