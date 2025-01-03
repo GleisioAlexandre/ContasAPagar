@@ -43,7 +43,7 @@ namespace ContasAPagar.view.Cadastros.Fornecedor
                 string cadastroPessoa = txt_Cpf_Cnpj.Text.Trim();
                 string cep = txtCep.Text.Trim();
                 string logradouro = txtLogradouro.Text.Trim();
-                int numero = Convert.ToInt32(txtNumero.Text.Trim());
+                int numero = int.TryParse(txtNumero.Text.Trim(), out int n) ? n: 0;
                 string complemento = txtComplemento.Text.Trim();
                 string bairro = txtBairro.Text.Trim();
                 string cidade = txtCidade.Text.Trim();

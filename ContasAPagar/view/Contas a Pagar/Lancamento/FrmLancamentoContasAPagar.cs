@@ -101,7 +101,7 @@ namespace ContasAPagar.view
                 int idTipoDocumento = Convert.ToInt32(cbxTipoDoc.SelectedValue);
                 string documento = txtDocumento.Text.Trim();
                 string obs = txtObs.Text.Trim();
-                double valor = Convert.ToDouble(txtValor.Text.Trim());
+                double valor = double.TryParse(txtValor.Text.Trim(), out double n) ? n : 0;
                 contAPagar.InserirContas(lancamento, idFornecedor, valor, documento, idTipoDocumento, idplanoDeContas, situacao, vencimento, pagamento, obs);
                 MessageBox.Show("Dados Inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ContasAPagar.CarregaGridContasAPagar();
